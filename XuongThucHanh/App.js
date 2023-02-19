@@ -1,11 +1,13 @@
 import React from 'react'
+import { View } from 'react-native'
+import Login from './src/components/Login'
 import { AppContextProvider } from './src/utils/AppContext'
 
 const App = () => {
   return (
-    <AppContextProvider>
-      {/* AppNavigation */}
-    </AppContextProvider>
+   <View>
+      <Login/>
+   </View>
   )
 }
 
