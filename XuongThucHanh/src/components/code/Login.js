@@ -7,6 +7,7 @@ const Login = () => {
 			<Image style={styles.back} source={require('../img/back.png')} />
 			<Text style={styles.sign}>Sign In</Text>
 			<Image style={styles.login} source={require('../img/login.png')} />
+			<Text style={styles.guide}>Enter your phone number and {'\n'}password to access your account</Text>
 		</View>
 	)
 }
@@ -14,18 +15,28 @@ const Login = () => {
 export default Login
 
 const styles = StyleSheet.create({
-	container:{
+	container: {
 		padding: 16
 	},
-	back:{
+	back: {
 		marginStart: 4,
 		marginTop: 10.5
 	},
-	sign:{
+	sign: {
 		textAlign: 'center',
 		fontFamily: 'Klarna Text',
 		fontSize: 24,
 		fontWeight: '700',
 		color: '#FF5E00'
+	},
+	login: {
+		width: 347.28,
+		height: 331.24
+	},
+	guide: {
+		fontFamily: 'Klarna Text',
+		fontSize: 18,
+		fontWeight: '400',
+		color: '#6D3805'
 	},
 })
