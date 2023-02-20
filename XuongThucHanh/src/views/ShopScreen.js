@@ -12,7 +12,9 @@ const ShopScreen = () => {
     const handleGetIdCategory = (item) => item.name;
 
     const handleRenderItemCategory = ({ item }) => (
-        <CategoryItem data={item} />
+        <CategoryItem
+            style={{ width: 100, height: 134, margin: 0 }}
+            data={item} />
     )
 
     const handleRenderItemProd = ({ item }) => (

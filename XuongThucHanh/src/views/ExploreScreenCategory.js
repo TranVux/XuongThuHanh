@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Dimensions, FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/Entypo'
@@ -6,6 +6,10 @@ import { Colors } from '../constants/Color'
 import Spacing from '../components/Spacing'
 import { DATA } from '../constants/DATA'
 import CategoryItem from '../components/CategoryItem'
+import { MasonryFlashList } from '@shopify/flash-list'
+
+const numCol = 3;
+const WIDTH = Dimensions.get('window').width;
 
 const ExploreScreenCategory = () => {
 
@@ -13,9 +17,7 @@ const ExploreScreenCategory = () => {
 
     const handleRenderItemCategory = ({ item, index }) => {
         return (
-            <CategoryItem
-                data={item}
-            />
+            <CategoryItem data={item} />
         )
     }
 
@@ -31,14 +33,24 @@ const ExploreScreenCategory = () => {
                 </View>
             </View>
             <View style={styles.categoryContainer}>
-                <FlatList
+                {/* <FlatList
                     ItemSeparatorComponent={() => <View style={{ paddingVertical: 15 }} />}
                     showsVerticalScrollIndicator={false}
                     data={DATA}
                     renderItem={handleRenderItemCategory}
                     numColumns={3}
                     keyExtractor={handleGetIdCategory}
-                    columnWrapperStyle={{ justifyContent: "space-around" }} />
+                    columnWrapperStyle={{ justifyContent: "space-around" }}
+                /> */}
+                <MasonryFlashList
+                    showsVerticalScrollIndicator={false}
+                    data={DATA}
+                    numColumns={3}
+                    renderItem={handleRenderItemCategory}
+                    estimatedItemSize={150}
+                    ItemSeparatorComponent={() => <View style={{ height: 20 }} />}
+                    keyExtractor={handleGetIdCategory}
+                />
             </View>
         </SafeAreaView>
     )
