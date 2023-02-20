@@ -1,0 +1,133 @@
+import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
+import React from 'react'
+import Icon from 'react-native-vector-icons/Entypo'
+import { Colors } from '../constants/Color'
+import CategoryItem from '../components/CategoryItem'
+import { DATA, ProductList } from '../constants/DATA'
+import Spacing from '../components/Spacing'
+import ProductItem from '../components/ProductItem'
+
+const ShopScreen = () => {
+
+    const handleGetIdCategory = (item) => item.name;
+
+    const handleRenderItemCategory = ({ item }) => (
+        <CategoryItem data={item} />
+    )
+
+    const handleRenderItemProd = ({ item }) => (
+        <ProductItem data={item} />
+    )
+
+    const handleGetIdProd = (item) => item.name;
+
+    return (
+        <SafeAreaView style={{ flex: 1, padding: 16, backgroundColor: "#fff" }}>
+            <View style={styles.header}>
+                <Icon name='location-pin' size={25} color={Colors.primaryColor} />
+                <Text style={styles.textHeader}>Lungangen</Text>
+            </View>
+            <View style={styles.searchView}>
+                <Icon style={styles.iconSearch} name='magnifying-glass' size={25} color={Colors.placeholder} />
+                <TextInput style={styles.textInput} placeholder="Search" placeholderTextColor={Colors.placeholder} cursorColor={Colors.text} />
+            </View>
+            <View style={styles.categoryContainer}>
+                <View style={styles.categoryHeader}>
+                    <Text style={styles.textCategory}>Categories</Text>
+                    <Pressable>
+                        <Text style={styles.textButtonSeeAll}>See All</Text>
+                    </Pressable>
+                </View>
+                <View style={styles.categoryContent}>
+                    <FlatList
+                        ItemSeparatorComponent={Spacing}
+                        showsHorizontalScrollIndicator={false}
+                        data={DATA}
+                        renderItem={handleRenderItemCategory}
+                        horizontal={true}
+                        keyExtractor={handleGetIdCategory} />
+                </View>
+            </View>
+            <View style={styles.popularDeals}>
+                <View style={styles.categoryHeader}>
+                    <Text style={styles.textCategory}>Popular deals</Text>
+                    <Pressable>
+                        <Text style={styles.textButtonSeeAll}>See All</Text>
+                    </Pressable>
+                </View>
+                <View style={styles.popularDealsContent}>
+                    <FlatList
+                        contentContainerStyle={{ paddingVertical: 10, paddingHorizontal: 2 }}
+                        ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
+                        showsHorizontalScrollIndicator={false}
+                        data={ProductList}
+                        renderItem={handleRenderItemProd}
+                        horizontal={true}
+                        keyExtractor={handleGetIdProd} />
+                </View>
+            </View>
+        </SafeAreaView>
+    )
+}
+
+export default ShopScreen
+
+const styles = StyleSheet.create({
+    header: {
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
+    },
+    textHeader: {
+        fontWeight: "700",
+        fontSize: 24,
+        color: Colors.primaryColor,
+        marginStart: 5
+    },
+    searchView: {
+        marginTop: 18,
+        alignItems: "center",
+        flexDirection: "row",
+    },
+    textInput: {
+        borderWidth: 1,
+        borderRadius: 7,
+        borderColor: "#fff",
+        backgroundColor: "#F3F3F3",
+        paddingStart: 40,
+        flex: 1
+    },
+    iconSearch: {
+        position: "absolute",
+        start: 13,
+        zIndex: 10,
+        top: 13
+    },
+    categoryContainer: {
+        marginTop: 30
+    },
+    categoryHeader: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginBottom: 23
+    },
+    textCategory: {
+        fontWeight: "700",
+        color: Colors.text,
+        fontSize: 22
+    },
+    textButtonSeeAll: {
+        color: Colors.primaryColor,
+        fontWeight: "400",
+        fontSize: 18
+    },
+    categoryContent: {
+        width: "100%",
+    },
+    popularDeals: {
+        marginVertical: 40
+    },
+    popularDealsContent: {
+    }
+})
