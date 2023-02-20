@@ -3,9 +3,9 @@ import { AppContextProvider } from './src/utils/AppContext'
 
 const App = () => {
   return (
-    <AppContextProvider>
-      {/* AppNavigation */}
-    </AppContextProvider>
+   <View>
+    <Text>Hello World</Text>
+   </View>
   )
 }
 
