@@ -17,9 +17,17 @@ const ShopScreen = () => {
             data={item} />
     )
 
-    const handleRenderItemProd = ({ item }) => (
-        <ProductItem data={item} />
-    )
+    const handleRenderItemProd = ({ item }) => {
+        if (item.type) {
+            return <></>
+        }
+        return (
+            <ProductItem
+                style={{ width: 150 }}
+                type="product"
+                data={item} />
+        )
+    }
 
     const handleGetIdProd = (item) => item.name;
 
@@ -59,8 +67,6 @@ const ShopScreen = () => {
                 </View>
                 <View style={styles.popularDealsContent}>
                     <FlatList
-                        contentContainerStyle={{ paddingVertical: 10, paddingHorizontal: 2 }}
-                        ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
                         showsHorizontalScrollIndicator={false}
                         data={ProductList}
                         renderItem={handleRenderItemProd}
@@ -112,7 +118,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        marginBottom: 23
+        marginBottom: 13
     },
     textCategory: {
         fontWeight: "700",

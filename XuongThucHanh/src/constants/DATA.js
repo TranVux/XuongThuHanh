@@ -63,6 +63,10 @@ export const ProductList = [
         price: 23
     },
     {
+        type: "banner",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2FGroup%207066.png?alt=media&token=3acc0095-a46f-48cb-81f4-06a03e1032e1"
+    },
+    {
         name: "Green Apple",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzAA2_Wi3poTVy2PXc_eDT3mp-ag7NI3vFNQfsPSp9pjaRCZ09Wd4jph6GzrTcKTDXYiE&usqp=CAU",
         price: 20

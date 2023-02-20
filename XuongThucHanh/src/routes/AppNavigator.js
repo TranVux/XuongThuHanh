@@ -3,16 +3,18 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ExploreScreenCategory from '../views/ExploreScreenCategory';
 import ShopScreen from '../views/ShopScreen'
+import DetailCategoryNavigatorScreen from '../views/DetailCategoryNavigatorScreen';
 
-const Main = createNativeStackNavigator();
+const MainStack = createNativeStackNavigator();
 
 const AppNavigator = () => {
     return (
         <NavigationContainer>
-            <Main.Navigator screenOptions={{ headerShown: false }}>
-                <Main.Screen component={ExploreScreenCategory} name='ExploreScreenCategory' />
-                <Main.Screen component={ShopScreen} name='ShopScreen' />
-            </Main.Navigator>
+            <MainStack.Navigator screenOptions={{ headerShown: false }}>
+                <MainStack.Screen component={DetailCategoryNavigatorScreen} name='DetailCategoryNavigatorScreen' />
+                <MainStack.Screen component={ShopScreen} name='ShopScreen' />
+                <MainStack.Screen component={ExploreScreenCategory} name='ExploreScreenCategory' />
+            </MainStack.Navigator>
         </NavigationContainer>
     )
 }

@@ -33,15 +33,6 @@ const ExploreScreenCategory = () => {
                 </View>
             </View>
             <View style={styles.categoryContainer}>
-                {/* <FlatList
-                    ItemSeparatorComponent={() => <View style={{ paddingVertical: 15 }} />}
-                    showsVerticalScrollIndicator={false}
-                    data={DATA}
-                    renderItem={handleRenderItemCategory}
-                    numColumns={3}
-                    keyExtractor={handleGetIdCategory}
-                    columnWrapperStyle={{ justifyContent: "space-around" }}
-                /> */}
                 <MasonryFlashList
                     showsVerticalScrollIndicator={false}
                     data={DATA}

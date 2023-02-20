@@ -5,19 +5,25 @@ import FastImage from 'react-native-fast-image'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { Colors } from '../constants/Color'
 
-const ProductItem = ({ data, onPress }) => {
+const ProductItem = ({ data, onPress, type, style }) => {
+    // console.log(type === "product");
+
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container, { ...style, padding: type === "product" ? 12 : 0 }]}>
             <FastImage
-                style={styles.image}
+                style={[styles.image, { width: type === "product" ? 120 : "100%" }]}
                 source={{ uri: data.image }}
-                resizeMode={FastImage.resizeMode.contain} />
-            <Text style={[styles.textStyle, styles.textName]}>{data.name}</Text>
-            <Text style={[styles.textStyle, styles.textAmount]}>1kg,priceg</Text>
-            <View style={styles.priceContainer}>
-                <Text style={styles.priceText}>$ {data.price}</Text>
-                <Icon name='pluscircle' size={29} color={Colors.green} />
-            </View>
+                resizeMode={type === "product" ? FastImage.resizeMode.contain : FastImage.resizeMode.cover} />
+            {type === "product" &&
+                <>
+                    <Text style={[styles.textStyle, styles.textName]}>{data.name}</Text>
+                    <Text style={[styles.textStyle, styles.textAmount]}>1kg,priceg</Text>
+                    <View style={styles.priceContainer}>
+                        <Text style={styles.priceText}>$ {data.price}</Text>
+                        <Icon name='pluscircle' size={29} color={Colors.green} />
+                    </View>
+                </>
+            }
         </SafeAreaView>
     )
 }
@@ -26,8 +32,8 @@ export default ProductItem
 
 const styles = StyleSheet.create({
     container: {
-        padding: 12,
-        width: 150,
+        // width: 150,
+        margin: 10,
         backgroundColor: "#fff",
         elevation: 4,
         justifyContent: "center",
