@@ -28,7 +28,32 @@ export const DATA = [
         color: "#FFD9BA",
         image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_pumpkin_4002936%201.png?alt=media&token=50ec55c8-ce79-4643-b8c7-b0729e0bc1c4",
         name: "Vegestables"
-    }
+    },
+    {
+        color: "#EDD0FF",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Fruit_2287486%201.png?alt=media&token=ef3c5a14-a1dc-47b7-bda3-3201f2fa89aa",
+        name: "Fruits"
+    },
+    {
+        color: "#DAF2FC",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2FGroup%207084.png?alt=media&token=83b5ee71-818e-4381-811b-9c31197b2e85",
+        name: "Egg & Milk"
+    },
+    {
+        color: "#FECA97",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2FGroup%207085.png?alt=media&token=5b93855e-68c0-4948-adc4-a8648db09463",
+        name: "Cake"
+    },
+    {
+        color: "#FFC0C0",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2FVector.png?alt=media&token=45bcb1cb-5394-455e-be05-430fd1dbe75e",
+        name: "Wine"
+    },
+    {
+        color: "#D6FAE9",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Hand%20Wash_2939926%201.png?alt=media&token=aa3ca966-37e6-4e2f-90f4-456aa2839afb",
+        name: "Hand wash"
+    },
 ]
 
 export const ProductList = [
