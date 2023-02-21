@@ -4,9 +4,9 @@ import React from 'react'
 const FavouriteEmpty = () => {
     return (
         <View style={styles.container}>
-            <Image style={styles.back} source={require('../img/back.png')} />
+            <Image style={styles.back} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
             <Text style={styles.sign}>Sign In</Text>
-            <Image style={styles.login} source={require('../img/login.png')} />
+            <Image style={styles.login} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/login.png')} />
             <Text style={styles.guide}>Enter your phone number and {'\n'}password to access your account</Text>
         </View>
     )
