@@ -97,3 +97,9 @@ export const ProductList = [
         price: 80
     }
 ]
+
+export const ShopList = [
+    { shopName: "Goteborg Arkaden1", distance: "1.2" },
+    { shopName: "Goteborg Arkaden2", distance: "1.2" },
+    { shopName: "Goteborg Arkaden3", distance: "1.2" },
+]
