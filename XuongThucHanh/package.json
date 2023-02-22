@@ -18,7 +18,9 @@
     "@shopify/flash-list": "^1.4.1",
     "react": "18.0.0",
     "react-native": "0.69.8",
+    "react-native-dropdown-select-list": "^2.0.4",
     "react-native-pager-view": "^6.1.4",
+    "react-native-simple-tablayout": "^0.0.5",
     "react-native-tab-view": "^3.5.0",
     "react-native-vector-icons": "^9.2.0",
     "yarn": "^1.22.19"

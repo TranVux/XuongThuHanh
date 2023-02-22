@@ -1,7 +1,19 @@
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import { SelectList } from 'react-native-dropdown-select-list'
+
+const data = [
+  { key: '1', value: 'Mobiles', disabled: true },
+  { key: '2', value: 'Appliances' },
+  { key: '3', value: 'Cameras' },
+  { key: '4', value: 'Computers', disabled: true },
+  { key: '5', value: 'Vegetables' },
+  { key: '6', value: 'Diary Products' },
+  { key: '7', value: 'Drinks' },
+]
 
 const NewAddress = () => {
+  const [selected, setSelected] = useState("")
   return (
     <View style={styles.container}>
       <Image
@@ -18,14 +30,24 @@ const NewAddress = () => {
           placeholder="Name Surname"
           placeholderTextColor='#AC8E71' />
       </View>
-      <View style={styles.inputContainer}>
+      {/* <View style={styles.inputContainer}>
         <TextInput style={styles.input}
           placeholder="City"
           placeholderTextColor='#AC8E71' />
         <Image
           style={styles.imgSpinner}
           source={require('../../assets/images/spinner.png')} />
-      </View>
+      </View> */}
+      <SelectList
+        style={styles.selectList}
+        //onSelect={() => alert(selected)}
+        setSelected={setSelected}
+        data={data}
+        search={false}
+        boxStyles={{ borderRadius: 5, marginBottom: 30, backgroundColor: '#F3F3F3', borderColor: '#F3F3F3',color :'red' }} //override default styles
+        inputStyles={{color: '#AC8E71'}}
+        defaultOption={{ key: '1', value: 'Jammu & Kashmir' }}   //default selected option
+      />
       <View style={styles.inputContainer}>
         <TextInput style={styles.input}
           placeholder="Address"

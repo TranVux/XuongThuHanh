@@ -1,20 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
-
 const OnGoing = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.imgBack}
-        source={require('../../assets/images/back.png')} />
-      <Text style={styles.title}>Orders</Text>
-
-      <View style={styles.header}>
-        <View style={styles.headerLeft}>
-          <Text style={styles.TextOnGoing}>Ongoing</Text>
-          <View style={styles.line}></View>
-        </View>
-        <Text style={styles.TextHistory}>History</Text>
-      </View>
       <View style={styles.time}>
         <View style={styles.timeLeft}>
           <Image style={styles.imgCalender}
@@ -111,7 +99,7 @@ const styles = StyleSheet.create({
     width: 1,
     height: 150,
     alignItems: 'center',
-    marginLeft: 5,
+    marginLeft: 6,
     borderWidth: 1,
     borderStyle: 'dashed',
     borderColor: '#C6C6C6',
@@ -147,7 +135,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 49.5
+    marginTop: 48
   },
   line: {
     width: 80,
@@ -173,21 +161,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly'
   },
-  title: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#FF5E00',
-    lineHeight: 28.8,
-    marginTop: 5,
-    textAlign: 'center',
-    marginBottom: 28
-  },
-  imgBack: {
-    marginTop: 48
-  },
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: '#ffffff',
   }
 })
