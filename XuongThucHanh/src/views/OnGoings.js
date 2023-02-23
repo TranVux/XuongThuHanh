@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, Dimensions, StyleSheet, Image } from 'react-native';
 import TabLayout from 'react-native-simple-tablayout';
 import OnGoing from './OnGoing';
-import History from './History';
 
 const { width } = Dimensions.get('window');
 
