@@ -7,7 +7,7 @@ import OrderSuccessfullScreen from './src/views/OrderSuccessfullScreen'
 
 const App = () => {
   return (
-    <OrderSuccessfullScreen/>
+    <ItemScreen/>
   )
 }
 

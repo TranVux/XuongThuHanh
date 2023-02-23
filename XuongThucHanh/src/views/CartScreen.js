@@ -1,81 +1,82 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import React from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const CartScreen = () => {
-  return (
-    <View style={styles.container}>
-            <Image style={styles.icon} source={require('../images/ic_back.png')} />
+    return (
+        <View style={styles.container}>
+            <Icon name="chevron-left" size={20} color="#FF7300" style={{ paddingLeft: 20 }} />
             <Text style={styles.title}>Cart</Text>
-            
+
             {/* Item 1 */}
-            <View style = {[styles.header]}>
-                <Image style={styles.image} resizeMode = 'cover' source={require('../images/img_apple.png')} />
-                <View style={{marginStart: 20, flexDirection: 'column', justifyContent: 'space-around'}}>
+            <View style={[styles.header]}>
+                <Image style={[styles.image, { width: 70, height: 70 }]} resizeMode='cover' source={require('../images/img_apple.png')} />
+                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
                     <Text style={styles.name}>Red Apple</Text>
-                    <View style = {styles.groupButton}>
-                        <View style = {[styles.button]}>
-                            <Text style={[styles.price, styles.add]}>-</Text>
+                    <View style={styles.groupButton}>
+                        <View style={[styles.button]}>
+                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                             <Text style={[styles.price,]}>2</Text>
-                            <Text style={[styles.price, styles.add]}>+</Text>
+                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                         </View>
-                        <Text style={[styles.price,{ marginStart: 50}]}>$4,99 kg</Text>
+                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
                     </View>
                 </View>
             </View>
 
             {/* Item 2 */}
-            <View style = {[styles.header]}>
-                <Image style={styles.image} resizeMode = 'cover' source={require('../images/img_banana.png')} />
-                <View style={{marginStart: 20, flexDirection: 'column', justifyContent: 'space-around'}}>
+            <View style={[styles.header]}>
+                <Image style={styles.image} resizeMode='cover' source={require('../images/img_banana.png')} />
+                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
                     <Text style={styles.name}>Orginal Banana</Text>
-                    <View style = {styles.groupButton}>
-                        <View style = {[styles.button]}>
-                            <Text style={[styles.price, styles.add]}>-</Text>
+                    <View style={styles.groupButton}>
+                        <View style={[styles.button]}>
+                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                             <Text style={[styles.price,]}>2</Text>
-                            <Text style={[styles.price, styles.add]}>+</Text>
+                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                         </View>
-                        <Text style={[styles.price,{ marginStart: 50}]}>$4,99 kg</Text>
+                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
                     </View>
                 </View>
             </View>
 
             {/* Item 3 */}
-            <View style = {[styles.header]}>
-                <Image style={styles.image} resizeMode = 'cover' source={require('../images/img_avocado.png')} />
-                <View style={{marginStart: 20, flexDirection: 'column', justifyContent: 'space-around'}}>
+            <View style={[styles.header]}>
+                <Image style={styles.image} resizeMode='cover' source={require('../images/img_avocado.png')} />
+                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
                     <Text style={styles.name}>Avocado Bowl</Text>
-                    <View style = {styles.groupButton}>
-                        <View style = {[styles.button]}>
-                            <Text style={[styles.price, styles.add]}>-</Text>
+                    <View style={styles.groupButton}>
+                        <View style={[styles.button]}>
+                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                             <Text style={[styles.price,]}>2</Text>
-                            <Text style={[styles.price, styles.add]}>+</Text>
+                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                         </View>
-                        <Text style={[styles.price,{ marginStart: 50}]}>$4,99 kg</Text>
+                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
                     </View>
                 </View>
             </View>
 
             {/* Item 4 */}
-            <View style = {[styles.header]}>
-                <Image style={styles.image} resizeMode = 'cover' source={require('../images/img_salmon.png')} />
-                <View style={{marginStart: 20, flexDirection: 'column', justifyContent: 'space-around'}}>
+            <View style={[styles.header]}>
+                <Image style={styles.image} resizeMode='cover' source={require('../images/img_salmon.png')} />
+                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
                     <Text style={styles.name}>Salmon</Text>
-                    <View style = {styles.groupButton}>
-                        <View style = {[styles.button]}>
-                            <Text style={[styles.price, styles.add]}>-</Text>
+                    <View style={styles.groupButton}>
+                        <View style={[styles.button]}>
+                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                             <Text style={[styles.price,]}>2</Text>
-                            <Text style={[styles.price, styles.add]}>+</Text>
+                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                         </View>
-                        <Text style={[styles.price,{ marginStart: 50}]}>$4,99 kg</Text>
+                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
                     </View>
                 </View>
             </View>
 
-            <Pressable style = {styles.buttonCheck}>
-            <Text style = {styles.textCheck}>CheckOut</Text>
+            <Pressable style={styles.buttonCheck}>
+                <Text style={styles.textCheck}>CheckOut</Text>
             </Pressable>
         </View>
-  )
+    )
 }
 
 export default CartScreen
@@ -112,7 +113,6 @@ const styles = StyleSheet.create({
     price: {
         fontSize: 18,
         color: '#6D3805',
-        fontWeight: '400',
         textAlign: 'center',
         lineHeight: 25
     },
@@ -121,16 +121,16 @@ const styles = StyleSheet.create({
         height: 25,
         backgroundColor: '#FFFFFF',
         borderRadius: 12.5,
-        
+
 
     },
     image: {
         width: 75,
         height: 56,
-    }, 
+    },
     header: {
         flexDirection: 'row',
-        
+        paddingVertical: 15,
         width: '100%',
         height: 83.65,
         borderBottomWidth: 1,
@@ -144,14 +144,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#F4F4F4',
         flexDirection: 'row',
         justifyContent: 'space-between', alignItems: 'center', borderRadius: 30, marginStart: 20
-    } ,
+    },
     buttonCheck: {
         position: 'absolute',
         left: 16,
         right: 16,
         bottom: 20,
         height: 50,
-        
+
         backgroundColor: '#FF5E00',
         justifyContent: 'center',
         alignItems: 'center',
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     textCheck: {
         fontSize: 18,
         fontWeight: '700',
-        lineHeight: 21.6, 
+        lineHeight: 21.6,
         color: 'white'
     }
 })
