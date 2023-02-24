@@ -78,11 +78,16 @@ const PaymentScreen = () => {
                         </Pressable>
 
                         {/* Dialog date picker */}
-                        <Dialog.Container visible={dialogIsVisible}
-                            onBackdropPress={() => { setDialogIsVisible(false) }}>
+                        <Dialog.Container
+                            visible={dialogIsVisible}
+                            onBackdropPress={() => { setDialogIsVisible(false) }}
+                        >
                             <DatePicker
                                 onSelectedChange={handleSelectDate}
                                 mode="calendar"
+                                options={{
+                                    mainColor: Colors.primaryColor,
+                                }}
                             />
                         </Dialog.Container>
 
