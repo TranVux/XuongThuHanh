@@ -272,11 +272,11 @@ const styles = StyleSheet.create({
 
     timeChoiceItem: {
         width: "31%",
-        height: 45,
+        height: 40,
         backgroundColor: "#fff",
         borderRadius: 7,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
     },
     textTimeChoiceItem: {
         color: Colors.text,
