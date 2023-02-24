@@ -1,23 +1,40 @@
 import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import IconIonicons from 'react-native-vector-icons/Ionicons'
 import { Colors } from '../constants/Color'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import DatePicker from 'react-native-modern-datepicker';
+import Dialog from "react-native-dialog";
+import { Chip, ToggleButtonGroupProps } from 'react-native-paper';
 import Collapsible from 'react-native-collapsible';
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import AntDesignIcon from 'react-native-vector-icons/AntDesign'
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons'
 import ShopItem from '../components/ShopItem'
 import { ShopList } from '../constants/DATA'
+import { TimeValue } from '../constants/TimeChoiceValue'
 
 
 const PaymentScreen = () => {
 
     const [collapsed, setCollapsed] = useState(true);
+    const [datePicked, setDatePicked] = useState("Select Date");
+    const [timePicked, setTimePicked] = useState("");
+    const [dialogIsVisible, setDialogIsVisible] = useState(false);
+    const [currentChipSellected, setCurrentChipSellected] = useState(-1);
 
     const handleCollapsed = () => {
         setCollapsed(!collapsed);
+    }
+
+    const handleSelectDate = (date) => {
+        setDatePicked(date);
+        setDialogIsVisible(false);
+    }
+
+    const handleChipSelected = (index, value) => {
+        setCurrentChipSellected(index);
+        setTimePicked(value);
     }
 
     return (
@@ -52,12 +69,71 @@ const PaymentScreen = () => {
                     <View style={[styles.radiusContainer, { marginTop: 0, marginBottom: 20 }]}>
                         <Text style={{ color: Colors.text, fontWeight: "700", fontSize: 18, marginBottom: 13 }}>Expected date & Time</Text>
 
-                        <View style={styles.selectDateContainer}>
+                        <Pressable style={styles.selectDateContainer} onPress={() => { setDialogIsVisible(true) }}>
                             <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", }}>
-                                <AntDesignIcon name='calendar' size={30} color={Colors.text} />
-                                <Text style={{ color: Colors.placeholder, fontSize: 18, marginStart: 13 }}>Select Date</Text>
+                                <AntDesignIcon name='calendar' size={25} color={Colors.text} />
+                                <Text style={{ color: datePicked !== "Select Date" ? Colors.text : Colors.placeholder, fontSize: 16, marginStart: 10 }}>{datePicked}</Text>
                             </View>
                             <IconIonicons name='chevron-back' color={Colors.text} size={25} style={{ transform: [{ rotate: "-90deg" }] }} />
+                        </Pressable>
+
+                        {/* Dialog date picker */}
+                        <Dialog.Container visible={dialogIsVisible}
+                            onBackdropPress={() => { setDialogIsVisible(false) }}>
+                            <DatePicker
+                                onSelectedChange={handleSelectDate}
+                                mode="calendar"
+                            />
+                        </Dialog.Container>
+
+                        <View style={styles.selectTimeContainer}>
+                            <Chip
+                                selected={currentChipSellected === 0}
+                                style={[styles.timeChoiceItem, { marginBottom: 20 }]}
+                                textStyle={{ color: Colors.text, fontWeight: "400", fontSize: 13 }}
+                                onPress={() => handleChipSelected(0, TimeValue[0])}>
+                                {TimeValue[0]}
+                            </Chip>
+
+                            <Chip
+                                selected={currentChipSellected === 1}
+                                style={[styles.timeChoiceItem, { marginBottom: 20 }]}
+                                textStyle={{ color: Colors.text, fontWeight: "400", fontSize: 13 }}
+                                onPress={() => handleChipSelected(1, TimeValue[1])}>
+                                {TimeValue[1]}
+                            </Chip>
+
+                            <Chip
+                                selected={currentChipSellected === 2}
+                                style={[styles.timeChoiceItem, { marginBottom: 20 }]}
+                                textStyle={{ color: Colors.text, fontWeight: "400", fontSize: 13 }}
+                                onPress={() => handleChipSelected(2, TimeValue[2])}>
+                                {TimeValue[2]}
+                            </Chip>
+
+                            <Chip
+                                selected={currentChipSellected === 3}
+                                style={styles.timeChoiceItem}
+                                textStyle={{ color: Colors.text, fontWeight: "400", fontSize: 13 }}
+                                onPress={() => handleChipSelected(3, TimeValue[3])}>
+                                {TimeValue[3]}
+                            </Chip>
+
+                            <Chip
+                                selected={currentChipSellected === 4}
+                                style={styles.timeChoiceItem}
+                                textStyle={{ color: Colors.text, fontWeight: "400", fontSize: 13 }}
+                                onPress={() => handleChipSelected(4, TimeValue[4])}>
+                                {TimeValue[4]}
+                            </Chip>
+
+                            <Chip
+                                selected={currentChipSellected === 5}
+                                style={styles.timeChoiceItem}
+                                textStyle={{ color: Colors.text, fontWeight: "400", fontSize: 13 }}
+                                onPress={() => handleChipSelected(5, TimeValue[5])}>
+                                {TimeValue[5]}
+                            </Chip>
                         </View>
                     </View>
                     {/* end Expected date & Time */}
@@ -181,13 +257,34 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         borderRadius: 6
     },
+    selectTimeContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        alignItems: "center",
+        marginTop: 10
+    },
+
+    timeChoiceItem: {
+        width: "31%",
+        height: 45,
+        backgroundColor: "#fff",
+        borderRadius: 7,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    textTimeChoiceItem: {
+        color: Colors.text,
+        fontSize: 13,
+        fontWeight: "400"
+    },
     textHeader: {
         color: Colors.primaryColor,
         fontWeight: "700",
         fontSize: 24
     },
     contentStyle: {
-        marginTop: 25
+        marginTop: 10
     },
     text: {
         color: Colors.text,
