@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 import React from 'react'
-import ProductItem from '../components/ProductItem';
+import ProductItem from '../components/Products/ProductItem';
 import { ProductList } from '../constants/DATA';
 import { MasonryFlashList } from '@shopify/flash-list';
 

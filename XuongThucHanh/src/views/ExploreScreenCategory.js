@@ -5,11 +5,8 @@ import Icon from 'react-native-vector-icons/Entypo'
 import { Colors } from '../constants/Color'
 import Spacing from '../components/Spacing'
 import { DATA } from '../constants/DATA'
-import CategoryItem from '../components/CategoryItem'
+import CategoryItem from '../components/Products/CategoryItem'
 import { MasonryFlashList } from '@shopify/flash-list'
-
-const numCol = 3;
-const WIDTH = Dimensions.get('window').width;
 
 const ExploreScreenCategory = () => {
 

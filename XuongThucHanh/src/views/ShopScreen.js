@@ -2,10 +2,10 @@ import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } 
 import React from 'react'
 import Icon from 'react-native-vector-icons/Entypo'
 import { Colors } from '../constants/Color'
-import CategoryItem from '../components/CategoryItem'
+import CategoryItem from '../components/Products/CategoryItem'
 import { DATA, ProductList } from '../constants/DATA'
 import Spacing from '../components/Spacing'
-import ProductItem from '../components/ProductItem'
+import ProductItem from '../components/Products/ProductItem'
 
 const ShopScreen = () => {
 
