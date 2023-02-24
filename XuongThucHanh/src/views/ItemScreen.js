@@ -1,6 +1,37 @@
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ItemCart from './ItemCart';
+import { SwipeListView } from 'react-native-swipe-list-view';
+
+
+const DATA = [
+    {
+        id: '1',
+        name: 'Red Apple',
+        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_apple.png?alt=media&token=d5723cae-0b4f-425e-8ca7-f8752edddca5',
+        price: '2.495',
+    },
+    {
+        id: '2',
+        name: 'Orginal Banana',
+        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_banana.png?alt=media&token=0716d432-fb7a-4447-87e9-88959ea85ed9',
+        price: '2.995',
+    },
+    {
+        id: '3',
+        name: 'Avocado Bowl',
+        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_avocado.png?alt=media&token=2351cadb-d381-4bfb-a322-a8507a79e8c1',
+        price: '24',
+    },
+    {
+        id: '4',
+        name: 'Salmon',
+        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_salmon.png?alt=media&token=e7f25566-5d3f-4bf5-8ada-5d77790a3cca',
+        price: '25',
+    },
+
+];
 
 const ItemScreen = () => {
     return (
@@ -8,70 +39,31 @@ const ItemScreen = () => {
             <Icon name="chevron-left" size={20} color="#FF7300" style={{ paddingLeft: 20 }} />
             <Text style={styles.title}>Itemes</Text>
 
-            {/* Item 1 */}
-            <View style={[styles.header]}>
-                <Image style={[styles.image, { width: 70, height: 70 }]} resizeMode='cover' source={require('../images/img_apple.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Red Apple</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                        </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
-                    </View>
-                </View>
-            </View>
+            {/* <FlatList
+                data={DATA}
+                renderItem={({ item }) => <ItemCart data={item} />}
+                keyExtractor={item => item.id}
+            /> */}
 
-            {/* Item 2 */}
-            <View style={[styles.header]}>
-                <Image style={styles.image} resizeMode='cover' source={require('../images/img_banana.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Orginal Banana</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
+            <SwipeListView
+                data={DATA}
+                renderItem={({ item }) => <ItemCart data={item} />}
+                keyExtractor={item => item.id}
+                renderHiddenItem={(data, index) => (
+                    <View style={styles.item}>
+                        <View style={[styles.item, {width: 75, height: 100, backgroundColor: '#A42B32', justifyContent: 'center'}]}>
+                            <TouchableOpacity onPress={() => {
+                                Alert.alert('Delete', "Bạn có muốn xóa không?");
+                            }}>
+                                <Icon name="trash" size={35} color="#ffffff" style={{ flexDirection: 'row', justifyContent: 'flex-end' }} />
+                            </TouchableOpacity>
                         </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
                     </View>
-                </View>
-            </View>
 
-            {/* Item 3 */}
-            <View style={[styles.header]}>
-                <Image style={styles.image} resizeMode='cover' source={require('../images/img_avocado.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Avocado Bowl</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                        </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
-                    </View>
-                </View>
-            </View>
-
-            {/* Item 4 */}
-            <View style={[styles.header]}>
-                <Image style={styles.image} resizeMode='cover' source={require('../images/img_salmon.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Salmon</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                        </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
-                    </View>
-                </View>
-            </View>
-
+                )}
+                
+                rightOpenValue={-75}
+            />
             <Pressable style={styles.buttonCheck}>
                 <Text style={styles.textCheck}>CheckOut</Text>
             </Pressable>
@@ -82,6 +74,14 @@ const ItemScreen = () => {
 export default ItemScreen
 
 const styles = StyleSheet.create({
+    item: {
+        flexDirection: 'row',
+        justifyContent: "flex-end",
+        alignItems: 'center',
+    },
+    title: {
+        fontSize: 32,
+    },
     groupButton: {
         flexDirection: "row",
         justifyContent: 'space-between',
