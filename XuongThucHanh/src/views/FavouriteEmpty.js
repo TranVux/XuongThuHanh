@@ -5,9 +5,14 @@ const FavouriteEmpty = () => {
     return (
         <View style={styles.container}>
             <Image style={styles.back} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
-            <Text style={styles.sign}>Sign In</Text>
-            <Image style={styles.login} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/login.png')} />
-            <Text style={styles.guide}>Enter your phone number and {'\n'}password to access your account</Text>
+            <Text style={styles.sign}>Favourite</Text>
+            <Image style={styles.favourite} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/favourite.png')} />
+            <Text style={styles.noti}>Your heart is empty</Text>
+            <Text style={styles.start}>Start fall in love with some good {'\n'}goods </Text>
+
+            <Pressable style={styles.button}>
+                <Text style={styles.shop}>Start shopping</Text>
+            </Pressable>
         </View>
     )
 }
@@ -30,14 +35,37 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         color: '#FF5E00'
     },
-    login: {
-        width: 347.28,
-        height: 331.24
+    favourite: {
+        marginTop: 15
     },
-    guide: {
+    noti: {
+        marginTop: 20,
+        textAlign: 'center',
         fontFamily: 'Klarna Text',
-        fontSize: 18,
+        fontSize: 20,
+        fontWeight: '700',
+        color: '#6D3805'
+    },
+    start: {
+        marginTop: 8,
+        textAlign: 'center',
+        fontFamily: 'Klarna Text',
+        fontSize: 16,
         fontWeight: '400',
         color: '#6D3805'
+    },
+    button: {
+        marginTop: 81,
+        backgroundColor: '#FF5E00',
+        height: 50,
+        borderRadius: 30
+    },
+    shop: {
+        padding: 14,
+        textAlign: 'center',
+        fontFamily: 'Klarna Text',
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#FFFFFF'
     },
 })
