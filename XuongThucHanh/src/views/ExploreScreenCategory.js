@@ -2,7 +2,7 @@ import { Dimensions, FlatList, StyleSheet, Text, TextInput, View } from 'react-n
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/Entypo'
-import { Colors } from '../constants/Color'
+import { Colors } from '../../assets/Colors';
 import Spacing from '../components/Spacing'
 import { DATA } from '../constants/DATA'
 import CategoryItem from '../components/Products/CategoryItem'

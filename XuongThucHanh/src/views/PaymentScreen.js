@@ -1,11 +1,11 @@
-import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import IconIonicons from 'react-native-vector-icons/Ionicons'
-import { Colors } from '../constants/Color'
+import { Colors } from '../../assets/Colors';
 import DatePicker from 'react-native-modern-datepicker';
 import Dialog from "react-native-dialog";
-import { Chip, ToggleButtonGroupProps } from 'react-native-paper';
+import { Chip } from 'react-native-paper';
 import Collapsible from 'react-native-collapsible';
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import AntDesignIcon from 'react-native-vector-icons/AntDesign'
@@ -13,7 +13,6 @@ import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons'
 import ShopItem from '../components/ShopItem'
 import { ShopList } from '../constants/DATA'
 import { TimeValue } from '../constants/TimeChoiceValue'
-
 
 const PaymentScreen = () => {
 
@@ -284,8 +283,8 @@ const styles = StyleSheet.create({
         fontWeight: "400"
     },
     textHeader: {
-        color: Colors.primaryColor,
         fontWeight: "700",
+        color: Colors.primaryColor,
         fontSize: 24
     },
     contentStyle: {

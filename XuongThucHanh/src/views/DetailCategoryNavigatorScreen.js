@@ -6,7 +6,7 @@ import { DATA } from '../constants/DATA';
 import DetailCategoryScreen from './DetailCategoryScreen';
 import IconIonicons from 'react-native-vector-icons/Ionicons'
 import IconEntypo from 'react-native-vector-icons/Entypo'
-import { Colors } from '../constants/Color';
+import { Colors } from '../../assets/Colors';
 
 const Tab = createMaterialTopTabNavigator();
 

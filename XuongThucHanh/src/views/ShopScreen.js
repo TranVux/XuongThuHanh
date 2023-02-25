@@ -1,7 +1,7 @@
 import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Entypo'
-import { Colors } from '../constants/Color'
+import { Colors } from '../../assets/Colors';
 import CategoryItem from '../components/Products/CategoryItem'
 import { DATA, ProductList } from '../constants/DATA'
 import Spacing from '../components/Spacing'

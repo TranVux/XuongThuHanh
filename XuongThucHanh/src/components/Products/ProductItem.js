@@ -3,7 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FastImage from 'react-native-fast-image'
 import Icon from 'react-native-vector-icons/AntDesign'
-import { Colors } from '../../constants/Color'
+import { Colors } from '../../../assets/Colors'
 
 const ProductItem = ({ data, onPress, type, style }) => {
     // console.log(type === "product");

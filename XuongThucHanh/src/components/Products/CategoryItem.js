@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FastImage from 'react-native-fast-image'
-import { Colors } from '../../constants/Color'
+import { Colors } from '../../../assets/Colors'
 
 const CategoryItem = ({ data, onPress, style }) => {
     return (

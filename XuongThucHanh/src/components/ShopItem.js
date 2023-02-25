@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import IconIonicons from 'react-native-vector-icons/Ionicons'
-import { Colors } from '../constants/Color'
+import { Colors } from '../../assets/Colors'
 
 const ShopItem = ({ data, onPress = () => { } }) => {
     return (
