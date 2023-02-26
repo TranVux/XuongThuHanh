@@ -21,17 +21,17 @@ export const DATA = [
     },
     {
         color: "#FFE299",
-        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Shrimp_703278%201.png?alt=media&token=f49a1c92-10cb-4988-b697-f2810b4e4947",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Shrimp_703278%201.png?alt=media&token=6e660865-208c-4793-9a61-7dd072ee4afc",
         name: "Sea food"
     },
     {
         color: "#FFD9BA",
-        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_pumpkin_4002936%201.png?alt=media&token=50ec55c8-ce79-4643-b8c7-b0729e0bc1c4",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_pumpkin_4002936%201.png?alt=media&token=673a4cbb-e3c6-48e9-b3fc-821e67eac6cb",
         name: "Vegestables"
     },
     {
         color: "#EDD0FF",
-        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Fruit_2287486%201.png?alt=media&token=ef3c5a14-a1dc-47b7-bda3-3201f2fa89aa",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Fruit_2287486%201.png?alt=media&token=134787d5-92b7-434e-9ecb-5b057f713ac6",
         name: "Fruits"
     },
     {
@@ -51,7 +51,7 @@ export const DATA = [
     },
     {
         color: "#D6FAE9",
-        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Hand%20Wash_2939926%201.png?alt=media&token=aa3ca966-37e6-4e2f-90f4-456aa2839afb",
+        image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_Hand%20Wash_2939926%201.png?alt=media&token=d78af196-0a27-4d8f-8594-76fcaba1d316",
         name: "Hand wash"
     },
 ]

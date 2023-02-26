@@ -1,12 +1,13 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { DATA } from '../constants/DATA';
 import DetailCategoryScreen from './DetailCategoryScreen';
 import IconIonicons from 'react-native-vector-icons/Ionicons'
-import IconEntypo from 'react-native-vector-icons/Entypo'
 import { Colors } from '../../assets/Colors';
+import { IconSearch } from '../../assets/img/svg';
+
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -22,7 +23,8 @@ const DetailCategoryNavigatorScreen = () => {
                 <View style={{ width: 25 }} />
             </View>
             <View style={styles.searchView}>
-                <IconEntypo style={styles.iconSearch} name='magnifying-glass' size={25} color={Colors.placeholder} />
+                {/* <IconEntypo style={styles.iconSearch} name='magnifying-glass' size={25} color={Colors.placeholder} /> */}
+                <IconSearch />
                 <TextInput style={styles.textInput} placeholder="Search" placeholderTextColor={Colors.placeholder} cursorColor={Colors.text} />
             </View>
 
@@ -41,9 +43,8 @@ const DetailCategoryNavigatorScreen = () => {
                     tabBarActiveTintColor: Colors.text,
                     tabBarInactiveTintColor: Colors.placeholder,
                     tabBarIndicatorStyle: {
-                        borderColor: Colors.primaryColor,
-                        borderRadius: 10,
-                        borderBottomWidth: 3
+                        backgroundColor: Colors.primaryColor,
+                        height: 3,
                     },
                     tabBarStyle: {
                         height: 50,
@@ -92,19 +93,15 @@ const styles = StyleSheet.create({
         marginTop: 18,
         alignItems: "center",
         flexDirection: "row",
-    },
-    textInput: {
         borderWidth: 1,
         borderRadius: 7,
         borderColor: "#fff",
         backgroundColor: "#F3F3F3",
-        paddingStart: 40,
-        flex: 1
+        paddingStart: 10
     },
-    iconSearch: {
-        position: "absolute",
-        start: 13,
-        zIndex: 10,
-        top: 13
+    textInput: {
+        // flex: 1
+        paddingStart: 10,
+        flex: 1
     },
 })

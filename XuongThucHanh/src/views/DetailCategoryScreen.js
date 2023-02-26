@@ -12,7 +12,7 @@ const DetailCategoryScreen = ({ route }) => {
 
         if (item.type === "banner") {
             return (
-                <ProductItem data={item} />
+                <ProductItem type="banner" data={item} />
             )
         }
 

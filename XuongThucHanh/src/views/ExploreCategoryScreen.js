@@ -1,14 +1,13 @@
 import { Dimensions, FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Icon from 'react-native-vector-icons/Entypo'
 import { Colors } from '../../assets/Colors';
-import Spacing from '../components/Spacing'
 import { DATA } from '../constants/DATA'
 import CategoryItem from '../components/Products/CategoryItem'
 import { MasonryFlashList } from '@shopify/flash-list'
+import { IconSearch } from '../../assets/img/svg';
 
-const ExploreScreenCategory = () => {
+const ExploreCategoryScreen = () => {
 
     const handleGetIdCategory = (item) => item.name;
 
@@ -25,7 +24,7 @@ const ExploreScreenCategory = () => {
                     <Text style={styles.textHeader}>Categories</Text>
                 </View>
                 <View style={styles.searchView}>
-                    <Icon style={styles.iconSearch} name='magnifying-glass' size={25} color={Colors.placeholder} />
+                    <IconSearch />
                     <TextInput style={styles.textInput} placeholder="Search" placeholderTextColor={Colors.placeholder} cursorColor={Colors.text} />
                 </View>
             </View>
@@ -44,7 +43,7 @@ const ExploreScreenCategory = () => {
     )
 }
 
-export default ExploreScreenCategory
+export default ExploreCategoryScreen
 
 const styles = StyleSheet.create({
     container: {
@@ -67,23 +66,19 @@ const styles = StyleSheet.create({
         marginTop: 18,
         alignItems: "center",
         flexDirection: "row",
-    },
-    textInput: {
         borderWidth: 1,
         borderRadius: 7,
         borderColor: "#fff",
         backgroundColor: "#F3F3F3",
-        paddingStart: 40,
-        flex: 1
+        paddingStart: 10
     },
-    iconSearch: {
-        position: "absolute",
-        start: 13,
-        zIndex: 10,
-        top: 13
+    textInput: {
+        // flex: 1
+        paddingStart: 10,
+        flex: 1
     },
     categoryContainer: {
         flex: 1,
-        marginTop: 30,
+        marginTop: 20,
     }
 })

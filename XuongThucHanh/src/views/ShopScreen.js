@@ -6,6 +6,7 @@ import CategoryItem from '../components/Products/CategoryItem'
 import { DATA, ProductList } from '../constants/DATA'
 import Spacing from '../components/Spacing'
 import ProductItem from '../components/Products/ProductItem'
+import { IconLocation, IconSearch } from '../../assets/img/svg';
 
 const ShopScreen = () => {
 
@@ -34,11 +35,13 @@ const ShopScreen = () => {
     return (
         <SafeAreaView style={{ flex: 1, padding: 16, backgroundColor: "#fff" }}>
             <View style={styles.header}>
-                <Icon name='location-pin' size={25} color={Colors.primaryColor} />
+                {/* <Icon name='location-pin' size={25} color={Colors.primaryColor} /> */}
+                <IconLocation />
                 <Text style={styles.textHeader}>Lungangen</Text>
             </View>
             <View style={styles.searchView}>
-                <Icon style={styles.iconSearch} name='magnifying-glass' size={25} color={Colors.placeholder} />
+                {/* <Icon style={styles.iconSearch} name='magnifying-glass' size={25} color={Colors.placeholder} /> */}
+                <IconSearch />
                 <TextInput style={styles.textInput} placeholder="Search" placeholderTextColor={Colors.placeholder} cursorColor={Colors.text} />
             </View>
             <View style={styles.categoryContainer}>
@@ -96,20 +99,16 @@ const styles = StyleSheet.create({
         marginTop: 18,
         alignItems: "center",
         flexDirection: "row",
-    },
-    textInput: {
         borderWidth: 1,
         borderRadius: 7,
         borderColor: "#fff",
         backgroundColor: "#F3F3F3",
-        paddingStart: 40,
-        flex: 1
+        paddingStart: 10
     },
-    iconSearch: {
-        position: "absolute",
-        start: 13,
-        zIndex: 10,
-        top: 13
+    textInput: {
+        // flex: 1
+        paddingStart: 10,
+        flex: 1
     },
     categoryContainer: {
         marginTop: 30
