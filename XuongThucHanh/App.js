@@ -11,8 +11,8 @@ import Favourite from './src/views/Favourite'
 const App = () => {
   return (
     <View>
-      {/* <Mango /> */}
-      <Favourite />
+      <Mango />
+      {/* <Favourite /> */}
     </View>
   )
 }

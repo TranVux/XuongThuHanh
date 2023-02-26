@@ -27,7 +27,7 @@ const ItemCart = (props) => {
                     <View style={styles.groupButton}>
                         <View style={[styles.button]}>
                             <Icon onPress={clickCong} name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>{count}</Text>
+                            <Text style={[styles.price]}>{count}</Text>
                             <Icon onPress={clickTru} name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                         </View>
                         <Text style={[styles.price, { marginStart: 50 }]}>${data.price} kg</Text>
@@ -100,7 +100,10 @@ const styles = StyleSheet.create({
         height: 29.65,
         backgroundColor: '#F4F4F4',
         flexDirection: 'row',
-        justifyContent: 'space-between', alignItems: 'center', borderRadius: 30, marginStart: 20
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
+        borderRadius: 30, 
+        marginStart: 20
     },
     buttonCheck: {
         position: 'absolute',
