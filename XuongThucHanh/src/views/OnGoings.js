@@ -13,7 +13,7 @@ const Screen1 = (props) => {
 const Screen2 = (props) => {
  return (
   <View style={{flex : 1,alignItems:'center',width,backgroundColor:props.color,justifyContent:'center'}}>
-      <Text>{props.text}</Text>
+      <Text>History</Text>
     </View>
  )
 }
@@ -24,8 +24,8 @@ const App = () => {
 
  //tab screen passed as array of screens 
  const data = [
-  <Screen1 text="OnGoing" />,
-  <Screen2 text="History" />,
+  <Screen1 />,
+  <Screen2 />,
  ];
 
  return (
