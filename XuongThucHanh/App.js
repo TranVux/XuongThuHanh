@@ -7,13 +7,16 @@ import Signcode from './src/views/Signcode'
 import Login from './src/views/Login'
 import StackNavigator from './src/routes/StackNavigator'
 import AppNavigator from './src/routes/AppNavigator'
+import { NavigationContainer } from '@react-navigation/native'
 
 const App = () => {
   return (
     // <AppContextProvider>
-    //   {/* <AppNavigator/> */}
-    // </AppContextProvider>
-    <Wellcome/>
+      <NavigationContainer>
+        <AppNavigator/>
+        </NavigationContainer>
+    // {/* </AppContextProvider> */}
+    // <Wellcome/>
   )
 }
 

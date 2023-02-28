@@ -6,6 +6,9 @@ const Login = (props) => {
     const back = () => {
         navigation.goBack();
     }
+    const signup=()=>{
+        navigation.navigate('Signup');
+    }
 
 
     return (
@@ -28,7 +31,7 @@ const Login = (props) => {
             </Pressable>
             <View style={styles.view}>
                 <Text style={{ color: '#7F4E1D',fontSize:16,lineHeight:19 }}>Don’t have an account?</Text>
-                <TouchableOpacity><Text style={{ color: '#FF5E00',fontSize:16,lineHeight:19 }}> Sign Up </Text></TouchableOpacity>
+                <TouchableOpacity onPress={signup} ><Text style={{ color: '#FF5E00',fontSize:16,lineHeight:19 }}> Sign Up </Text></TouchableOpacity>
             </View>
         </View>
 

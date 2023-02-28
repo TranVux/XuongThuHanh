@@ -1,10 +1,17 @@
 import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const Signcode = () => {
+const Signcode = (props) => {
+    const { navigation } = props;
+    const back = () => {
+        navigation.goBack();
+    }
+    const login=()=>{
+        navigation.navigate('Login');
+    }
   return (
     <View style={styles.container}>
-            <TouchableOpacity><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+            <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <View style={{ marginBottom: 81, alignItems: 'center' }}>
@@ -14,7 +21,7 @@ const Signcode = () => {
             <Text style={styles.text} numberOfLines={2}>We have sent SMS to:
             {'\n'}046 XXX XX XX</Text>
             <View style={{height:100}}></View>
-            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]}>
+            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={login} >
                 <Text style={[{ color: '#ffffff' }, styles.textButton]}>Next</Text>
             </Pressable>
         </View>

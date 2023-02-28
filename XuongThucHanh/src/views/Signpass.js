@@ -1,10 +1,17 @@
-import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View,TextInput } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native'
 import React from 'react'
 
-const Signpass = () => {
-  return (
-    <View style={styles.container}>
-            <TouchableOpacity><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+const Signpass = (props) => {
+    const { navigation } = props;
+    const back = () => {
+        navigation.goBack();
+    }
+    const signcode = () => {
+        navigation.navigate('Signcode');
+    }
+    return (
+        <View style={styles.container}>
+            <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <View style={{ marginBottom: 71, alignItems: 'center' }}>
@@ -13,10 +20,18 @@ const Signpass = () => {
             <Text style={styles.titlecontent}>Enter the password</Text>
             <Text style={styles.text} numberOfLines={2}>For the security & safety please choose a password</Text>
             <View>
-                <TextInput style={styles.input} placeholder='Password'></TextInput>
-                <TextInput style={styles.input} placeholder='Confirm Password'></TextInput>
+                <View style={styles.inputView}>
+                    {/* <Image source={require('../../assets/images/khoa.png')} /> */}
+                    <TextInput autoComplete='password' style={styles.input} placeholder='Password'></TextInput>
+                    {/* <Image source={require('../../assets/images/mat.png')} /> */}
+                </View>
+                <View style={styles.inputView} >
+                    {/* <Image source={require('../../assets/images/khoa.png')} /> */}
+                    <TextInput secureTextEntry={true} style={styles.input} placeholder='Confirm Password'></TextInput>
+                    {/* <Image source={require('../../assets/images/mat.png')} /> */}
+                </View>
             </View>
-            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]}>
+            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={signcode}>
                 <Text style={[{ color: '#ffffff' }, styles.textButton]}>Next</Text>
             </Pressable>
         </View>
@@ -36,7 +51,7 @@ const styles = StyleSheet.create({
     img: {
         height: 270
     },
-    title:{
+    title: {
         color: '#FF5E00',
         fontSize: 24,
         lineHeight: 41,
@@ -81,15 +96,21 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 48,
+        width:'100%',
         backgroundColor: '#F3F3F3',
         borderRadius: 5,
         marginBottom: 16,
-        paddingStart:27
+        paddingStart: 27
     },
     view: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 10
+    },
+    inputView:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center'
     }
 })

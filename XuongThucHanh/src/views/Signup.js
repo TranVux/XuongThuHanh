@@ -6,7 +6,12 @@ const Signup = (props) => {
     const back = () => {
         navigation.goBack();
     }
-
+    const signpass=()=>{
+        navigation.navigate('Signpass');
+    }
+    const login=()=>{
+        navigation.navigate('Login');
+    }
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
@@ -20,12 +25,12 @@ const Signup = (props) => {
                 <TextInput style={styles.input} placeholder='Phone Number'></TextInput>
             </View>
             <Text style={styles.text} numberOfLines={2}>We need to verify you. We will send you a one time verification code. </Text>
-            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]}>
+            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={signpass}>
                 <Text style={[{ color: '#ffffff' }, styles.textButton]}>Next</Text>
             </Pressable>
             <View style={styles.view}>
                 <Text style={{ color: '#7F4E1D',fontSize:16,lineHeight:19 }}>Already have an account? </Text>
-                <TouchableOpacity><Text style={{ color: '#FF5E00',fontSize:16,lineHeight:19 }}>Login</Text></TouchableOpacity>
+                <TouchableOpacity onPress={login}><Text style={{ color: '#FF5E00',fontSize:16,lineHeight:19 }}>Login</Text></TouchableOpacity>
             </View>
         </View>
     )
