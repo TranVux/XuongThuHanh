@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Pressable, ScrollView, StyleSheet, Text, TouchableOpacity, View ,TextInput} from 'react-native'
 import React from 'react'
 
 const Signcode = (props) => {
@@ -6,27 +6,36 @@ const Signcode = (props) => {
     const back = () => {
         navigation.goBack();
     }
-    const login=()=>{
+    const login = () => {
         navigation.navigate('Login');
     }
-  return (
-    <View style={styles.container}>
+    return (
+        <View style={styles.container}>
             <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
-            <View style={{ marginBottom: 81, alignItems: 'center' }}>
-                <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
-            </View>
-            <Text style={styles.titlecontent}>Enter Verification Code</Text>
-            <Text style={styles.text} numberOfLines={2}>We have sent SMS to:
-            {'\n'}046 XXX XX XX</Text>
-            <View style={{height:100}}></View>
-            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={login} >
-                <Text style={[{ color: '#ffffff' }, styles.textButton]}>Next</Text>
-            </Pressable>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={{ marginBottom: 81, alignItems: 'center' }}>
+                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                </View>
+                <Text style={styles.titlecontent}>Enter Verification Code</Text>
+                <Text style={styles.text} numberOfLines={2}>We have sent SMS to:
+                    {'\n'}046 XXX XX XX</Text>
+                <View style={styles.viewcode}>
+                    <TextInput keyboardType='phone-pad' maxLength={1} style={styles.textinput}></TextInput>
+                    <TextInput keyboardType='phone-pad' maxLength={1} style={styles.textinput}></TextInput>
+                    <TextInput keyboardType='phone-pad' maxLength={1} style={styles.textinput}></TextInput>
+                    <TextInput keyboardType='phone-pad' maxLength={1} style={styles.textinput}></TextInput>
+                    <TextInput keyboardType='phone-pad' maxLength={1} style={styles.textinput}></TextInput>
+                    <TextInput keyboardType='phone-pad' maxLength={1} style={styles.textinput}></TextInput>
+                </View>
+                <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={login} >
+                    <Text style={[{ color: '#ffffff' }, styles.textButton]}>Sign Up</Text>
+                </Pressable>
+            </ScrollView>
         </View>
-    
-  )
+
+    )
 }
 
 export default Signcode
@@ -77,7 +86,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 16
+        marginTop: 72,
+        marginBottom:72
     },
     titlecontent: {
         color: '#7F4E1D',
@@ -85,5 +95,17 @@ const styles = StyleSheet.create({
         lineHeight: 24,
         fontWeight: 'bold',
         marginTop: 33
+    },
+    viewcode:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    textinput:{
+        borderBottomWidth:3,
+        borderColor:'#7F4E1D',
+        width:50,
+        textAlign:'center',
+        fontSize:16
     }
 })

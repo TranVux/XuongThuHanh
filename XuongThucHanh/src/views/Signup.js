@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image, Pressable, TextInput } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, Image, Pressable, TextInput, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 
 const Signup = (props) => {
@@ -6,10 +6,10 @@ const Signup = (props) => {
     const back = () => {
         navigation.goBack();
     }
-    const signpass=()=>{
+    const signpass = () => {
         navigation.navigate('Signpass');
     }
-    const login=()=>{
+    const login = () => {
         navigation.navigate('Login');
     }
     return (
@@ -17,21 +17,23 @@ const Signup = (props) => {
             <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
-            <View style={{ marginBottom: 81, alignItems: 'center' }}>
-                <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
-            </View>
-            <View>
-                <TextInput style={styles.input} placeholder='Name Surname'></TextInput>
-                <TextInput style={styles.input} placeholder='Phone Number'></TextInput>
-            </View>
-            <Text style={styles.text} numberOfLines={2}>We need to verify you. We will send you a one time verification code. </Text>
-            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={signpass}>
-                <Text style={[{ color: '#ffffff' }, styles.textButton]}>Next</Text>
-            </Pressable>
-            <View style={styles.view}>
-                <Text style={{ color: '#7F4E1D',fontSize:16,lineHeight:19 }}>Already have an account? </Text>
-                <TouchableOpacity onPress={login}><Text style={{ color: '#FF5E00',fontSize:16,lineHeight:19 }}>Login</Text></TouchableOpacity>
-            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={{ marginBottom: 81, alignItems: 'center' }}>
+                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                </View>
+                <View>
+                    <TextInput style={styles.input} placeholder='Name Surname'></TextInput>
+                    <TextInput keyboardType='phone-pad' style={styles.input} placeholder='Phone Number'></TextInput>
+                </View>
+                <Text style={styles.text}>We need to verify you. We will send you a one time verification code. </Text>
+                <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={signpass}>
+                    <Text style={[{ color: '#ffffff' }, styles.textButton]}>Next</Text>
+                </Pressable>
+                <View style={styles.view}>
+                    <Text style={{ color: '#7F4E1D', fontSize: 16, lineHeight: 19 }}>Already have an account? </Text>
+                    <TouchableOpacity onPress={login}><Text style={{ color: '#FF5E00', fontSize: 16, lineHeight: 19 }}>Login</Text></TouchableOpacity>
+                </View>
+            </ScrollView>
         </View>
     )
 }
@@ -67,10 +69,8 @@ const styles = StyleSheet.create({
         color: '#7F4E1D',
         fontSize: 16,
         lineHeight: 19,
-        width: 325,
-        height: 53,
-        marginStart: 25,
-        marginEnd: 25,
+        marginStart: 20,
+        marginEnd: 20,
         marginBottom: 39,
         marginTop: 10
     },
@@ -93,12 +93,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#F3F3F3',
         borderRadius: 5,
         marginTop: 16,
-        paddingStart:27
+        paddingStart: 27
     },
     view: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 10,
+        marginBottom:40
     }
 })
