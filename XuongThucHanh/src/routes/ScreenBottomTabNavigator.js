@@ -4,9 +4,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Account, CartScreen, ExploreCategoryScreen, FavouriteEmpty, ShopScreen } from '../screens';
 import { Colors } from '../../assets/Colors';
 import { IconHome, IconExplore, IconHeart, IconUser, IconCart } from '../../assets/images/svg';
-import ExploreNavigatorScreen from '../screens/navigators/ExploreNavigatorScreen';
-import AccountNavigatorScreen from '../screens/navigators/AccountNavigatorScreen';
-import CartNavigatorScreen from '../screens/navigators/CartNavigatorScreen';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -27,24 +24,13 @@ const handleTabBarIcon = (color, name) => {
     }
 }
 
-const BottomNavigator = () => {
+const ScreenBottomTabNavigator = () => {
     return (
-        <BottomTab.Navigator initialRouteName='Shop' screenOptions={
+        <BottomTab.Navigator screenOptions={
             {
                 headerShown: false,
                 tabBarActiveTintColor: Colors.primaryColor,
-                tabBarInactiveTintColor: Colors.text,
-                tabBarStyle: {
-                    height: 60,
-                    paddingTop: 5,
-                    borderTopRightRadius: 25,
-                    borderTopLeftRadius: 25,
-                    elevation: 20,
-                    backgroundColor: "#fff"
-                },
-                tabBarLabelStyle: {
-                    marginBottom: 10
-                }
+                tabBarInactiveTintColor: Colors.text
             }
         }>
             <BottomTab.Screen
@@ -59,7 +45,7 @@ const BottomNavigator = () => {
                 options={{
                     tabBarIcon: ({ color }) => handleTabBarIcon(color, "Explore")
                 }}
-                component={ExploreNavigatorScreen}
+                component={ExploreCategoryScreen}
                 name="Explore"
             />
 
@@ -67,7 +53,7 @@ const BottomNavigator = () => {
                 options={{
                     tabBarIcon: ({ color }) => handleTabBarIcon(color, "Cart")
                 }}
-                component={CartNavigatorScreen}
+                component={CartScreen}
                 name="Cart"
             />
 
@@ -83,11 +69,11 @@ const BottomNavigator = () => {
                 options={{
                     tabBarIcon: ({ color }) => handleTabBarIcon(color, "Account")
                 }}
-                component={AccountNavigatorScreen}
+                component={Account}
                 name="Account"
             />
         </BottomTab.Navigator>
     )
 }
 
-export default BottomNavigator
+export default ScreenBottomTabNavigator

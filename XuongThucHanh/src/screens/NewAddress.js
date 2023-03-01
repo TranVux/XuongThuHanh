@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
 import React, { useState } from 'react'
 import { SelectList } from 'react-native-dropdown-select-list'
+import FastImage from 'react-native-fast-image'
 
 const data = [
   { key: '1', value: 'Mobiles', disabled: true },
@@ -16,7 +17,7 @@ const NewAddress = () => {
   const [selected, setSelected] = useState("")
   return (
     <View style={styles.container}>
-      <Image
+      <FastImage
         style={styles.imgBack}
         source={require('../../assets/images/back.png')} />
       <Text style={styles.textNewAddress}>New Address</Text>

@@ -4,7 +4,7 @@ import ProductItem from '../components/Products/ProductItem';
 import { ProductList } from '../constants/DATA';
 import { MasonryFlashList } from '@shopify/flash-list';
 
-const DetailCategoryScreen = ({ route }) => {
+const DetailCategoryScreen = ({ route, navigation }) => {
 
     const { params } = route;
 
@@ -18,6 +18,7 @@ const DetailCategoryScreen = ({ route }) => {
 
         return (
             <ProductItem
+                onPress={() => { navigation.navigate("DetailProductScreen") }}
                 type="product"
                 data={item} />
         )

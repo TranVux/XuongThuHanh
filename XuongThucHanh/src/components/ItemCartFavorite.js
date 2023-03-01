@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import FastImage from 'react-native-fast-image';
 const ItemCartFavorite = (props) => {
     const { data } = props;
 
@@ -21,7 +22,15 @@ const ItemCartFavorite = (props) => {
         <View style={styles.container}>
             {/* Item 1 */}
             <View style={[styles.header]}>
-                <Image style={[styles.image]} resizeMode='cover' source={{ uri: data.image }} />
+                <FastImage
+                    style={[styles.image]}
+                    resizeMode='cover'
+                    source={{
+                        uri: data.image,
+                        priority: FastImage.priority.normal,
+                        cache: FastImage.cacheControl.cacheOnly
+                    }}
+                />
                 <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
                     <Text style={styles.name}>{data.name}</Text>
                     <View style={styles.groupButton}>

@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image'
 
 const OrderSuccessfullScreen = () => {
     return (
         <View style={styles.container}>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-
-                <Image style={styles.image} source={require('../../assets/images/img_order_success.png')} />
+                <FastImage style={styles.image} source={require('../../assets/images/img_order_success.png')} />
             </View>
             <Text style={styles.title}>Your Order Has Been Accepted</Text>
             <Text style={styles.content}>We’ve accepted your order, and we’re {'\n'}getting it ready.</Text>

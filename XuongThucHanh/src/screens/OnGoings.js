@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Dimensions, StyleSheet, Image } from 'react-native';
+import FastImage from 'react-native-fast-image';
 import TabLayout from 'react-native-simple-tablayout';
 import OnGoing from './OnGoing';
 
@@ -30,7 +31,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.imgBack}
+      <FastImage style={styles.imgBack}
         source={require('../../assets/images/back.png')} />
       <Text style={styles.title}>Orders</Text>
       <TabLayout

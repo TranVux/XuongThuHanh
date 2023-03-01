@@ -3,7 +3,7 @@ import NewCard from './card/NewCard';
 import CartScreen from './CartScreen'
 import DetailCategoryScreen from "./DetailCategoryScreen";
 import ChangePass from './ChangePass'
-import DetailCategoryNavigatorScreen from "./DetailCategoryNavigatorScreen";
+import DetailCategoryNavigatorScreen from "./navigators/DetailCategoryNavigatorScreen";
 import EditProfile from './EditProfile'
 import ExploreCategoryScreen from "./ExploreCategoryScreen";
 import ItemCart from "../components/ItemCart";

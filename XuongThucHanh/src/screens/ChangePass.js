@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native'
 import React, { useState } from 'react'
+import FastImage from 'react-native-fast-image';
 
 const ChangePass = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,43 +9,43 @@ const ChangePass = () => {
   }
   return (
     <View style={styles.changepass}>
-      <TouchableOpacity><Image style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></Image></TouchableOpacity>
+      <TouchableOpacity><FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')} /></TouchableOpacity>
       <View style={styles.title}>
         <Text style={styles.title_text}>Change Password</Text>
       </View>
       <View style={[styles.passwordContainer, { marginTop: 51 }]}>
-        <Image style={styles.lock} source={require('../../assets/images/lock.png')}></Image>
+        <FastImage style={styles.lock} source={require('../../assets/images/lock.png')} />
         <TextInput
           style={styles.passwordInput}
           placeholder="Old Password"
           secureTextEntry={!showPassword}
         />
         <TouchableOpacity style={styles.toggleButton} onPress={toggleShowPassword}>
-          <Text style={styles.toggleButtonText}>{showPassword ? <Image style={styles.eye} source={require('../../assets/images/show.png')}></Image> : <Image style={styles.eye} source={require('../../assets/images/hide.png')}></Image>}</Text>
+          <Text style={styles.toggleButtonText}>{showPassword ? <FastImage style={styles.eye} source={require('../../assets/images/show.png')} /> : <FastImage style={styles.eye} source={require('../../assets/images/hide.png')} />}</Text>
         </TouchableOpacity>
       </View>
       <View style={[styles.passwordContainer, { marginTop: 43 }]}>
-        <Image style={styles.lock} source={require('../../assets/images/lock.png')}></Image>
+        <FastImage style={styles.lock} source={require('../../assets/images/lock.png')} />
         <TextInput
           style={styles.passwordInput}
           placeholder="New Password"
           secureTextEntry={!showPassword}
         />
         <TouchableOpacity style={styles.toggleButton} onPress={toggleShowPassword}>
-          <Text style={styles.toggleButtonText}>{showPassword ? <Image style={styles.eye} source={require('../../assets/images/show.png')}></Image> : <Image style={styles.eye} source={require('../../assets/images/hide.png')}></Image>}</Text>
+          <Text style={styles.toggleButtonText}>{showPassword ? <FastImage style={styles.eye} source={require('../../assets/images/show.png')} /> : <FastImage style={styles.eye} source={require('../../assets/images/hide.png')} />}</Text>
         </TouchableOpacity>
       </View>
 
 
       <View style={[styles.passwordContainer, { marginTop: 8 }]}>
-        <Image style={styles.lock} source={require('../../assets/images/lock.png')}></Image>
+        <FastImage style={styles.lock} source={require('../../assets/images/lock.png')} />
         <TextInput
           style={styles.passwordInput}
           placeholder="Confirm Password"
           secureTextEntry={!showPassword}
         />
         <TouchableOpacity style={styles.toggleButton} onPress={toggleShowPassword}>
-          <Text style={styles.toggleButtonText}>{showPassword ? <Image style={styles.eye} source={require('../../assets/images/show.png')}></Image> : <Image style={styles.eye} source={require('../../assets/images/hide.png')}></Image>}</Text>
+          <Text style={styles.toggleButtonText}>{showPassword ? <FastImage style={styles.eye} source={require('../../assets/images/show.png')} /> : <FastImage style={styles.eye} source={require('../../assets/images/hide.png')} />}</Text>
         </TouchableOpacity>
       </View>
 

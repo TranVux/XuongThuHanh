@@ -1,20 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import FastImage from 'react-native-fast-image'
 import { Colors } from '../../../assets/Colors'
 
 const CategoryItem = ({ data, onPress, style }) => {
     return (
-        <SafeAreaView style={[styles.containerStyle, { ...style }]}>
+        <Pressable style={[styles.containerStyle, { ...style }]} onPress={onPress}>
             <View style={[{ backgroundColor: data.color }, styles.imageContainer]}>
                 <FastImage
-                    source={{ uri: data.image }}
+                    source={{
+                        uri: data.image,
+                        priority: FastImage.priority.normal,
+                        cache: FastImage.cacheControl.cacheOnly
+                    }}
                     resizeMode={FastImage.resizeMode.contain}
                     style={{ width: 65, aspectRatio: 1, }} />
             </View>
             <Text style={styles.name}>{data.name}</Text>
-        </SafeAreaView>
+        </Pressable>
     )
 }
 

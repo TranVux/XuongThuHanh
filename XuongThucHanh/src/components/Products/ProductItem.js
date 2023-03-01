@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FastImage from 'react-native-fast-image'
@@ -9,10 +9,14 @@ const ProductItem = ({ data, onPress, type, style }) => {
     // console.log(type === "product");
 
     return (
-        <SafeAreaView style={[styles.container, { ...style, padding: type === "product" ? 12 : 0 }]}>
+        <Pressable onPress={onPress} style={[styles.container, { ...style, padding: type === "product" ? 12 : 0 }]}>
             <FastImage
                 style={[styles.image, { width: type === "product" ? 120 : "100%" }]}
-                source={{ uri: data.image }}
+                source={{
+                    uri: data.image,
+                    priority: FastImage.priority.normal,
+                    cache: FastImage.cacheControl.cacheOnly
+                }}
                 resizeMode={type === "product" ? FastImage.resizeMode.contain : FastImage.resizeMode.cover} />
             {type === "product" &&
                 <>
@@ -24,7 +28,7 @@ const ProductItem = ({ data, onPress, type, style }) => {
                     </View>
                 </>
             }
-        </SafeAreaView>
+        </Pressable>
     )
 }
 

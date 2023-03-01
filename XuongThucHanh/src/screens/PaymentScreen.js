@@ -13,6 +13,7 @@ import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons'
 import ShopItem from '../components/ShopItem'
 import { ShopList } from '../constants/DATA'
 import { TimeValue } from '../constants/TimeChoiceValue'
+import FastImage from 'react-native-fast-image';
 
 const PaymentScreen = () => {
 
@@ -185,7 +186,7 @@ const PaymentScreen = () => {
                         <Text style={styles.radiusContainerTitleText}>Payment Method</Text>
                         <View style={[styles.paymentMethod, { justifyContent: "space-between" }]}>
                             <View style={styles.paymentMethod}>
-                                <Image source={require('../../assets/images/cost_img.png')} />
+                                <FastImage source={require('../../assets/images/cost_img.png')} />
                                 <Text style={{ color: Colors.text, fontWeight: "400", fontSize: 16, marginStart: 10 }}>Cash on delivery</Text>
                             </View>
                             <EntypoIcon name='check' size={20} color={Colors.green} />

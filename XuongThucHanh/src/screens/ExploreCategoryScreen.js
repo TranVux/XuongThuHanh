@@ -7,7 +7,7 @@ import { MasonryFlashList } from '@shopify/flash-list'
 import { IconSearch } from '../../assets/images/svg';
 import { useDispatch, useSelector } from 'react-redux';
 
-const ExploreCategoryScreen = () => {
+const ExploreCategoryScreen = ({ navigation }) => {
 
     const dispatch = useDispatch();
     const dataCategory = useSelector(state => state.categories);
@@ -16,7 +16,7 @@ const ExploreCategoryScreen = () => {
 
     const handleRenderItemCategory = ({ item, index }) => {
         return (
-            <CategoryItem data={item} />
+            <CategoryItem data={item} onPress={() => { navigation.navigate("DetailCategoryNavigatorScreen") }} />
         )
     }
 

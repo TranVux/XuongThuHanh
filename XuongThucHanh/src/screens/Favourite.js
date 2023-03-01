@@ -32,8 +32,7 @@ const DATA = [
 
 ];
 
-
-const CartScreen = () => {
+const Favourite = () => {
     return (
         <View style={styles.container}>
             <Icon name="chevron-left" size={20} color="#FF7300" style={{ paddingLeft: 20 }} />
@@ -74,7 +73,7 @@ const CartScreen = () => {
     )
 }
 
-export default CartScreen
+export default Favourite
 
 const styles = StyleSheet.create({
     item: {

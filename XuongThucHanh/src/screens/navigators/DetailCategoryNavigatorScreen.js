@@ -2,20 +2,20 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { DATA } from '../constants/DATA';
-import DetailCategoryScreen from './DetailCategoryScreen';
+import { DATA } from '../../constants/DATA';
+import DetailCategoryScreen from '../DetailCategoryScreen';
 import IconIonicons from 'react-native-vector-icons/Ionicons'
-import { Colors } from '../../assets/Colors';
-import { IconSearch } from '../../assets/images/svg';
+import { Colors } from '../../../assets/Colors';
+import { IconSearch } from '../../../assets/images/svg';
 
 const Tab = createMaterialTopTabNavigator();
 
-const DetailCategoryNavigatorScreen = () => {
+const DetailCategoryNavigatorScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
-                <Pressable>
+                <Pressable onPress={() => { navigation.goBack() }}>
                     <IconIonicons name='chevron-back' color={Colors.primaryColor} size={25} />
                 </Pressable>
                 <Text style={styles.textHeader}>Categories</Text>

@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Image, Pressable, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Colors } from '../../assets/Colors';
+import FastImage from 'react-native-fast-image';
 
 // import CounterInput from "react-native-counter-input";
 // import RNBounceable from '@freakycoder/react-native-bounceable';
@@ -35,7 +37,7 @@ const DATA = [
 
 const Mango = (props) => {
 
-    const { data } = props;
+    const { data, navigation } = props;
 
     const [count, setCount] = useState(1);
     const clickCong = () => {
@@ -54,9 +56,13 @@ const Mango = (props) => {
         // <SafeAreaView>
         <ScrollView style={styles.scrollView} contentContainerStyle={{}}>
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-                <Image style={styles.back} source={require('../../assets/images/back.png')} />
-                <Image style={styles.cake} source={require('../../assets/images/gr_cake.png')} />
-                <Image style={styles.mango} source={require('../../assets/images/mango.png')} />
+                <Pressable onPress={() => {
+                    navigation.goBack();
+                }}>
+                    <FastImage style={styles.back} source={require('../../assets/images/back.png')} />
+                </Pressable>
+                <FastImage style={styles.cake} source={require('../../assets/images/gr_cake.png')} />
+                <FastImage style={styles.mango} source={require('../../assets/images/mango.png')} />
                 <Text style={styles.name}>Orinal Mango</Text>
                 <View style={styles.cost}>
                     <Text style={styles.dollar}>$3.00</Text>
@@ -84,13 +90,13 @@ const Mango = (props) => {
                         <Text style={[styles.price]}>{count}</Text>
                         <Icon onPress={clickCong} name="plus" size={30} color="#6D3805" style={[styles.price, styles.add]} />
                     </View>
-                    <Image style={styles.fav} source={require('../../assets/images/fav.png')} />
+                    <FastImage style={styles.fav} source={require('../../assets/images/fav.png')} />
                 </View>
 
                 <Pressable style={styles.addTo}>
                     <Text style={styles.txtAdd}>Add to cart</Text>
                 </Pressable>
-                <Text style={styles.line}>──────────────────────────────────────</Text>
+                <View style={{ width: "100%", height: 1, backgroundColor: "#6D38052B", marginVertical: 20 }} />
                 <Text style={styles.ad}>You may also need</Text>
                 {/* test scroll */}
                 {/* <Text style={styles.test}>“Trước khi khởi hành hôm nay, phi hành đoàn xác nhận tôi đã đặt suất ăn VGML (đồ ăn chay) và bữa sáng của tôi là một quả chuối. Tuy nhiên, tôi lại nghĩ ý cô ấy là bữa sáng bao gồm quả chuối”, một tài khoản có tên Kris_Chari viết trên diễn đàn hàng không FlyerTalk hôm 21/2.

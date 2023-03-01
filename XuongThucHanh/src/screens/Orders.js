@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image'
 
 const Orders = () => {
     return (
         <View style={styles.orders}>
-            <TouchableOpacity><Image style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></Image></TouchableOpacity>
+            <TouchableOpacity><FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></FastImage></TouchableOpacity>
             <View style={styles.title} >
                 <Text style={styles.title_text}>Orders</Text>
             </View>
@@ -12,7 +13,7 @@ const Orders = () => {
                 <Text style={styles.tab_ongoing}>Ongoing</Text>
                 <Text style={styles.tab_history}>History</Text>
             </View>
-            <Image style={styles.background} source={require('../../assets/images/Shadow_inject.png')}></Image>
+            <FastImage style={styles.background} source={require('../../assets/images/Shadow_inject.png')}></FastImage>
             <Text style={styles.content}>There is n ongoing order right now. You can order from home</Text>
         </View>
     )

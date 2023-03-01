@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image';
 
 const NewCard = () => {
 
@@ -10,7 +11,7 @@ const NewCard = () => {
     return (
         <View style={styles.container}>
             <View style={styles.topIcon}>
-                <Image source={require('../../../assets/images/Arrow.png')} />
+                <FastImage source={require('../../../assets/images/Arrow.png')} />
             </View>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={styles.Title}>New card</Text>

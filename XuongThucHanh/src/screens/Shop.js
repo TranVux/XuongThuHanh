@@ -1,16 +1,16 @@
 import { } from 'react'
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image'
 
 const Shop = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image style={styles.gps} source={require('../../assets/images/address.png')} />
+                <FastImage style={styles.gps} source={require('../../assets/images/address.png')} />
                 <Text style={styles.txtHead}>Lungangen</Text>
             </View>
             <TextInput style={styles.textInput}>
-
             </TextInput>
         </View>
     )

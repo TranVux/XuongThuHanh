@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'react-native'
 import AppNavigator from './src/routes/AppNavigator'
 import { Provider } from 'react-redux'
 import store from './src/redux/store'
 
-import NewCard from './src/screens/card/NewCard'
+import { enableFreeze } from 'react-native-screens';
+enableFreeze(true);
+
 const App = () => {
   return (
     <Provider store={store}>
@@ -16,5 +17,3 @@ const App = () => {
 }
 
 export default App
-
-const styles = StyleSheet.create({})

@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image'
 
 const OrderFailedScreen = () => {
     return (
         <View style={styles.container}>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Image style={styles.image} source={require('../../assets/images/img_order_faled.png')} />
+                <FastImage style={styles.image} source={require('../../assets/images/img_order_faled.png')} />
             </View>
             <Text style={styles.title}>Oops! Order Failed!</Text>
             <Text style={styles.content}>Something went terribly wrong</Text>

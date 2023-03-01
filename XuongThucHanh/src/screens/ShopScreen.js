@@ -12,7 +12,7 @@ const ShopScreen = () => {
     const products = useSelector(state => state.products)
     const categories = useSelector(state => state.categories)
 
-    const handleGetIdCategory = (item) => item.name;
+    const handleGetIdCategory = (item) => item._id;
 
     const handleRenderItemCategory = ({ item }) => (
         <CategoryItem

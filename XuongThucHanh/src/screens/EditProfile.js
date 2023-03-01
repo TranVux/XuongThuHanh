@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import { SelectCountry } from 'react-native-element-dropdown';
 import React, { useState } from 'react'
+import FastImage from 'react-native-fast-image';
 
 const EditProfile = () => {
   const [country, setCountry] = useState('1');
   return (
     <View style={styles.editprofile}>
-      <TouchableOpacity><Image style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></Image></TouchableOpacity>
+      <TouchableOpacity>
+        <FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')} />
+      </TouchableOpacity>
       <View style={styles.title}>
         <Text style={styles.title_text}>Edit Profile</Text>
       </View>

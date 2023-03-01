@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, Image, Switch, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
+import FastImage from 'react-native-fast-image';
 
 const Profile = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   return (
     <View style={styles.profile}>
-      <TouchableOpacity><Image style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></Image></TouchableOpacity>
+      <TouchableOpacity><FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></FastImage></TouchableOpacity>
       <View style={styles.title}>
         <Text style={styles.title_text}>Profile</Text>
       </View>
@@ -14,27 +15,27 @@ const Profile = () => {
       <View style={styles.account}>
         {/* edit profile */}
         <View style={styles.account_edit}>
-          <Image style={styles.account_img} source={require('../../assets/images/user.png')}></Image>
+          <FastImage style={styles.account_img} source={require('../../assets/images/user.png')}></FastImage>
           <View style={styles.account_title_arrow}>
             <Text style={styles.account_title}>Edit Profile</Text>
-            <Image style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></Image>
+            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
           </View>
         </View>
         {/* change pass */}
         <View style={styles.account_edit}>
-          <Image style={styles.account_img} source={require('../../assets/images/key.png')}></Image>
+          <FastImage style={styles.account_img} source={require('../../assets/images/key.png')}></FastImage>
           <View style={styles.account_title_arrow}>
             <Text style={styles.account_title}>Change Password</Text>
-            <Image style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></Image>
+            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
           </View>
         </View>
 
         {/* my cards */}
         <View style={[styles.account_edit, { marginBottom: 0 }]}>
-          <Image style={styles.account_img} source={require('../../assets/images/cart.png')}></Image>
+          <FastImage style={styles.account_img} source={require('../../assets/images/cart.png')}></FastImage>
           <View style={styles.account_title_arrow}>
             <Text style={styles.account_title}>Edit Profile</Text>
-            <Image style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></Image>
+            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
           </View>
         </View>
 
@@ -46,7 +47,7 @@ const Profile = () => {
 
         {/* Notifications */}
         <View style={[styles.account_edit]}>
-          <Image style={styles.account_img} source={require('../../assets/images/bell.png')}></Image>
+          <FastImage style={styles.account_img} source={require('../../assets/images/bell.png')}></FastImage>
           <View style={styles.account_title_arrow}>
             <Text style={styles.account_title}>Notifications</Text>
             <View style={styles.togglebutton}>
@@ -63,18 +64,18 @@ const Profile = () => {
         {/* language */}
         <View style={[styles.appsettings, { marginBottom: 33 }]}>
           <View style={styles.appsettings_left}>
-            <Image style={styles.account_img} source={require('../../assets/images/language.png')}></Image>
+            <FastImage style={styles.account_img} source={require('../../assets/images/language.png')}></FastImage>
             <Text style={[styles.account_title, { marginLeft: 15 }]}>Languages</Text>
           </View>
           <View style={styles.appsettings_right}>
             <Text style={styles.account_select}>English</Text>
-            <Image style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></Image>
+            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
           </View>
         </View>
 
         {/* logout */}
         <View style={[styles.account_edit]}>
-          <Image style={styles.account_img} source={require('../../assets/images/logout.png')}></Image>
+          <FastImage style={styles.account_img} source={require('../../assets/images/logout.png')}></FastImage>
           <Text style={[styles.account_title, { marginLeft: 15 }]}>Logout</Text>
         </View>
       </View>
