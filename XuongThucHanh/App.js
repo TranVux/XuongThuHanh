@@ -5,6 +5,7 @@ import AppNavigator from './src/routes/AppNavigator'
 import { Provider } from 'react-redux'
 import store from './src/redux/store'
 
+import NewCard from './src/Screen/card/NewCard'
 const App = () => {
   return (
     <Provider store={store}>
