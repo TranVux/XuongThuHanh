@@ -14,6 +14,12 @@ import Orders from './Orders'
 import PaymentScreen from "./PaymentScreen";
 import Profile from './Profile'
 import ShopScreen from "./ShopScreen";
+import Favourite from './Favourite'
+import FavouriteEmpty from './FavouriteEmpty'
+import Login from './Login'
+import DetailProductScreen from './Mango'
+import Shop from './Shop'
+import Account from './Account'
 
 export {
     MyCard,
@@ -32,4 +38,10 @@ export {
     PaymentScreen,
     Profile,
     ShopScreen,
+    Favourite,
+    FavouriteEmpty,
+    DetailProductScreen,
+    Login,
+    Shop,
+    Account
 }

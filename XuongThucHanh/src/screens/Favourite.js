@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, Pressable, FlatList, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ItemCart from './ItemCart';
+import ItemCartFavorite from '../components/ItemCartFavorite';
 import { SwipeListView } from 'react-native-swipe-list-view';
 
 const DATA = [
@@ -47,7 +47,7 @@ const CartScreen = () => {
 
             <SwipeListView
                 data={DATA}
-                renderItem={({ item }) => <ItemCart data={item} />}
+                renderItem={({ item }) => <ItemCartFavorite data={item} />}
                 keyExtractor={item => item.id}
                 renderHiddenItem={(data, index) => (
                     <View style={styles.item}>
@@ -145,9 +145,9 @@ const styles = StyleSheet.create({
         height: 29.65,
         backgroundColor: '#F4F4F4',
         flexDirection: 'row',
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        borderRadius: 30, 
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderRadius: 30,
         marginStart: 20
     },
     buttonCheck: {

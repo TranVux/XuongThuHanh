@@ -4,26 +4,26 @@ import React from 'react'
 const Account = () => {
     return (
         <View style={styles.container}>
-            <Image style={styles.back} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
+            <Image style={styles.back} source={require('../../assets/images/back.png')} />
             <Text style={styles.account}>Account</Text>
 
             <View style={styles.profile}>
-                <Image style={styles.img} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/profile.png')} />
+                <Image style={styles.img} source={require('../../assets/images/profile.png')} />
                 <Text style={styles.txtprofile}>Profile</Text>
             </View>
 
             <View style={styles.order}>
-                <Image style={styles.img} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/orders.png')} />
+                <Image style={styles.img} source={require('../../assets/images/orders.png')} />
                 <Text style={styles.txtorder}>Orders</Text>
             </View>
 
             <View style={styles.address}>
-                <Image style={styles.img} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/address.png')} />
+                <Image style={styles.img} source={require('../../assets/images/address.png')} />
                 <Text style={styles.txtaddress}>Address</Text>
             </View>
 
             <View style={styles.payment}>
-                <Image style={styles.img} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/payment.png')} />
+                <Image style={styles.img} source={require('../../assets/images/payment.png')} />
                 <Text style={styles.txtpayment}>Payment</Text>
             </View>
         </View>
@@ -34,7 +34,9 @@ export default Account
 
 const styles = StyleSheet.create({
     container: {
-        padding: 18
+        padding: 18,
+        flex: 1,
+        backgroundColor: "#fff"
     },
     back: {
         marginStart: 4,

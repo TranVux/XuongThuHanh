@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
-const ItemCart = (props) => {
+const ItemCartFavorite = (props) => {
     const { data } = props;
 
     const [count, setCount] = useState(1);
@@ -38,7 +38,7 @@ const ItemCart = (props) => {
     )
 }
 
-export default ItemCart
+export default ItemCartFavorite
 
 const styles = StyleSheet.create({
     groupButton: {
@@ -100,9 +100,9 @@ const styles = StyleSheet.create({
         height: 29.65,
         backgroundColor: '#F4F4F4',
         flexDirection: 'row',
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        borderRadius: 30, 
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderRadius: 30,
         marginStart: 20
     },
     buttonCheck: {

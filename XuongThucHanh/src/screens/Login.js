@@ -4,9 +4,9 @@ import React from 'react'
 const Login = () => {
 	return (
 		<View style={styles.container}>
-			<Image style={styles.back} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
+			<Image style={styles.back} source={require('../../assets/images/back.png')} />
 			<Text style={styles.sign}>Sign In</Text>
-			<Image style={styles.login} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/login.png')} />
+			<Image style={styles.login} source={require('../../assets/images/login.png')} />
 			<Text style={styles.guide}>Enter your phone number and {'\n'}password to access your account</Text>
 		</View>
 	)
