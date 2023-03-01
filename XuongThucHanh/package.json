@@ -10,10 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.8",
     "@react-navigation/bottom-tabs": "^6.5.5",
     "@react-navigation/material-top-tabs": "^6.6.0",
-    "@react-navigation/native": "^6.1.4",
-    "@react-navigation/native-stack": "^6.9.10",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/native-stack": "^6.9.12",
     "@react-navigation/stack": "^6.3.14",
     "@reduxjs/toolkit": "^1.9.3",
     "@shopify/flash-list": "^1.4.1",
@@ -33,6 +34,8 @@
     "react-native-screens": "^3.20.0",
     "react-native-svg": "^13.8.0",
     "react-native-swipe-list-view": "^3.2.9",
+    "react-native-element-textinput": "^2.2.0",
+    "react-native-reanimated": "^2.14.4",
     "react-native-tab-view": "^3.5.0",
     "react-native-vector-icons": "^9.2.0",
     "react-redux": "^8.0.5",
