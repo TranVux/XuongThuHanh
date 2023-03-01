@@ -44,8 +44,8 @@ const NewAddress = () => {
         setSelected={setSelected}
         data={data}
         search={false}
-        boxStyles={{ borderRadius: 5, marginBottom: 30, backgroundColor: '#F3F3F3', borderColor: '#F3F3F3',color :'red' }} //override default styles
-        inputStyles={{color: '#AC8E71'}}
+        boxStyles={{ borderRadius: 5, marginBottom: 30, backgroundColor: '#F3F3F3', borderColor: '#F3F3F3', color: 'red' }} //override default styles
+        inputStyles={{ color: '#AC8E71' }}
         defaultOption={{ key: '1', value: 'Jammu & Kashmir' }}   //default selected option
       />
       <View style={styles.inputContainer}>

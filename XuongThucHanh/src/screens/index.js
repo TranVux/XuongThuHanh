@@ -20,6 +20,10 @@ import Login from './Login'
 import DetailProductScreen from './Mango'
 import Shop from './Shop'
 import Account from './Account'
+import NewAddress from "./NewAddress";
+import Address from './Address'
+import OnGoings from './OnGoings'
+import EditAddress from './EditAddress'
 
 export {
     MyCard,
@@ -43,5 +47,9 @@ export {
     DetailProductScreen,
     Login,
     Shop,
-    Account
+    Account,
+    NewAddress,
+    Address,
+    OnGoings,
+    EditAddress
 }
