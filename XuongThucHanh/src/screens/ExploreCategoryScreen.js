@@ -2,10 +2,9 @@ import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Colors } from '../../assets/Colors';
-import { DATA } from '../constants/DATA'
 import CategoryItem from '../components/Products/CategoryItem'
 import { MasonryFlashList } from '@shopify/flash-list'
-import { IconSearch } from '../../assets/img/svg';
+import { IconSearch } from '../../assets/images/svg';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ExploreCategoryScreen = () => {

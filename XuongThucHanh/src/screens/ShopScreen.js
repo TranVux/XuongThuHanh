@@ -2,10 +2,9 @@ import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } 
 import React from 'react'
 import { Colors } from '../../assets/Colors';
 import CategoryItem from '../components/Products/CategoryItem'
-import { DATA, ProductList } from '../constants/DATA'
 import Spacing from '../components/Spacing'
 import ProductItem from '../components/Products/ProductItem'
-import { IconLocation, IconSearch } from '../../assets/img/svg';
+import { IconLocation, IconSearch } from '../../assets/images/svg';
 import { useSelector } from 'react-redux'
 
 const ShopScreen = () => {
@@ -37,12 +36,10 @@ const ShopScreen = () => {
     return (
         <SafeAreaView style={{ flex: 1, padding: 16, backgroundColor: "#fff" }}>
             <View style={styles.header}>
-                {/* <Icon name='location-pin' size={25} color={Colors.primaryColor} /> */}
                 <IconLocation />
                 <Text style={styles.textHeader}>Lungangen</Text>
             </View>
             <View style={styles.searchView}>
-                {/* <Icon style={styles.iconSearch} name='magnifying-glass' size={25} color={Colors.placeholder} /> */}
                 <IconSearch />
                 <TextInput style={styles.textInput} placeholder="Search" placeholderTextColor={Colors.placeholder} cursorColor={Colors.text} />
             </View>

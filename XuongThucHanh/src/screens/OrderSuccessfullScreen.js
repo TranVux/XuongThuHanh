@@ -1,26 +1,26 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import React from 'react'
 
-const OrderFailedScreen = () => {
-  return (
-    <View style={styles.container}>
+const OrderSuccessfullScreen = () => {
+    return (
+        <View style={styles.container}>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
 
-                <Image style={styles.image} source={require('../images/img_order_faled.png')} />
+                <Image style={styles.image} source={require('../../assets/images/img_order_success.png')} />
             </View>
-            <Text style={styles.title}>Oops! Order Failed!</Text>
-            <Text style={styles.content}>Something went terribly wrong</Text>
+            <Text style={styles.title}>Your Order Has Been Accepted</Text>
+            <Text style={styles.content}>We’ve accepted your order, and we’re {'\n'}getting it ready.</Text>
             <Pressable style={styles.buttonTrack}>
-                <Text style={styles.textButton}>Try Again</Text>
+                <Text style={styles.textButton}>Track Order</Text>
             </Pressable>
             <Pressable style={styles.buttonBackHome}>
                 <Text style={[styles.textButton, { color: '#FF5E00' }]}>Back Home</Text>
             </Pressable>
         </View>
-  )
+    )
 }
 
-export default OrderFailedScreen
+export default OrderSuccessfullScreen
 
 const styles = StyleSheet.create({
     container: {
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '700',
         color: '#FFFFFF',
-        
+
     },
     buttonBackHome: {
         height: 50,

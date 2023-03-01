@@ -6,10 +6,11 @@ const NewCard = () => {
     const [number, onChangeNumber] = React.useState('');
     const [date, onDate] = React.useState('');
     const [CGV, onCGV] = React.useState('');
+
     return (
         <View style={styles.container}>
             <View style={styles.topIcon}>
-                <Image source={require('../../../media/images/Arrow.png')} />
+                <Image source={require('../../../assets/images/Arrow.png')} />
             </View>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={styles.Title}>New card</Text>
@@ -61,9 +62,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-
+        backgroundColor: "#fff",
         alignItems: 'center'
-
     },
     topIcon: {
         width: '100%',
@@ -77,30 +77,25 @@ const styles = StyleSheet.create({
     titleItem: {
         fontSize: 18,
         color: '#6D3805'
-    }, input: {
+    },
+    input: {
         height: 40,
         width: '100%',
         paddingHorizontal: 20,
         paddingVertical: 10,
-
         backgroundColor: '#F3F3F3'
     },
     button: {
-        backgroundColor: '#FF5E00'
-        , width: '100%',
-        height: 50
-        , borderRadius: 30,
+        backgroundColor: '#FF5E00',
+        width: '100%',
+        height: 50,
+        borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center',
-
-
-    }
-    , viewButton: {
-        width: '100%'
-        , position: 'absolute',
-
+    },
+    viewButton: {
+        width: '100%',
+        position: 'absolute',
         bottom: 19
     }
-
-
 })

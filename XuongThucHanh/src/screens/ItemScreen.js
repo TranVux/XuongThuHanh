@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, Image, Pressable, FlatList, TouchableOpacity, Alert } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ItemCart from './ItemCart';
+import ItemCart from '../components/ItemCart';
 import { SwipeListView } from 'react-native-swipe-list-view';
+
 
 const DATA = [
     {
@@ -32,13 +33,11 @@ const DATA = [
 
 ];
 
-
-
-const CartScreen = () => {
+const ItemScreen = () => {
     return (
         <View style={styles.container}>
             <Icon name="chevron-left" size={20} color="#FF7300" style={{ paddingLeft: 20 }} />
-            <Text style={styles.title}>Cart</Text>
+            <Text style={styles.title}>Itemes</Text>
 
             {/* <FlatList
                 data={DATA}
@@ -52,7 +51,7 @@ const CartScreen = () => {
                 keyExtractor={item => item.id}
                 renderHiddenItem={(data, index) => (
                     <View style={styles.item}>
-                        <View style={[styles.item, {width: 75, height: 100, backgroundColor: '#A42B32', justifyContent: 'center'}]}>
+                        <View style={[styles.item, { width: 75, height: 100, backgroundColor: '#A42B32', justifyContent: 'center' }]}>
                             <TouchableOpacity onPress={() => {
                                 Alert.alert('Delete', "Bạn có muốn xóa không?");
                             }}>
@@ -62,75 +61,9 @@ const CartScreen = () => {
                     </View>
 
                 )}
-                
+
                 rightOpenValue={-75}
             />
-
-
-            {/* Item 1 */}
-            {/* <View style={[styles.header]}>
-                <Image style={[styles.image, { width: 70, height: 70 }]} resizeMode='cover' source={require('../images/img_apple.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Red Apple</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                        </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
-                    </View>
-                </View>
-            </View> */}
-
-            {/* Item 2 */}
-            {/* <View style={[styles.header]}>
-                <Image style={styles.image} resizeMode='cover' source={require('../images/img_banana.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Orginal Banana</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                        </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
-                    </View>
-                </View>
-            </View> */}
-
-            {/* Item 3 */}
-            {/* <View style={[styles.header]}>
-                <Image style={styles.image} resizeMode='cover' source={require('../images/img_avocado.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Avocado Bowl</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                        </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
-                    </View>
-                </View>
-            </View> */}
-
-            {/* Item 4 */}
-            {/* <View style={[styles.header]}>
-                <Image style={styles.image} resizeMode='cover' source={require('../images/img_salmon.png')} />
-                <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
-                    <Text style={styles.name}>Salmon</Text>
-                    <View style={styles.groupButton}>
-                        <View style={[styles.button]}>
-                            <Icon name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price,]}>2</Text>
-                            <Icon name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                        </View>
-                        <Text style={[styles.price, { marginStart: 50 }]}>$4,99 kg</Text>
-                    </View>
-                </View>
-            </View> */}
-
             <Pressable style={styles.buttonCheck}>
                 <Text style={styles.textCheck}>CheckOut</Text>
             </Pressable>
@@ -138,7 +71,7 @@ const CartScreen = () => {
     )
 }
 
-export default CartScreen
+export default ItemScreen
 
 const styles = StyleSheet.create({
     item: {
