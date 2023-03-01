@@ -1,14 +1,17 @@
 import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
-import Icon from 'react-native-vector-icons/Entypo'
 import { Colors } from '../../assets/Colors';
 import CategoryItem from '../components/Products/CategoryItem'
 import { DATA, ProductList } from '../constants/DATA'
 import Spacing from '../components/Spacing'
 import ProductItem from '../components/Products/ProductItem'
 import { IconLocation, IconSearch } from '../../assets/img/svg';
+import { useSelector } from 'react-redux'
 
 const ShopScreen = () => {
+
+    const products = useSelector(state => state.products)
+    const categories = useSelector(state => state.categories)
 
     const handleGetIdCategory = (item) => item.name;
 
@@ -29,7 +32,6 @@ const ShopScreen = () => {
                 data={item} />
         )
     }
-
     const handleGetIdProd = (item) => item.name;
 
     return (
@@ -55,7 +57,7 @@ const ShopScreen = () => {
                     <FlatList
                         ItemSeparatorComponent={Spacing}
                         showsHorizontalScrollIndicator={false}
-                        data={DATA}
+                        data={categories}
                         renderItem={handleRenderItemCategory}
                         horizontal={true}
                         keyExtractor={handleGetIdCategory} />
@@ -71,7 +73,7 @@ const ShopScreen = () => {
                 <View style={styles.popularDealsContent}>
                     <FlatList
                         showsHorizontalScrollIndicator={false}
-                        data={ProductList}
+                        data={products}
                         renderItem={handleRenderItemProd}
                         horizontal={true}
                         keyExtractor={handleGetIdProd} />

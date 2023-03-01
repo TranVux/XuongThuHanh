@@ -13,9 +13,9 @@ const AppNavigator = () => {
     return (
         <NavigationContainer>
             <MainStack.Navigator screenOptions={{ headerShown: false }}>
-                <MainStack.Screen component={ExploreCategoryScreen} name='ExploreCategoryScreen' />
-                <MainStack.Screen component={ShopScreen} name='ShopScreen' />
                 <MainStack.Screen component={DetailCategoryNavigatorScreen} name='DetailCategoryNavigatorScreen' />
+                <MainStack.Screen component={ShopScreen} name='ShopScreen' />
+                <MainStack.Screen component={ExploreCategoryScreen} name='ExploreCategoryScreen' />
                 <MainStack.Screen component={PaymentScreen} name='PaymentScreen' />
             </MainStack.Navigator>
         </NavigationContainer>

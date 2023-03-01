@@ -1,15 +1,15 @@
 import React from 'react'
 import { StatusBar } from 'react-native'
-import { Colors } from './assets/Colors'
 import AppNavigator from './src/routes/AppNavigator'
-import { AppContextProvider } from './src/utils/AppContext'
+import { Provider } from 'react-redux'
+import store from './src/redux/store'
 
 const App = () => {
   return (
-    <AppContextProvider>
+    <Provider store={store}>
       <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
       <AppNavigator />
-    </AppContextProvider>
+    </Provider>
   )
 }
 

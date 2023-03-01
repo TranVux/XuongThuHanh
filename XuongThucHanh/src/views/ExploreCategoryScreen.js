@@ -1,4 +1,4 @@
-import { Dimensions, FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Colors } from '../../assets/Colors';
@@ -6,8 +6,12 @@ import { DATA } from '../constants/DATA'
 import CategoryItem from '../components/Products/CategoryItem'
 import { MasonryFlashList } from '@shopify/flash-list'
 import { IconSearch } from '../../assets/img/svg';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ExploreCategoryScreen = () => {
+
+    const dispatch = useDispatch();
+    const dataCategory = useSelector(state => state.categories);
 
     const handleGetIdCategory = (item) => item.name;
 
@@ -31,7 +35,7 @@ const ExploreCategoryScreen = () => {
             <View style={styles.categoryContainer}>
                 <MasonryFlashList
                     showsVerticalScrollIndicator={false}
-                    data={DATA}
+                    data={dataCategory}
                     numColumns={3}
                     renderItem={handleRenderItemCategory}
                     estimatedItemSize={150}
