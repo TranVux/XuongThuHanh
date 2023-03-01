@@ -35,7 +35,10 @@
     "react-native-swipe-list-view": "^3.2.9",
     "react-native-tab-view": "^3.5.0",
     "react-native-vector-icons": "^9.2.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "react-native-dropdown-select-list": "^2.0.4",
+    "react-native-simple-tablayout": "^0.0.5",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
