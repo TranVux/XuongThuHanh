@@ -16,7 +16,7 @@ import Profile from './Profile'
 import ShopScreen from "./ShopScreen";
 import Favourite from './Favourite'
 import FavouriteEmpty from './FavouriteEmpty'
-import Login from './Login'
+import Login1 from './Login1'
 import DetailProductScreen from './Mango'
 import Shop from './Shop'
 import Account from './Account'
@@ -24,6 +24,11 @@ import NewAddress from "./NewAddress";
 import Address from './Address'
 import OnGoings from './OnGoings'
 import EditAddress from './EditAddress'
+import Login from './Login'
+import Signcode from './Signcode'
+import Signpass from './Signpass'
+import Signup from './Signup'
+import Wellcome from './Wellcome'
 
 export {
     MyCard,
@@ -51,5 +56,9 @@ export {
     NewAddress,
     Address,
     OnGoings,
-    EditAddress
+    EditAddress,
+    Signcode,
+    Signpass,
+    Signup,
+    Wellcome,
 }
