@@ -20,7 +20,7 @@ const Signup = (props) => {
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ marginBottom: 81, alignItems: 'center' }}>
-                    <FastImage style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
                 </View>
                 <View>
                     <TextInput style={styles.input} placeholder='Name Surname'></TextInput>

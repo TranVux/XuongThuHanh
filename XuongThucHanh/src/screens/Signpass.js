@@ -17,7 +17,7 @@ const Signpass = (props) => {
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ marginBottom: 71, alignItems: 'center' }}>
-                    <FastImage style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
                 </View>
                 <Text style={styles.titlecontent}>Enter the password</Text>
                 <Text style={styles.text} numberOfLines={2}>For the security & safety please choose a password</Text>
