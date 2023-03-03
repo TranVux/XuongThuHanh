@@ -59,10 +59,10 @@ const Mango = (props) => {
                 <Pressable onPress={() => {
                     navigation.goBack();
                 }}>
-                    <FastImage style={styles.back} source={require('../../assets/images/back.png')} />
+                    <Image style={styles.back} source={require('../../assets/images/back.png')} />
                 </Pressable>
-                <FastImage style={styles.cake} source={require('../../assets/images/gr_cake.png')} />
-                <FastImage style={styles.mango} source={require('../../assets/images/mango.png')} />
+                <Image style={styles.cake} source={require('../../assets/images/gr_cake.png')} />
+                <Image style={styles.mango} source={require('../../assets/images/mango.png')} />
                 <Text style={styles.name}>Orinal Mango</Text>
                 <View style={styles.cost}>
                     <Text style={styles.dollar}>$3.00</Text>

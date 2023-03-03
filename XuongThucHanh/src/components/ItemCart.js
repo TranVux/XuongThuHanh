@@ -28,7 +28,6 @@ const ItemCart = (props) => {
                     source={{
                         uri: data.image,
                         priority: FastImage.priority.normal,
-                        cache: FastImage.cacheControl.cacheOnly
                     }}
                 />
                 <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>

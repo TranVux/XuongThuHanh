@@ -6,13 +6,13 @@ const Address = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <FastImage style={styles.imgBack} source={require('../../assets/images/back.png')} />
-                <FastImage style={styles.imgAdd} source={require('../../assets/images/add.png')} />
+                <Image style={styles.imgBack} source={require('../../assets/images/back.png')} />
+                <Image style={styles.imgAdd} source={require('../../assets/images/add.png')} />
             </View>
             <Text style={styles.title}>Address</Text>
             <View style={styles.social}>
                 <View style={styles.content}>
-                    <FastImage
+                    <Image
                         style={styles.imgHome}
                         source={require('../../assets/images/icHome.png')} />
                     <View style={styles.information}>
@@ -20,13 +20,13 @@ const Address = () => {
                         <Text style={styles.textTime}>Lungangen 6, 41722</Text>
                     </View>
                 </View>
-                <FastImage style={styles.imgRight} source={require('../../assets/images/right.png')} />
+                <Image style={styles.imgRight} source={require('../../assets/images/right.png')} />
             </View>
             <View style={styles.line}></View>
 
             <View style={styles.social}>
                 <View style={styles.content}>
-                    <FastImage
+                    <Image
                         style={styles.imgHome}
                         source={require('../../assets/images/icBag.png')} />
                     <View style={styles.information}>
@@ -34,7 +34,7 @@ const Address = () => {
                         <Text style={styles.textTime}>Lungangen 6, 41722</Text>
                     </View>
                 </View>
-                <FastImage style={styles.imgRight} source={require('../../assets/images/right.png')} />
+                <Image style={styles.imgRight} source={require('../../assets/images/right.png')} />
             </View>
             <View style={styles.line}></View>
         </View>

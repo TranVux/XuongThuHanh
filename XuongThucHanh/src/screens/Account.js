@@ -1,35 +1,34 @@
 import { StyleSheet, Text, View, Image, Button, Pressable, TextInput } from 'react-native'
 import React from 'react'
-import FastImage from 'react-native-fast-image'
 
 const Account = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                 <Pressable onPress={() => { navigation.goBack() }}>
-                    <FastImage style={styles.back} source={require('../../assets/images/back.png')} />
+                    <Image style={styles.back} source={require('../../assets/images/back.png')} />
                 </Pressable>
                 <Text style={styles.account}>Account</Text>
                 <View style={{ width: 10 }} />
             </View>
 
             <Pressable style={styles.profile} onPress={() => { navigation.navigate("ProfileScreen") }}>
-                <FastImage style={styles.img} source={require('../../assets/images/profile.png')} />
+                <Image style={styles.img} source={require('../../assets/images/profile.png')} />
                 <Text style={styles.txtprofile}>Profile</Text>
             </Pressable>
 
             <Pressable style={styles.order} onPress={() => { navigation.navigate("OrdersScreen") }}>
-                <FastImage style={styles.img} source={require('../../assets/images/orders.png')} />
+                <Image style={styles.img} source={require('../../assets/images/orders.png')} />
                 <Text style={styles.txtorder}>Orders</Text>
             </Pressable>
 
             <Pressable style={styles.address} onPress={() => { navigation.navigate("AddressScreen") }}>
-                <FastImage style={styles.img} source={require('../../assets/images/address.png')} />
+                <Image style={styles.img} source={require('../../assets/images/address.png')} />
                 <Text style={styles.txtaddress}>Address</Text>
             </Pressable>
 
             <Pressable style={styles.payment} onPress={() => { navigation.navigate("PaymentScreen") }}>
-                <FastImage style={styles.img} source={require('../../assets/images/payment.png')} />
+                <Image style={styles.img} source={require('../../assets/images/payment.png')} />
                 <Text style={styles.txtpayment}>Payment</Text>
             </Pressable>
         </View>

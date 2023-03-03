@@ -17,7 +17,7 @@ const EditAddress = () => {
   const [selected, setSelected] = useState("");
   return (
     <View style={styles.container}>
-      <FastImage
+      <Image
         style={styles.imgBack}
         source={require('../../assets/images/back.png')} />
       <Text style={styles.textNewAddress}>Edit Address</Text>

@@ -24,12 +24,12 @@ const Login = (props) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={back}>
-                <FastImage style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+                <Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign In</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ marginBottom: 46, alignItems: 'center' }}>
-                    <FastImage style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
                 </View>
                 <Text style={styles.text}>Enter your phone number and
                     password to access your account</Text>

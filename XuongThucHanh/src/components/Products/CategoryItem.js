@@ -11,7 +11,6 @@ const CategoryItem = ({ data, onPress, style }) => {
                     source={{
                         uri: data.image,
                         priority: FastImage.priority.normal,
-                        cache: FastImage.cacheControl.cacheOnly
                     }}
                     resizeMode={FastImage.resizeMode.contain}
                     style={{ width: 65, aspectRatio: 1, }} />

@@ -15,7 +15,6 @@ const ProductItem = ({ data, onPress, type, style }) => {
                 source={{
                     uri: data.image,
                     priority: FastImage.priority.normal,
-                    cache: FastImage.cacheControl.cacheOnly
                 }}
                 resizeMode={type === "product" ? FastImage.resizeMode.contain : FastImage.resizeMode.cover} />
             {type === "product" &&

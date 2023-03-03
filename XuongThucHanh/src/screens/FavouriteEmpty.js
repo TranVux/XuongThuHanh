@@ -1,13 +1,12 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import React from 'react'
-import FastImage from 'react-native-fast-image'
 
 const FavouriteEmpty = () => {
     return (
         <View style={styles.container}>
-            <FastImage style={styles.back} source={require('../../assets/images/back.png')} />
+            <Image style={styles.back} source={require('../../assets/images/back.png')} />
             <Text style={styles.sign}>Favourite</Text>
-            <FastImage style={styles.favourite} source={require('../../assets/images/favourite.png')} />
+            <Image style={styles.favourite} source={require('../../assets/images/favourite.png')} />
             <Text style={styles.noti}>Your heart is empty</Text>
             <Text style={styles.start}>Start fall in love with some good {'\n'}goods </Text>
             <Pressable style={styles.button}>
@@ -23,7 +22,8 @@ const styles = StyleSheet.create({
     container: {
         padding: 16,
         flex: 1,
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        justifyContent: "space-between",
     },
     back: {
         marginStart: 4,

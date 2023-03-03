@@ -5,9 +5,9 @@ import FastImage from 'react-native-fast-image'
 const Login1 = () => {
 	return (
 		<View style={styles.container}>
-			<FastImage style={styles.back} source={require('../../assets/images/back.png')} />
+			<Image style={styles.back} source={require('../../assets/images/back.png')} />
 			<Text style={styles.sign}>Sign In</Text>
-			<FastImage style={styles.login} source={require('../../assets/images/login.png')} />
+			<Image style={styles.login} source={require('../../assets/images/login.png')} />
 			<Text style={styles.guide}>Enter your phone number and {'\n'}password to access your account</Text>
 		</View>
 	)
