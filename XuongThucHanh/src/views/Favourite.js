@@ -233,23 +233,16 @@
 //                 </View>
 //             </View> */}
 
-import {
-    StyleSheet,
-    View,
-    Image,
-    Text,
-    TouchableOpacity,
-    TouchableHighlight,
-} from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity, TouchableHighlight } from 'react-native';
 // import FastImage from 'react-native-fast-image'
 import React, { useState } from 'react';
 import { SwipeListView } from 'react-native-swipe-list-view';
 
 const Favorite = () => {
     const [listData, setListData] = useState([
-        { id: 0, nameProduct: 'Red Apple', numberProduct: '$4,99', unit: 'kg', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/banana.png') },
-        { id: 1, nameProduct: 'Salmon', numberProduct: '$50', unit: 'kg', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/mango.png') },
-        { id: 2, nameProduct: 'Apple Pay', numberProduct: '$24', unit: 'st', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/strawberry.png') },
+        { id: 0, nameProduct: 'Red Apple', numberProduct: '$4,99', unit: 'kg', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/apple.png') },
+        { id: 1, nameProduct: 'Salmon', numberProduct: '$50', unit: 'kg', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/salmon.png') },
+        { id: 2, nameProduct: 'Avocado Bowl', numberProduct: '$24', unit: 'st', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/avocado.png') },
     ]);
 
     const closeRow = (rowMap, rowKey) => {
@@ -277,7 +270,7 @@ const Favorite = () => {
                         <Text style={styles.titleProduct}>{data.item.nameProduct}</Text>
                         <TouchableOpacity onPress={() => console.log('Add to cart')}>
                             <View style={styles.cart}>
-                                {/* <Image source={require('../assets/cart.png')} /> */}
+                                <Image source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/cart.png')} />
                                 <Text style={styles.txtaddCart}>Add to cart</Text>
                             </View>
                         </TouchableOpacity>
@@ -285,7 +278,7 @@ const Favorite = () => {
                 </View>
                 <View style={styles.money}>
                     <Text style={styles.txtmoney}>{data.item.numberProduct}</Text>
-                    <Text style={[styles.txtmoney, { fontSize: 12 }, { marginLeft: -15 }, { paddingTop: 45 }]}>{data.item.unit}</Text>
+                    <Text style={[styles.txtmoney, { fontSize: 12 }, { marginLeft: -15 }, { paddingTop: 45 }]}> {data.item.unit}</Text>
                 </View>
             </TouchableOpacity>
         </TouchableHighlight>
@@ -296,16 +289,17 @@ const Favorite = () => {
             <TouchableOpacity
                 style={[styles.backRightBtn, styles.backRightBtnRight]}
                 onPress={() => deleteRow(rowMap, data.item.id)}>
-                {/* <Image style={styles.trash} source={require('../assets/trash.png')} /> */}
+                <Image style={styles.trash} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/trash.png')} />
             </TouchableOpacity>
         </View>
     );
     return (
         <View style={styles.container}>
             <View style={styles.viewIconTitle}>
-                {/* <Image source={require('../assets/back.png')} /> */}
+                <Image source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
+                <Text style={styles.textTitle}>Favorite</Text>
             </View>
-            <Text style={styles.textTitle}>Favorite</Text>
+
             <SwipeListView
                 data={listData}
                 renderItem={renderItem}
@@ -321,13 +315,12 @@ export default Favorite;
 const styles = StyleSheet.create({
     container: {
         marginBottom: 150,
+        backgroundColor: '#FFFFFF'
     },
     viewIconTitle: {
         flexDirection: 'row',
         marginHorizontal: 20,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginTop: 20,
+        marginTop: 30,
     },
 
     textTitle: {
@@ -337,9 +330,10 @@ const styles = StyleSheet.create({
         height: 29,
         lineHeight: 29,
         color: '#FF5E00',
-        letterSpacing: -0.165,
+        marginStart: 118,
+        // letterSpacing: -0.165,
         textAlign: 'center',
-        marginBottom: 16,
+        marginBottom: 16
     },
 
     backTextWhite: {
@@ -423,7 +417,8 @@ const styles = StyleSheet.create({
         color: '#6D3805',
     },
     imgProduct: {
-        width: 82,
+        width: 80,
+        height: 60,
         borderRadius: 15
     },
 });

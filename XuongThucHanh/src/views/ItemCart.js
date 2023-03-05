@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+
 const ItemCart = (props) => {
     const { data } = props;
 
@@ -21,7 +23,7 @@ const ItemCart = (props) => {
         <View style={styles.container}>
             {/* Item 1 */}
             <View style={[styles.header]}>
-                <Image style={[styles.image]} resizeMode='cover' source={{ uri: data.image }} />
+                <Image style={[styles.image]} resizeMode='cover' source={{ uri: data.item.image }} />
                 <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
                     <Text style={styles.name}>{data.name}</Text>
                     <View style={styles.groupButton}>
@@ -100,9 +102,9 @@ const styles = StyleSheet.create({
         height: 29.65,
         backgroundColor: '#F4F4F4',
         flexDirection: 'row',
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        borderRadius: 30, 
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderRadius: 30,
         marginStart: 20
     },
     buttonCheck: {
@@ -111,7 +113,6 @@ const styles = StyleSheet.create({
         right: 16,
         bottom: 20,
         height: 50,
-
         backgroundColor: '#FF5E00',
         justifyContent: 'center',
         alignItems: 'center',
@@ -123,5 +124,5 @@ const styles = StyleSheet.create({
         lineHeight: 21.6,
         color: 'white'
     }
-})
+});
 

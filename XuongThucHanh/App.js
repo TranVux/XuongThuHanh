@@ -6,15 +6,14 @@ import FavouriteEmpty from './src/views/FavouriteEmpty'
 import Login from './src/views/Login'
 import Mango from './src/views/Mango'
 import Favourite from './src/views/Favourite'
-import Explore from './src/views/Explore'
 
 
 const App = () => {
   return (
     <View>
-      {/* <Explore /> */}
-      <Mango />
-      {/* <Favourite /> */}
+      {/* <Mango /> */}
+      <Favourite />
+
     </View>
   )
 }

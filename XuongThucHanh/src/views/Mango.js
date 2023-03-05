@@ -4,8 +4,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 // import CounterInput from "react-native-counter-input";
 // import RNBounceable from '@freakycoder/react-native-bounceable';
-import ItemCart from './ItemCart';
-
 // const DATA = [
 //     {
 //         id: '1',
@@ -77,7 +75,7 @@ const Item = ({ DATA }) => (
 
 const Mango = (props) => {
 
-    const { data } = props;
+    // const { data } = props;
 
     const [count, setCount] = useState(1);
     const clickCong = () => {
