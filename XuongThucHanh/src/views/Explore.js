@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react';
 import {
      View,
      FlatList,
@@ -13,34 +13,31 @@ import {
 const DATA = [
      {
           id: '1',
-          image: 'https://firebasestorage.googleapis.com/v0/b/groceryapp-8f148.appspot.com/o/strawberry.png?alt=media&token=01f00d25-2359-4478-bdcc-a0a80d22a381',
           title: 'Strawberry',
           title_mini: '1kg',
-          money: '$24.0'
+          money: '$24.0',
+          image: 'https://anhdep123.com/wp-content/uploads/2020/11/anh-qua-dau-tay-chan-thuc-nhat.jpg'
      },
-
      {
           id: '2',
-          image: 'https://firebasestorage.googleapis.com/v0/b/groceryapp-8f148.appspot.com/o/avocado.png?alt=media&token=89125a26-f431-41bd-a2ab-f91bfb7c681a',
           title: 'Avocado Bowl',
           title_mini: '1kg',
-          money: '$24.0'
+          money: '$24.0',
+          image: 'https://anhdep123.com/wp-content/uploads/2021/03/hinh-anh-qua-bo-1.jpg'
      },
-
      {
           id: '3',
-          image: 'https://firebasestorage.googleapis.com/v0/b/groceryapp-8f148.appspot.com/o/banana.png?alt=media&token=93fd27b1-500d-489d-87dd-129d15bc5b50',
           title: 'Orginal Banana',
           title_mini: '1kg',
-          money: '$24.0'
+          money: '$24.0',
+          image: 'https://anhdep123.com/wp-content/uploads/2020/11/hinh-anh-qua-chuoi-tieu.jpg'
      },
 ];
 
 const Item = ({ DATA }) => (
      <TouchableOpacity onPress={() => console.log('Press item')}>
           <View style={styles.item}>
-               {/* <Image style={styles.img} source={require('../assets/Apple.png')} /> */}
-               <Image style={styles.img} source={{ uri: DATA.image }}></Image>
+               <Image style={styles.img} source={{ uri: DATA.image }} />
                <Text style={styles.title}>{DATA.title}</Text>
                <Text style={styles.title_mini}>{DATA.title_mini}</Text>
                <View style={styles.add}>
@@ -80,7 +77,7 @@ const styles = StyleSheet.create({
           borderRadius: 15
      },
      img: {
-          width: 75,
+          width: 89,
           height: 72.09,
           alignSelf: 'center'
      },

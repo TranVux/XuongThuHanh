@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Button, Pressable, TextInput, ScrollView, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View, Image, Button, Pressable, TextInput, ScrollView, SafeAreaView, FlatList, TouchableOpacity, TouchableHighlight } from 'react-native'
 import React, { Component, useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -6,33 +6,74 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 // import RNBounceable from '@freakycoder/react-native-bounceable';
 import ItemCart from './ItemCart';
 
+// const DATA = [
+//     {
+//         id: '1',
+//         name: 'Red Apple',
+//         image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_apple.png?alt=media&token=d5723cae-0b4f-425e-8ca7-f8752edddca5',
+//         price: '2.495',
+//     },
+//     {
+//         id: '2',
+//         name: 'Orginal Banana',
+//         image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_banana.png?alt=media&token=0716d432-fb7a-4447-87e9-88959ea85ed9',
+//         price: '2.995',
+//     },
+//     {
+//         id: '3',
+//         name: 'Avocado Bowl',
+//         image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_avocado.png?alt=media&token=2351cadb-d381-4bfb-a322-a8507a79e8c1',
+//         price: '24',
+//     },
+//     {
+//         id: '4',
+//         name: 'Salmon',
+//         image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_salmon.png?alt=media&token=e7f25566-5d3f-4bf5-8ada-5d77790a3cca',
+//         price: '25',
+//     },
+
+// ];
+
 const DATA = [
     {
         id: '1',
-        name: 'Red Apple',
-        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_apple.png?alt=media&token=d5723cae-0b4f-425e-8ca7-f8752edddca5',
-        price: '2.495',
+        title: 'Strawberry',
+        title_mini: '1kg',
+        money: '$24.0',
+        image: 'https://anhdep123.com/wp-content/uploads/2020/11/anh-qua-dau-tay-chan-thuc-nhat.jpg'
     },
     {
         id: '2',
-        name: 'Orginal Banana',
-        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_banana.png?alt=media&token=0716d432-fb7a-4447-87e9-88959ea85ed9',
-        price: '2.995',
+        title: 'Avocado Bowl',
+        title_mini: '1kg',
+        money: '$24.0',
+        image: 'https://anhdep123.com/wp-content/uploads/2021/03/hinh-anh-qua-bo-1.jpg'
     },
     {
         id: '3',
-        name: 'Avocado Bowl',
-        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_avocado.png?alt=media&token=2351cadb-d381-4bfb-a322-a8507a79e8c1',
-        price: '24',
+        title: 'Orginal Banana',
+        title_mini: '1kg',
+        money: '$24.0',
+        image: 'https://anhdep123.com/wp-content/uploads/2020/11/hinh-anh-qua-chuoi-tieu.jpg'
     },
-    {
-        id: '4',
-        name: 'Salmon',
-        image: 'https://firebasestorage.googleapis.com/v0/b/appontap-b2bd1.appspot.com/o/img_salmon.png?alt=media&token=e7f25566-5d3f-4bf5-8ada-5d77790a3cca',
-        price: '25',
-    },
-
 ];
+
+
+const Item = ({ DATA }) => (
+    <TouchableOpacity onPress={() => console.log('Press item')}>
+        <View style={styles.item}>
+            <Image style={styles.img} source={{ uri: DATA.image }} />
+            <Text style={styles.title}>{DATA.title}</Text>
+            <Text style={styles.title_mini}>{DATA.title_mini}</Text>
+            <View style={styles.btnadd}>
+                <Text style={styles.txtdola}>{DATA.money}</Text>
+                <TouchableHighlight onPress={() => console.log('Add product')}>
+                    <Image style={styles.imgadd} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/add_green.png')} />
+                </TouchableHighlight>
+            </View>
+        </View>
+    </TouchableOpacity>
+);
 
 const Mango = (props) => {
 
@@ -52,7 +93,6 @@ const Mango = (props) => {
     }
 
     return (
-        // <SafeAreaView>
         <ScrollView style={styles.scrollView} contentContainerStyle={{ flexGrow: 1 }}>
             <Image style={styles.back} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
             <Image style={styles.cake} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/gr_cake.png')} />
@@ -92,27 +132,16 @@ const Mango = (props) => {
             </Pressable>
             <Text style={styles.line}>──────────────────────────────────────</Text>
             <Text style={styles.ad}>You may also need</Text>
-            {/* test scroll */}
-            <Text style={styles.test}>“Trước khi khởi hành hôm nay, phi hành đoàn xác nhận tôi đã đặt suất ăn VGML (đồ ăn chay) và bữa sáng của tôi là một quả chuối. Tuy nhiên, tôi lại nghĩ ý cô ấy là bữa sáng bao gồm quả chuối”, một tài khoản có tên Kris_Chari viết trên diễn đàn hàng không FlyerTalk hôm 21/2.
-                “Khi cô ấy mang quả chuối đến sau khi máy bay cất cánh, tôi nghĩ đó chỉ là một món khai vị không mấy ấn tượng. Dù vậy, thực tế đây là toàn bộ bữa ăn”, Kris_Chari viết thêm. “Quả chuối này thực sự ngon - một trong những quả ngon nhất tôi đã ăn gần đây - nhưng nó làm đồ ăn vặt thì có lẽ phù hợp hơn”.
-                Đáng ngạc nhiên hơn với vị khách hàng, phi hành đoàn mang ra cả đũa và thìa cùng với quả chuối. Theo người này, bữa trưa trên máy bay cũng không ngon miệng hơn là mấy.
-                “Bữa trưa là mì spaghetti gần như không được nêm gia vị. Các bữa ăn khác của tôi trên các chuyến bay của Japan Airlines cũng tệ, nhưng không đến mức đó. Dù vậy, phi hành đoàn khá đáng yêu khi phục vụ chuối cùng với đũa”, hành khách chia sẻ.
-                Theo các nhà khoa học, sự kết hợp của các điều kiện trên máy bay - độ ẩm thấp, áp suất thấp và độ cao lớn - khiến khứu giác và vị giác của con người phần nào bớt nhạy bén. Do đó, nhiều người cảm thấy thức ăn trên máy bay nhạt nhẽo.
-                Tuy nhiên, cũng từng có nhiều trường hợp hành khách ăn chay được phục vụ bữa ăn đúng như mong đợi. Hồi năm 2022, một hành khách cho biết đã được Air Canada phục vụ một chai nước khi yêu cầu đồ ăn chay.
-            </Text>
+          
+            <FlatList
+                horizontal
+                data={DATA}
+                renderItem={({ item }) => <Item DATA={item} />}
+                keyExtractor={item => item.id}
+            />
 
-
-
-            <Text style={styles.test}>“Trước khi khởi hành hôm nay, phi hành đoàn xác nhận tôi đã đặt suất ăn VGML (đồ ăn chay) và bữa sáng của tôi là một quả chuối. Tuy nhiên, tôi lại nghĩ ý cô ấy là bữa sáng bao gồm quả chuối”, một tài khoản có tên Kris_Chari viết trên diễn đàn hàng không FlyerTalk hôm 21/2.
-                “Khi cô ấy mang quả chuối đến sau khi máy bay cất cánh, tôi nghĩ đó chỉ là một món khai vị không mấy ấn tượng. Dù vậy, thực tế đây là toàn bộ bữa ăn”, Kris_Chari viết thêm. “Quả chuối này thực sự ngon - một trong những quả ngon nhất tôi đã ăn gần đây - nhưng nó làm đồ ăn vặt thì có lẽ phù hợp hơn”.
-                Đáng ngạc nhiên hơn với vị khách hàng, phi hành đoàn mang ra cả đũa và thìa cùng với quả chuối. Theo người này, bữa trưa trên máy bay cũng không ngon miệng hơn là mấy.
-                “Bữa trưa là mì spaghetti gần như không được nêm gia vị. Các bữa ăn khác của tôi trên các chuyến bay của Japan Airlines cũng tệ, nhưng không đến mức đó. Dù vậy, phi hành đoàn khá đáng yêu khi phục vụ chuối cùng với đũa”, hành khách chia sẻ.
-                Theo các nhà khoa học, sự kết hợp của các điều kiện trên máy bay - độ ẩm thấp, áp suất thấp và độ cao lớn - khiến khứu giác và vị giác của con người phần nào bớt nhạy bén. Do đó, nhiều người cảm thấy thức ăn trên máy bay nhạt nhẽo.
-                Tuy nhiên, cũng từng có nhiều trường hợp hành khách ăn chay được phục vụ bữa ăn đúng như mong đợi. Hồi năm 2022, một hành khách cho biết đã được Air Canada phục vụ một chai nước khi yêu cầu đồ ăn chay.
-            </Text>
         </ScrollView>
-        // </SafeAreaView>
-
+        
     )
 }
 
@@ -274,6 +303,54 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '400',
         color: '#6D3805'
+    },
+
+
+
+
+    item: {
+        shadowOffset: 10,
+        height: 189,
+        width: 150,
+        backgroundColor: '#FFFFFF',
+        padding: 16,
+        margin: 16,
+        marginBottom: 25,
+        borderRadius: 15
+    },
+    img: {
+        width: 75,
+        height: 72.09,
+        alignSelf: 'center'
+    },
+    title: {
+        marginTop: 20,
+        fontFamily: 'Klarna Text',
+        fontWeight: '700',
+        fontSize: 15,
+        color: '#6D3805'
+    },
+    title_mini: {
+        fontFamily: 'Klarna Text',
+        fontWeight: '400',
+        fontSize: 12,
+        color: '#929292',
+    },
+    btnadd: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 12,
+        marginBottom: 15
+    },
+    // imgadd:{
+    //     marginBottom: 15
+    // },
+    txtdola: {
+        fontFamily: 'Klarna Text',
+        fontWeight: '700',
+        fontSize: 18,
+        color: '#FF5E00'
     },
 })
 

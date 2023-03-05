@@ -12,8 +12,8 @@ import Explore from './src/views/Explore'
 const App = () => {
   return (
     <View>
-      <Explore />
-      {/* <Mango /> */}
+      {/* <Explore /> */}
+      <Mango />
       {/* <Favourite /> */}
     </View>
   )
