@@ -9,18 +9,15 @@ enableFreeze(true);
 
 const App = () => {
   return (
-<<<<<<< HEAD
     <View>
-      {/* <Mango /> */}
+      <Mango />
       <Favourite />
 
     </View>
-=======
-    <Provider store={store}>
-      <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
-      <AppNavigator />
-    </Provider>
->>>>>>> TranVux
+    // <Provider store={store}>
+    //   <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
+    //   <AppNavigator />
+    // </Provider>
   )
 }
 
