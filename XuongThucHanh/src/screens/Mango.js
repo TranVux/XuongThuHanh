@@ -53,7 +53,7 @@ const Mango = (props) => {
     }
 
     return (
-        // <SafeAreaView>
+
         <ScrollView style={styles.scrollView} contentContainerStyle={{}}>
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <Pressable onPress={() => {
@@ -69,20 +69,6 @@ const Mango = (props) => {
                     <Text style={styles.st}> /st</Text>
                 </View>
                 <Text style={styles.describe}>Golden Ripe Alphonsa mangoes delivered to your {'\n'}house in the most hygenic way ever... Best for eating {'\n'}plain but can also be made into shakes and cakes.</Text>
-                {/* 
-            <View style={styles.grCount}>
-                <Pressable style={styles.count}>
-                    <Pressable style={styles.press}>
-                        <Image style={styles.imgPressM} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/press.png')} />
-                    </Pressable>
-                    <Text style={styles.num}>2</Text>
-                    <Pressable style={styles.press}>
-                        <Image style={styles.imgPressP} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/press.png')} />
-                    </Pressable>
-                </Pressable>
-                <Image style={styles.fav} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/fav.png')} />
-            </View> */}
-
 
                 <View style={styles.groupButton}>
                     <View style={[styles.button]}>
@@ -98,25 +84,10 @@ const Mango = (props) => {
                 </Pressable>
                 <View style={{ width: "100%", height: 1, backgroundColor: "#6D38052B", marginVertical: 20 }} />
                 <Text style={styles.ad}>You may also need</Text>
-                {/* test scroll */}
-                {/* <Text style={styles.test}>“Trước khi khởi hành hôm nay, phi hành đoàn xác nhận tôi đã đặt suất ăn VGML (đồ ăn chay) và bữa sáng của tôi là một quả chuối. Tuy nhiên, tôi lại nghĩ ý cô ấy là bữa sáng bao gồm quả chuối”, một tài khoản có tên Kris_Chari viết trên diễn đàn hàng không FlyerTalk hôm 21/2.
-                    “Khi cô ấy mang quả chuối đến sau khi máy bay cất cánh, tôi nghĩ đó chỉ là một món khai vị không mấy ấn tượng. Dù vậy, thực tế đây là toàn bộ bữa ăn”, Kris_Chari viết thêm. “Quả chuối này thực sự ngon - một trong những quả ngon nhất tôi đã ăn gần đây - nhưng nó làm đồ ăn vặt thì có lẽ phù hợp hơn”.
-                    Đáng ngạc nhiên hơn với vị khách hàng, phi hành đoàn mang ra cả đũa và thìa cùng với quả chuối. Theo người này, bữa trưa trên máy bay cũng không ngon miệng hơn là mấy.
-                    “Bữa trưa là mì spaghetti gần như không được nêm gia vị. Các bữa ăn khác của tôi trên các chuyến bay của Japan Airlines cũng tệ, nhưng không đến mức đó. Dù vậy, phi hành đoàn khá đáng yêu khi phục vụ chuối cùng với đũa”, hành khách chia sẻ.
-                    Theo các nhà khoa học, sự kết hợp của các điều kiện trên máy bay - độ ẩm thấp, áp suất thấp và độ cao lớn - khiến khứu giác và vị giác của con người phần nào bớt nhạy bén. Do đó, nhiều người cảm thấy thức ăn trên máy bay nhạt nhẽo.
-                    Tuy nhiên, cũng từng có nhiều trường hợp hành khách ăn chay được phục vụ bữa ăn đúng như mong đợi. Hồi năm 2022, một hành khách cho biết đã được Air Canada phục vụ một chai nước khi yêu cầu đồ ăn chay.
-                </Text>
 
-                <Text style={styles.test}>“Trước khi khởi hành hôm nay, phi hành đoàn xác nhận tôi đã đặt suất ăn VGML (đồ ăn chay) và bữa sáng của tôi là một quả chuối. Tuy nhiên, tôi lại nghĩ ý cô ấy là bữa sáng bao gồm quả chuối”, một tài khoản có tên Kris_Chari viết trên diễn đàn hàng không FlyerTalk hôm 21/2.
-                    “Khi cô ấy mang quả chuối đến sau khi máy bay cất cánh, tôi nghĩ đó chỉ là một món khai vị không mấy ấn tượng. Dù vậy, thực tế đây là toàn bộ bữa ăn”, Kris_Chari viết thêm. “Quả chuối này thực sự ngon - một trong những quả ngon nhất tôi đã ăn gần đây - nhưng nó làm đồ ăn vặt thì có lẽ phù hợp hơn”.
-                    Đáng ngạc nhiên hơn với vị khách hàng, phi hành đoàn mang ra cả đũa và thìa cùng với quả chuối. Theo người này, bữa trưa trên máy bay cũng không ngon miệng hơn là mấy.
-                    “Bữa trưa là mì spaghetti gần như không được nêm gia vị. Các bữa ăn khác của tôi trên các chuyến bay của Japan Airlines cũng tệ, nhưng không đến mức đó. Dù vậy, phi hành đoàn khá đáng yêu khi phục vụ chuối cùng với đũa”, hành khách chia sẻ.
-                    Theo các nhà khoa học, sự kết hợp của các điều kiện trên máy bay - độ ẩm thấp, áp suất thấp và độ cao lớn - khiến khứu giác và vị giác của con người phần nào bớt nhạy bén. Do đó, nhiều người cảm thấy thức ăn trên máy bay nhạt nhẽo.
-                    Tuy nhiên, cũng từng có nhiều trường hợp hành khách ăn chay được phục vụ bữa ăn đúng như mong đợi. Hồi năm 2022, một hành khách cho biết đã được Air Canada phục vụ một chai nước khi yêu cầu đồ ăn chay.
-                </Text> */}
             </View>
         </ScrollView>
-        // </SafeAreaView>
+
     )
 }
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
 // import { StyleSheet, Text, View, Image, Pressable, FlatList, TouchableOpacity, Alert } from 'react-native'
 // import React from 'react'
 // import Icon from 'react-native-vector-icons/FontAwesome';
@@ -237,15 +236,13 @@
 import { StyleSheet, View, Image, Text, TouchableOpacity, TouchableHighlight } from 'react-native';
 // import FastImage from 'react-native-fast-image'
 import React, { useState } from 'react';
-=======
 import { StyleSheet, Text, View, Image, Pressable, FlatList, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ItemCartFavorite from '../components/ItemCartFavorite';
->>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
 import { SwipeListView } from 'react-native-swipe-list-view';
 
-const Favorite = () => {
+const Favourite = () => {
     const [listData, setListData] = useState([
         { id: 0, nameProduct: 'Red Apple', numberProduct: '$4,99', unit: 'kg', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/apple.png') },
         { id: 1, nameProduct: 'Salmon', numberProduct: '$50', unit: 'kg', avatar: require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/salmon.png') },
@@ -258,7 +255,6 @@ const Favorite = () => {
         }
     };
 
-<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
     const deleteRow = (rowMap, rowKey) => {
         const newData = [...listData];
         const prevIndex = listData.findIndex(item => item.id === rowKey);
@@ -300,58 +296,46 @@ const Favorite = () => {
                 <Image style={styles.trash} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/trash.png')} />
             </TouchableOpacity>
         </View>
-    );
-=======
-const Favourite = () => {
->>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
-    return (
-        <View style={styles.container}>
-            <View style={styles.viewIconTitle}>
-                <Image source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
-                <Text style={styles.textTitle}>Favorite</Text>
-            </View>
+)};
+// const Favourite = () => {
+//     return (
+//         <View style={styles.container}>
+//             <View style={styles.viewIconTitle}>
+//                 <Image source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
+//                 <Text style={styles.textTitle}>Favorite</Text>
+//             </View>
 
-            <SwipeListView
-<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
-                data={listData}
-                renderItem={renderItem}
-                renderHiddenItem={renderHiddenItem}
-                rightOpenValue={-72}
-                disableRightSwipe={true}
-=======
-                data={DATA}
-                renderItem={({ item }) => <ItemCartFavorite data={item} />}
-                keyExtractor={item => item.id}
-                renderHiddenItem={(data, index) => (
-                    <View style={styles.item}>
-                        <View style={[styles.item, { width: 75, height: 100, backgroundColor: '#A42B32', justifyContent: 'center' }]}>
-                            <TouchableOpacity onPress={() => {
-                                Alert.alert('Delete', "Bạn có muốn xóa không?");
-                            }}>
-                                <Icon name="trash" size={35} color="#ffffff" style={{ flexDirection: 'row', justifyContent: 'flex-end' }} />
-                            </TouchableOpacity>
-                        </View>
-                    </View>
+//             <SwipeListView
+//                 data={listData}
+//                 renderItem={renderItem}
+//                 renderHiddenItem={renderHiddenItem}
+//                 rightOpenValue={-72}
+//                 disableRightSwipe={true}
+//                 data={DATA}
+//                 renderItem={({ item }) => <ItemCartFavorite data={item} />}
+//                 keyExtractor={item => item.id}
+//                 renderHiddenItem={(data, index) => (
+//                     <View style={styles.item}>
+//                         <View style={[styles.item, { width: 75, height: 100, backgroundColor: '#A42B32', justifyContent: 'center' }]}>
+//                             <TouchableOpacity onPress={() => {
+//                                 Alert.alert('Delete', "Bạn có muốn xóa không?");
+//                             }}>
+//                                 <Icon name="trash" size={35} color="#ffffff" style={{ flexDirection: 'row', justifyContent: 'flex-end' }} />
+//                             </TouchableOpacity>
+//                         </View>
+//                     </View>
 
-                )}
-                rightOpenValue={-75}
->>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
-            />
-        </View>
-    );
-};
+//                 )}
+//                 rightOpenValue={-75}
+//             />
+//         </View>
+//     );
+// };
 
-<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
-export default Favorite;
-=======
+export default Favourite;
 
 
-    )
-}
 
-export default Favourite
-
->>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
 const styles = StyleSheet.create({
     container: {
         marginBottom: 150,
@@ -421,8 +405,6 @@ const styles = StyleSheet.create({
     item: {
         flexDirection: 'row',
         alignItems: 'center',
-<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
-=======
     },
     // title: {
     //     fontSize: 32,
@@ -499,7 +481,6 @@ const styles = StyleSheet.create({
         bottom: 20,
         height: 50,
         backgroundColor: '#FF5E00',
->>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
         justifyContent: 'center',
     },
     addCart: {

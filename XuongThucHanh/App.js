@@ -8,17 +8,17 @@ import { enableFreeze } from 'react-native-screens';
 enableFreeze(true);
 
 const App = () => {
-  return (
-    <View>
-      <Mango />
-      <Favourite />
+   return (
+      <View>
+         <Mango />
+         <Favourite />
 
-    </View>
-    // <Provider store={store}>
-    //   <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
-    //   <AppNavigator />
-    // </Provider>
-  )
+      </View>
+      // <Provider store={store}>
+      //   <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
+      //   <AppNavigator />
+      // </Provider>
+   )
 }
 
 export default App
