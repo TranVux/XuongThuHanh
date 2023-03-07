@@ -1,5 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View, TextInput, ScrollView } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image';
 
 const Signpass = (props) => {
     const { navigation } = props;
@@ -11,7 +12,7 @@ const Signpass = (props) => {
     }
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+            <TouchableOpacity onPress={back}><FastImage style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -23,19 +24,15 @@ const Signpass = (props) => {
                 <View>
                     <View style={styles.inputView}>
                         <TextInput
-                        textContentType='password'
-                        style={styles.input} 
-                        placeholder='Password'
-                        ></TextInput>
-                        
+                            textContentType='password'
+                            style={styles.input}
+                            placeholder='Password' />
                     </View>
                     <View style={styles.inputView} >
                         <TextInput
-                        textContentType='password'
-                        style={styles.input} 
-                        placeholder='Confirm Password'
-                        ></TextInput>
-                       
+                            textContentType='password'
+                            style={styles.input}
+                            placeholder='Confirm Password' />
                     </View>
                 </View>
                 <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={signcode}>
@@ -101,7 +98,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom:72
+        marginBottom: 72
     },
     input: {
         height: 48,

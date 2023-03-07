@@ -1,7 +1,13 @@
 import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View, TextInput, ScrollView } from 'react-native'
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { handleLogin } from '../redux/slices/isLogin';
+import FastImage from 'react-native-fast-image';
 
 const Login = (props) => {
+
+    const dispatch = useDispatch();
+
     const { navigation } = props;
     const back = () => {
         navigation.goBack();
@@ -10,10 +16,15 @@ const Login = (props) => {
         navigation.navigate('Signup');
     }
 
+    const _handleLogin = () => {
+        const action = handleLogin(true);
+        dispatch(action)
+    }
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+            <TouchableOpacity onPress={back}>
+                <Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign In</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -27,7 +38,7 @@ const Login = (props) => {
                     <TextInput style={styles.input} placeholder='Password'></TextInput>
                 </View>
                 <View style={{ justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }}><TouchableOpacity><Text style={{ color: '#FF5E00' }}>Forgote Password</Text></TouchableOpacity></View>
-                <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]}>
+                <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={_handleLogin}>
                     <Text style={[{ color: '#ffffff' }, styles.textButton]}>Sign In</Text>
                 </Pressable>
                 <View style={styles.view}>
@@ -98,6 +109,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 13,
-        marginBottom:40
+        marginBottom: 40
     }
 })

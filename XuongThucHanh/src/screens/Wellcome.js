@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, Pressable, ScrollView} from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, Pressable, ScrollView } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image';
 
 
 const Wellcome = (props) => {
@@ -13,21 +14,20 @@ const Wellcome = (props) => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.img} source={require('../../assets/images/Illustration.png')}/>
-             <ScrollView showsVerticalScrollIndicator={false}>
+            <FastImage style={styles.img} source={require('../../assets/images/Illustration.png')} />
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.content}>
-                <Text style={styles.title}>Realax and shop</Text>
-                <Text style={styles.text} numberOfLines={3}>Shop online and get grocories
-                    delivered from stores to your home
-                    in as fast as 1 hour .</Text>
-            </View>
-           
-            <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]}>
-                <Text style={[{ color: '#ffffff' }, styles.textButton]} onPress={onclickup}>Sign up</Text>
-            </Pressable>
-            <Pressable style={[styles.button,{marginBottom:72}]}>
-                <Text style={[{ color: '#FF5E00' }, styles.textButton]} onPress={onclickin}>Sign in</Text>
-            </Pressable>
+                    <Text style={styles.title}>Realax and shop</Text>
+                    <Text style={styles.text} numberOfLines={3}>Shop online and get grocories
+                        delivered from stores to your home
+                        in as fast as 1 hour .</Text>
+                </View>
+                <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]}>
+                    <Text style={[{ color: '#ffffff' }, styles.textButton]} onPress={onclickup}>Sign up</Text>
+                </Pressable>
+                <Pressable style={[styles.button, { marginBottom: 72 }]}>
+                    <Text style={[{ color: '#FF5E00' }, styles.textButton]} onPress={onclickin}>Sign in</Text>
+                </Pressable>
             </ScrollView>
         </View>
     )
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
         paddingStart: 16,
         paddingEnd: 16
     },
-    img:{
-        height:362,
-        width:330,
-        marginTop:37,
-        marginStart:23,
-        marginEnd:23
+    img: {
+        height: 362,
+        width: 330,
+        marginTop: 37,
+        marginStart: 23,
+        marginEnd: 23
     }
     ,
     title: {

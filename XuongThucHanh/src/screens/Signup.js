@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View, Image, Pressable, TextInput, ScrollView } from 'react-native'
 import React, { useState } from 'react'
+import FastImage from 'react-native-fast-image';
 
 const Signup = (props) => {
     const { navigation } = props;
@@ -14,7 +15,7 @@ const Signup = (props) => {
     }
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+            <TouchableOpacity onPress={back}><FastImage style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -100,6 +101,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 10,
-        marginBottom:40
+        marginBottom: 40
     }
 })

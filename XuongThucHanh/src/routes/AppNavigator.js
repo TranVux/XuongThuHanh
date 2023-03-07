@@ -1,31 +1,27 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Wellcome from '../views/Wellcome';
-import Signup from '../views/Signup';
-import Signcode from '../views/Signcode';
-import Signpass from '../views/Signpass';
-import Login from '../views/Login';
+import BottomNavigator from './BottomNavigator';
+import StackNavigator from './StackNavigator';
+import { useSelector } from 'react-redux';
 
-
-const Main = createNativeStackNavigator();
-const User = ()=>{
-    return (
-        <Main.Navigator initialRouteName='Wellcome' screenOptions={{ headerShown: false }}>
-          <Main.Screen name='Wellcome' component={Wellcome} />
-          <Main.Screen name='Signup' component={Signup} />
-          <Main.Screen name='Signpass' component={Signpass} />
-          <Main.Screen name='Signcode' component={Signcode} />
-          <Main.Screen name='Login' component={Login} />
-        </Main.Navigator>
-      )
-}
+const MainStack = createNativeStackNavigator();
 
 const AppNavigator = () => {
+
+    const isLogin = useSelector(state => state.isLogin);
+
     return (
-            <>
-            <User></User>
-            </>
+        <NavigationContainer>
+            <MainStack.Navigator screenOptions={{ headerShown: false, contentStyle: { backgroundColor: "#fff" } }}>
+                {
+                    isLogin ?
+                        <MainStack.Screen component={BottomNavigator} name='BottomNavigator' />
+                        :
+                        <MainStack.Screen component={StackNavigator} name='StackNavigator' />
+                }
+            </MainStack.Navigator>
+        </NavigationContainer>
     )
 }
 

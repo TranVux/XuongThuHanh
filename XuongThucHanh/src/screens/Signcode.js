@@ -1,5 +1,6 @@
-import { Image, Pressable, ScrollView, StyleSheet, Text, TouchableOpacity, View ,TextInput} from 'react-native'
+import { Image, Pressable, ScrollView, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image';
 
 const Signcode = (props) => {
     const { navigation } = props;
@@ -11,7 +12,7 @@ const Signcode = (props) => {
     }
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={back}><Image style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+            <TouchableOpacity onPress={back}><FastImage style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -44,9 +45,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF',
-        paddingStart: 16,
-        paddingEnd: 16,
-
+        paddingHorizontal: 16,
     },
     img: {
         height: 270
@@ -87,25 +86,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 72,
-        marginBottom:72
+        marginBottom: 72
     },
     titlecontent: {
         color: '#7F4E1D',
         fontSize: 20,
         lineHeight: 24,
         fontWeight: 'bold',
-        marginTop: 33
     },
-    viewcode:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center'
+    viewcode: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
-    textinput:{
-        borderBottomWidth:3,
-        borderColor:'#7F4E1D',
-        width:50,
-        textAlign:'center',
-        fontSize:16
+    textinput: {
+        borderBottomWidth: 3,
+        borderColor: '#7F4E1D',
+        width: 50,
+        textAlign: 'center',
+        fontSize: 16
     }
 })
