@@ -1,20 +1,26 @@
 import React from 'react'
-import { View } from 'react-native'
-import { AppContextProvider } from './src/utils/AppContext'
-import Account from './src/views/Account'
-import FavouriteEmpty from './src/views/FavouriteEmpty'
-import Login from './src/views/Login'
-import Mango from './src/views/Mango'
-import Favourite from './src/views/Favourite'
+import { StatusBar } from 'react-native'
+import AppNavigator from './src/routes/AppNavigator'
+import { Provider } from 'react-redux'
+import store from './src/redux/store'
 
+import { enableFreeze } from 'react-native-screens';
+enableFreeze(true);
 
 const App = () => {
   return (
+<<<<<<< HEAD
     <View>
       {/* <Mango /> */}
       <Favourite />
 
     </View>
+=======
+    <Provider store={store}>
+      <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
+      <AppNavigator />
+    </Provider>
+>>>>>>> TranVux
   )
 }
 

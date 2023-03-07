@@ -1,8 +1,12 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
+<<<<<<< HEAD:XuongThucHanh/src/views/ItemCart.js
 
 
+=======
+import FastImage from 'react-native-fast-image';
+>>>>>>> TranVux:XuongThucHanh/src/components/ItemCart.js
 const ItemCart = (props) => {
     const { data } = props;
 
@@ -23,13 +27,24 @@ const ItemCart = (props) => {
         <View style={styles.container}>
             {/* Item 1 */}
             <View style={[styles.header]}>
+<<<<<<< HEAD:XuongThucHanh/src/views/ItemCart.js
                 <Image style={[styles.image]} resizeMode='cover' source={{ uri: data.item.image }} />
+=======
+                <FastImage
+                    style={[styles.image]}
+                    resizeMode={FastImage.resizeMode.cover}
+                    source={{
+                        uri: data.image,
+                        priority: FastImage.priority.normal,
+                    }}
+                />
+>>>>>>> TranVux:XuongThucHanh/src/components/ItemCart.js
                 <View style={{ marginStart: 20, flexDirection: 'column', justifyContent: 'space-around' }}>
                     <Text style={styles.name}>{data.name}</Text>
                     <View style={styles.groupButton}>
                         <View style={[styles.button]}>
                             <Icon onPress={clickCong} name="plus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
-                            <Text style={[styles.price]}>{count}</Text>
+                            <Text style={[styles.price,]}>{count}</Text>
                             <Icon onPress={clickTru} name="minus" size={10} color="#6D3805" style={[styles.price, styles.add]} />
                         </View>
                         <Text style={[styles.price, { marginStart: 50 }]}>${data.price} kg</Text>
@@ -83,6 +98,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderRadius: 12.5,
 
+
     },
     image: {
         width: 75,
@@ -102,10 +118,14 @@ const styles = StyleSheet.create({
         height: 29.65,
         backgroundColor: '#F4F4F4',
         flexDirection: 'row',
+<<<<<<< HEAD:XuongThucHanh/src/views/ItemCart.js
         justifyContent: 'space-between',
         alignItems: 'center',
         borderRadius: 30,
         marginStart: 20
+=======
+        justifyContent: 'space-between', alignItems: 'center', borderRadius: 30, marginStart: 20
+>>>>>>> TranVux:XuongThucHanh/src/components/ItemCart.js
     },
     buttonCheck: {
         position: 'absolute',
@@ -124,5 +144,9 @@ const styles = StyleSheet.create({
         lineHeight: 21.6,
         color: 'white'
     }
+<<<<<<< HEAD:XuongThucHanh/src/views/ItemCart.js
 });
 
+=======
+})
+>>>>>>> TranVux:XuongThucHanh/src/components/ItemCart.js

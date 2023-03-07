@@ -1,3 +1,4 @@
+<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
 // import { StyleSheet, Text, View, Image, Pressable, FlatList, TouchableOpacity, Alert } from 'react-native'
 // import React from 'react'
 // import Icon from 'react-native-vector-icons/FontAwesome';
@@ -236,6 +237,12 @@
 import { StyleSheet, View, Image, Text, TouchableOpacity, TouchableHighlight } from 'react-native';
 // import FastImage from 'react-native-fast-image'
 import React, { useState } from 'react';
+=======
+import { StyleSheet, Text, View, Image, Pressable, FlatList, TouchableOpacity, Alert } from 'react-native'
+import React from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import ItemCartFavorite from '../components/ItemCartFavorite';
+>>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
 import { SwipeListView } from 'react-native-swipe-list-view';
 
 const Favorite = () => {
@@ -251,6 +258,7 @@ const Favorite = () => {
         }
     };
 
+<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
     const deleteRow = (rowMap, rowKey) => {
         const newData = [...listData];
         const prevIndex = listData.findIndex(item => item.id === rowKey);
@@ -293,6 +301,9 @@ const Favorite = () => {
             </TouchableOpacity>
         </View>
     );
+=======
+const Favourite = () => {
+>>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
     return (
         <View style={styles.container}>
             <View style={styles.viewIconTitle}>
@@ -301,17 +312,46 @@ const Favorite = () => {
             </View>
 
             <SwipeListView
+<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
                 data={listData}
                 renderItem={renderItem}
                 renderHiddenItem={renderHiddenItem}
                 rightOpenValue={-72}
                 disableRightSwipe={true}
+=======
+                data={DATA}
+                renderItem={({ item }) => <ItemCartFavorite data={item} />}
+                keyExtractor={item => item.id}
+                renderHiddenItem={(data, index) => (
+                    <View style={styles.item}>
+                        <View style={[styles.item, { width: 75, height: 100, backgroundColor: '#A42B32', justifyContent: 'center' }]}>
+                            <TouchableOpacity onPress={() => {
+                                Alert.alert('Delete', "Bạn có muốn xóa không?");
+                            }}>
+                                <Icon name="trash" size={35} color="#ffffff" style={{ flexDirection: 'row', justifyContent: 'flex-end' }} />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                )}
+                rightOpenValue={-75}
+>>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
             />
         </View>
     );
 };
 
+<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
 export default Favorite;
+=======
+
+
+    )
+}
+
+export default Favourite
+
+>>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
 const styles = StyleSheet.create({
     container: {
         marginBottom: 150,
@@ -381,6 +421,85 @@ const styles = StyleSheet.create({
     item: {
         flexDirection: 'row',
         alignItems: 'center',
+<<<<<<< HEAD:XuongThucHanh/src/views/Favourite.js
+=======
+    },
+    // title: {
+    //     fontSize: 32,
+    // },
+    groupButton: {
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    container: {
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+        paddingTop: 30,
+    },
+    icon: {
+        width: 8.49,
+        height: 14,
+        marginStart: 16,
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: '700',
+        lineHeight: 28.8,
+        color: '#FF5E00',
+        textAlign: 'center'
+    },
+    name: {
+        fontSize: 18,
+        fontWeight: '700',
+        lineHeight: 21.6,
+        color: '#6D3805',
+    },
+    price: {
+        fontSize: 18,
+        color: '#6D3805',
+        textAlign: 'center',
+        lineHeight: 25
+    },
+    add: {
+        width: 25,
+        height: 25,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 12.5,
+
+    },
+    image: {
+        width: 75,
+        height: 56,
+    },
+    header: {
+        flexDirection: 'row',
+        paddingVertical: 15,
+        width: '100%',
+        height: 83.65,
+        borderBottomWidth: 1,
+        borderColor: '#6D380517',
+        paddingHorizontal: 20
+
+    },
+    button: {
+        width: 98,
+        height: 29.65,
+        backgroundColor: '#F4F4F4',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderRadius: 30,
+        marginStart: 20
+    },
+    buttonCheck: {
+        position: 'absolute',
+        left: 16,
+        right: 16,
+        bottom: 20,
+        height: 50,
+        backgroundColor: '#FF5E00',
+>>>>>>> TranVux:XuongThucHanh/src/screens/Favourite.js
         justifyContent: 'center',
     },
     addCart: {

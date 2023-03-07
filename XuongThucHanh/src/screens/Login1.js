@@ -1,18 +1,19 @@
 import { StyleSheet, Text, View, Image, Button, Pressable, TextInput } from 'react-native'
 import React from 'react'
+import FastImage from 'react-native-fast-image'
 
-const Login = () => {
+const Login1 = () => {
 	return (
 		<View style={styles.container}>
-			<Image style={styles.back} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/back.png')} />
+			<Image style={styles.back} source={require('../../assets/images/back.png')} />
 			<Text style={styles.sign}>Sign In</Text>
-			<Image style={styles.login} source={require('/Documents/XuongThucHanh/Git/XuongThucHanh/XuongThucHanh/assets/img/login.png')} />
+			<Image style={styles.login} source={require('../../assets/images/login.png')} />
 			<Text style={styles.guide}>Enter your phone number and {'\n'}password to access your account</Text>
 		</View>
 	)
 }
 
-export default Login
+export default Login1
 
 const styles = StyleSheet.create({
 	container: {
