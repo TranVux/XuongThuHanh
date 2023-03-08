@@ -1,6 +1,5 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Account from '../Account';
 import Profile from '../Profile';
 import EditProfile from '../EditProfile';
@@ -12,25 +11,42 @@ import NewAddress from '../NewAddress';
 import Address from '../Address';
 import EditAddress from '../EditAddress';
 import PaymentScreen from '../PaymentScreen';
+import ItemScreen from '../ItemScreen';
 
 const AccountNavigatorStack = createNativeStackNavigator();
 
 const AccountNavigatorScreen = () => {
-    return (
-        <AccountNavigatorStack.Navigator screenOptions={{ headerShown: false }}>
-            <AccountNavigatorStack.Screen component={Account} name="AccountScreen" />
-            <AccountNavigatorStack.Screen component={Profile} name="ProfileScreen" />
-            <AccountNavigatorStack.Screen component={EditProfile} name="EditProfileScreen" />
-            <AccountNavigatorStack.Screen component={Orders} name="OrdersScreen" />
-            <AccountNavigatorStack.Screen component={ChangePass} name="ChangePassScreen" />
-            <AccountNavigatorStack.Screen component={MyCard} name="MyCardScreen" />
-            <AccountNavigatorStack.Screen component={NewCard} name="NewCardScreen" />
-            <AccountNavigatorStack.Screen component={NewAddress} name="NewAddressScreen" />
-            <AccountNavigatorStack.Screen component={Address} name="AddressScreen" />
-            <AccountNavigatorStack.Screen component={EditAddress} name="EditAddressScreen" />
-            <AccountNavigatorStack.Screen component={PaymentScreen} name="PaymentScreen" />
-        </AccountNavigatorStack.Navigator>
-    )
-}
+  return (
+    <AccountNavigatorStack.Navigator screenOptions={{headerShown: false}}>
+      <AccountNavigatorStack.Screen component={Account} name="AccountScreen" />
+      <AccountNavigatorStack.Screen component={Profile} name="ProfileScreen" />
+      <AccountNavigatorStack.Screen
+        component={EditProfile}
+        name="EditProfileScreen"
+      />
+      <AccountNavigatorStack.Screen component={Orders} name="OrdersScreen" />
+      <AccountNavigatorStack.Screen
+        component={ChangePass}
+        name="ChangePassScreen"
+      />
+      <AccountNavigatorStack.Screen component={MyCard} name="MyCardScreen" />
+      <AccountNavigatorStack.Screen component={NewCard} name="NewCardScreen" />
+      <AccountNavigatorStack.Screen
+        component={NewAddress}
+        name="NewAddressScreen"
+      />
+      <AccountNavigatorStack.Screen component={Address} name="AddressScreen" />
+      <AccountNavigatorStack.Screen
+        component={EditAddress}
+        name="EditAddressScreen"
+      />
+      <AccountNavigatorStack.Screen
+        component={PaymentScreen}
+        name="PaymentScreen"
+      />
+      <AccountNavigatorStack.Screen component={ItemScreen} name="ItemScreen" />
+    </AccountNavigatorStack.Navigator>
+  );
+};
 
-export default AccountNavigatorScreen
+export default AccountNavigatorScreen;
