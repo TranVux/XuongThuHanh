@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import { SelectCountry } from 'react-native-element-dropdown';
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import FastImage from 'react-native-fast-image';
 
-const EditProfile = () => {
+const EditProfile = (props) => {
+  const {navigation} = props;
   const [country, setCountry] = useState('1');
   return (
     <View style={styles.editprofile}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('ProfileScreen')}>
         <Image style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')} />
       </TouchableOpacity>
       <View style={styles.title}>
@@ -33,7 +34,7 @@ const EditProfile = () => {
         />
         <TextInput style={styles.phone} placeholder='000999'></TextInput>
       </View>
-      <TouchableOpacity style={styles.button_update}>
+      <TouchableOpacity onPress={() => navigation.navigate('ProfileScreen')} style={styles.button_update}>
         <Text style={styles.button_update_text}>Update Profile</Text>
       </TouchableOpacity>
     </View>

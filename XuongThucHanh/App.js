@@ -1,25 +1,30 @@
-import React from 'react'
-import { StatusBar } from 'react-native'
-import AppNavigator from './src/routes/AppNavigator'
-import { Provider } from 'react-redux'
-import store from './src/redux/store'
+import React from 'react';
+import {StatusBar} from 'react-native';
+import AppNavigator from './src/routes/AppNavigator';
+import {Provider} from 'react-redux';
+import store from './src/redux/store';
 
-import { enableFreeze } from 'react-native-screens';
+import {enableFreeze} from 'react-native-screens';
+import {
+  CartScreen,
+  OrderFailedScreen,
+  OrderSuccessfullScreen,
+  Wellcome,
+} from './src/screens';
 enableFreeze(true);
 
 const App = () => {
   return (
-<<<<<<< Updated upstream
+
     <Provider store={store}>
-      <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
+      <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
       <AppNavigator />
     </Provider>
-=======
-    <View>
-      <ToggleButton />
-    </View>
->>>>>>> Stashed changes
+
+    
   )
 }
 
-export default App
+   
+
+export default App;

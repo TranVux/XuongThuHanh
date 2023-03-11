@@ -1,13 +1,18 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import React, { useContext } from 'react'
 import FastImage from 'react-native-fast-image'
 
-const Address = () => {
+const Address = (props) => {
+    const { navigation } = props;
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image style={styles.imgBack} source={require('../../assets/images/back.png')} />
-                <Image style={styles.imgAdd} source={require('../../assets/images/add.png')} />
+                <TouchableOpacity onPress={() => {navigation.navigate('AccountScreen')}}>
+                    <Image style={styles.imgBack} source={require('../../assets/images/back.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => {navigation.navigate('NewAddressScreen')}}>
+                    <Image style={styles.imgAdd} source={require('../../assets/images/add.png')} />
+                </TouchableOpacity>
             </View>
             <Text style={styles.title}>Address</Text>
             <View style={styles.social}>

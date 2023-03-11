@@ -1,5 +1,5 @@
 import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import IconIonicons from 'react-native-vector-icons/Ionicons'
 import { Colors } from '../../assets/Colors';
@@ -15,7 +15,9 @@ import { ShopList } from '../constants/DATA'
 import { TimeValue } from '../constants/TimeChoiceValue'
 import FastImage from 'react-native-fast-image';
 
-const PaymentScreen = () => {
+const PaymentScreen = (props) => {
+
+    const {navigation} = props;
 
     const [collapsed, setCollapsed] = useState(true);
     const [datePicked, setDatePicked] = useState("Select Date");
@@ -40,7 +42,7 @@ const PaymentScreen = () => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
             <View style={styles.header}>
-                <Pressable>
+                <Pressable onPress={() => {navigation.navigate('AccountScreen')}}>
                     <IconIonicons name='chevron-back' color={Colors.primaryColor} size={25} />
                 </Pressable>
                 <Text style={styles.textHeader}>Payment</Text>
@@ -222,7 +224,7 @@ const PaymentScreen = () => {
                     {/* end Order Sammery */}
                 </View>
                 {/*  */}
-                <Pressable style={styles.buttonCheckout}>
+                <Pressable  style={styles.buttonCheckout}>
                     <Text style={{ color: "#fff", fontSize: 18, fontWeight: "700" }}>Checkout $146.50</Text>
                 </Pressable>
             </ScrollView>

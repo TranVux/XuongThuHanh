@@ -7,7 +7,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import {Colors} from '../../assets/Colors';
 import CategoryItem from '../components/Products/CategoryItem';
 import Spacing from '../components/Spacing';
@@ -15,9 +15,10 @@ import ProductItem from '../components/Products/ProductItem';
 import {IconLocation, IconSearch} from '../../assets/images/svg';
 import {useSelector} from 'react-redux';
 
-const ShopScreen = () => {
+const ShopScreen = (props) => {
   const products = useSelector(state => state.products);
   const categories = useSelector(state => state.categories);
+  const {navigation} = props;
 
   const handleGetIdCategory = item => item._id;
 
@@ -51,7 +52,7 @@ const ShopScreen = () => {
       <View style={styles.categoryContainer}>
         <View style={styles.categoryHeader}>
           <Text style={styles.textCategory}>Categories</Text>
-          <Pressable>
+          <Pressable >
             <Text style={styles.textButtonSeeAll}>See All</Text>
           </Pressable>
         </View>

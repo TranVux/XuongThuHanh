@@ -1,8 +1,14 @@
-import { StyleSheet, Text, View, Image, Pressable, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import { StyleSheet, Text, View, Image, Pressable, ScrollView, FlatList } from 'react-native'
+import React, { useState, useContext } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Colors } from '../../assets/Colors';
 import FastImage from 'react-native-fast-image';
+
+import CategoryItem from '../components/Products/CategoryItem';
+import Spacing from '../components/Spacing';
+import ProductItem from '../components/Products/ProductItem';
+import {IconLocation, IconSearch} from '../../assets/images/svg';
+import {useSelector} from 'react-redux';
 
 // import CounterInput from "react-native-counter-input";
 // import RNBounceable from '@freakycoder/react-native-bounceable';
@@ -37,6 +43,23 @@ const DATA = [
 
 const Mango = (props) => {
 
+    const products = useSelector(state => state.products);
+  const categories = useSelector(state => state.categories);
+
+  const handleGetIdCategory = item => item._id;
+
+  const handleRenderItemCategory = ({item}) => (
+    <CategoryItem style={{width: 100, height: 134, margin: 0}} data={item} />
+  );
+
+  const handleRenderItemProd = ({item}) => {
+    if (item.type) {
+      return <></>;
+    }
+    return <ProductItem style={{width: 150}} type="product" data={item} />;
+  };
+  const handleGetIdProd = item => item.name;
+
     const { data, navigation } = props;
 
     const [count, setCount] = useState(1);
@@ -51,6 +74,8 @@ const Mango = (props) => {
             setCount(count - 1);
         }
     }
+
+
 
     return (
         // <SafeAreaView>
@@ -90,7 +115,7 @@ const Mango = (props) => {
                         <Text style={[styles.price]}>{count}</Text>
                         <Icon onPress={clickCong} name="plus" size={30} color="#6D3805" style={[styles.price, styles.add]} />
                     </View>
-                    <FastImage style={styles.fav} source={require('../../assets/images/fav.png')} />
+                    <Image style={styles.fav} source={require('../../assets/images/fav.png')} />
                 </View>
 
                 <Pressable style={styles.addTo}>
@@ -98,6 +123,16 @@ const Mango = (props) => {
                 </Pressable>
                 <View style={{ width: "100%", height: 1, backgroundColor: "#6D38052B", marginVertical: 20 }} />
                 <Text style={styles.ad}>You may also need</Text>
+
+                <View style={{marginTop: 16}}>
+                    <FlatList
+                        showsHorizontalScrollIndicator={false}
+                        data={products}
+                        renderItem={handleRenderItemProd}
+                        horizontal={true}
+                        keyExtractor={handleGetIdProd}
+                    />
+                </View>
                 {/* test scroll */}
                 {/* <Text style={styles.test}>“Trước khi khởi hành hôm nay, phi hành đoàn xác nhận tôi đã đặt suất ăn VGML (đồ ăn chay) và bữa sáng của tôi là một quả chuối. Tuy nhiên, tôi lại nghĩ ý cô ấy là bữa sáng bao gồm quả chuối”, một tài khoản có tên Kris_Chari viết trên diễn đàn hàng không FlyerTalk hôm 21/2.
                     “Khi cô ấy mang quả chuối đến sau khi máy bay cất cánh, tôi nghĩ đó chỉ là một món khai vị không mấy ấn tượng. Dù vậy, thực tế đây là toàn bộ bữa ăn”, Kris_Chari viết thêm. “Quả chuối này thực sự ngon - một trong những quả ngon nhất tôi đã ăn gần đây - nhưng nó làm đồ ăn vặt thì có lẽ phù hợp hơn”.

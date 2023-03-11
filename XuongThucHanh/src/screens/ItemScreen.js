@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity, Alert } from 'react-native'
+import React, { useContext } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ItemCart from '../components/ItemCart';
 import { SwipeListView } from 'react-native-swipe-list-view';
@@ -33,10 +33,13 @@ const DATA = [
 
 ];
 
-const ItemScreen = () => {
+const ItemScreen = (props) => {
+    const { navigation } = props;
     return (
         <View style={styles.container}>
-            <Icon name="chevron-left" size={20} color="#FF7300" style={{ paddingLeft: 20 }} />
+            <TouchableOpacity onPress={() => {navigation.navigate('PaymentScreen')}}>
+                <Icon name="chevron-left" size={20} color="#FF7300" style={{ paddingLeft: 20 }} />
+            </TouchableOpacity>
             <Text style={styles.title}>Itemes</Text>
 
             {/* <FlatList
@@ -64,9 +67,7 @@ const ItemScreen = () => {
 
                 rightOpenValue={-75}
             />
-            <Pressable style={styles.buttonCheck}>
-                <Text style={styles.textCheck}>CheckOut</Text>
-            </Pressable>
+
         </View>
     )
 }

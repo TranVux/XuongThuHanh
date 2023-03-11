@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
 import FastImage from 'react-native-fast-image';
 
-const MyCard = () => {
+const MyCard = (props) => {
+    const { navigation } = props;
 
     const dem = (Object.keys(DATA).length)
     const [selectedId, setSelectedId] = useState();
@@ -17,15 +18,15 @@ const MyCard = () => {
                 // leftOpenValue={20 + Math.random() * 150}
                 rightOpenValue={-70}>
                 <View style={styles.delete}>
-                    <FastImage source={require('../../../assets/images/trash.png')} />
+                    <Image source={require('../../../assets/images/trash.png')} />
                 </View>
                 <View style={styles.containerItem}>
-                    <FastImage source={require('../../../assets/images/card.png')} />
+                    <Image source={require('../../../assets/images/card.png')} />
                     <View style={{ marginLeft: 8 }}>
                         <Text style={styles.titleItem}>{item.title}</Text>
                         <Text style={styles.contentItem}>{item.stk}</Text>
                     </View>
-                    <FastImage style={{ position: 'absolute', right: 0 }} source={require('../../../assets/images/righArrow.png')} />
+                    <Image style={{ position: 'absolute', right: 0 }} source={require('../../../assets/images/righArrow.png')} />
                 </View>
             </SwipeRow>
         );
@@ -34,7 +35,7 @@ const MyCard = () => {
     const noSaveCard = () => {
         return (
             <View style={{ alignItems: 'center', width: '100%' }} >
-                <FastImage source={require('../../../assets/images/noSaveCard.png')} />
+                <Image source={require('../../../assets/images/noSaveCard.png')} />
                 <Text style={styles.textNoSave}>No Saved Card</Text>
                 <Text style={[styles.textNoSave, { fontSize: 16, textAlign: 'center', paddingHorizontal: 61 }]}>You can save your card info to make purchase easier, faster.</Text>
             </View>
@@ -44,8 +45,12 @@ const MyCard = () => {
     return (
         <View style={styles.container}>
             <View style={styles.topIcon}>
-                <FastImage source={require('../../../assets/images/Arrow.png')} />
-                <FastImage source={require('../../../assets/images/add.png')} />
+                <TouchableOpacity onPress={() => {navigation.navigate('ProfileScreen')}}>
+                    <Image source={require('../../../assets/images/Arrow.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => {navigation.navigate('NewCardScreen')}}>
+                    <Image source={require('../../../assets/images/add.png')} />
+                </TouchableOpacity>
             </View>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={styles.Title}>My card</Text>

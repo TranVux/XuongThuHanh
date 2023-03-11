@@ -30,7 +30,7 @@ export const DATA = [
         name: "Sea food"
     },
     {
-        _id: 5,
+        _id: 6,
         color: "#FFD9BA",
         image: "https://firebasestorage.googleapis.com/v0/b/project1-group3-52e2e.appspot.com/o/Images%2Fxuongth%2Fnoun_pumpkin_4002936%201.png?alt=media&token=673a4cbb-e3c6-48e9-b3fc-821e67eac6cb",
         name: "Vegestables"

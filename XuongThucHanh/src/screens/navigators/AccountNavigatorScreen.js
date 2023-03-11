@@ -12,6 +12,9 @@ import NewAddress from '../NewAddress';
 import Address from '../Address';
 import EditAddress from '../EditAddress';
 import PaymentScreen from '../PaymentScreen';
+import Wellcome from '../Wellcome';
+import OnGoing from '../OnGoing';
+import OnGoings from '../OnGoings';
 
 const AccountNavigatorStack = createNativeStackNavigator();
 
@@ -29,6 +32,8 @@ const AccountNavigatorScreen = () => {
             <AccountNavigatorStack.Screen component={Address} name="AddressScreen" />
             <AccountNavigatorStack.Screen component={EditAddress} name="EditAddressScreen" />
             <AccountNavigatorStack.Screen component={PaymentScreen} name="PaymentScreen" />
+            <AccountNavigatorStack.Screen component={Wellcome} name="Wellcome" />
+            <AccountNavigatorStack.Screen component={OnGoings} name="OnGoings" />
         </AccountNavigatorStack.Navigator>
     )
 }

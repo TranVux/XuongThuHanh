@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
+import React, {useContext} from 'react'
 import FastImage from 'react-native-fast-image';
 
-const NewCard = () => {
+const NewCard = (props) => {
+    const {navigation} = props;
 
     const [number, onChangeNumber] = React.useState('');
     const [date, onDate] = React.useState('');
@@ -47,10 +48,10 @@ const NewCard = () => {
                 />
             </View>
             <View style={styles.viewButton}>
-                <TouchableOpacity
+                <TouchableOpacity onPress={() => {navigation.navigate('MyCardScreen')}}
                     style={styles.button}
                 >
-                    <Text>Add Card</Text>
+                    <Text style={styles.textButton}>Add Card</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -60,6 +61,12 @@ const NewCard = () => {
 export default NewCard
 
 const styles = StyleSheet.create({
+    textButton: {
+        fontSize: 18,
+        fontWeight: '700',
+        lineHeight: 21.6,
+        color:'#ffffff'
+    },
     container: {
         flex: 1,
         padding: 20,

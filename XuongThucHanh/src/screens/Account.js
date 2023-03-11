@@ -17,7 +17,7 @@ const Account = ({ navigation }) => {
                 <Text style={styles.txtprofile}>Profile</Text>
             </Pressable>
 
-            <Pressable style={styles.order} onPress={() => { navigation.navigate("OrdersScreen") }}>
+            <Pressable style={styles.order} onPress={() => { navigation.navigate("OnGoings") }}>
                 <Image style={styles.img} source={require('../../assets/images/orders.png')} />
                 <Text style={styles.txtorder}>Orders</Text>
             </Pressable>

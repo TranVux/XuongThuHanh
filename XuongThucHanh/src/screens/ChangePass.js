@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
-const ChangePass = () => {
+const ChangePass = (props) => {
+  const {navigation} = props;
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   }
   return (
     <View style={styles.changepass}>
-      <TouchableOpacity><Image style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')} /></TouchableOpacity>
+      <TouchableOpacity onPress={() => {navigation.navigate('ProfileScreen')}}><Image style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')} /></TouchableOpacity>
       <View style={styles.title}>
         <Text style={styles.title_text}>Change Password</Text>
       </View>
@@ -47,7 +48,7 @@ const ChangePass = () => {
           <Text style={styles.toggleButtonText}>{showPassword ? <Image style={styles.eye} source={require('../../assets/images/show.png')} /> : <Image style={styles.eye} source={require('../../assets/images/hide.png')} />}</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.button_confirm}>
+      <TouchableOpacity onPress={() => {navigation.navigate('ProfileScreen')}} style={styles.button_confirm}>
         <Text style={styles.button_confirm_text}>Confirm</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button_backSign}>

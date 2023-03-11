@@ -6,7 +6,7 @@ const OnGoing = () => {
     <View style={styles.container}>
       <View style={styles.time}>
         <View style={styles.timeLeft}>
-          <FastImage style={styles.imgCalender}
+          <Image style={styles.imgCalender}
             source={require('../../assets/images/calender.png')} />
           <Text style={styles.TextCalender}>March 5, 2019</Text>
         </View>
@@ -14,28 +14,28 @@ const OnGoing = () => {
       </View>
       <View style={styles.delivery}>
         <View style={styles.deliveryTime}>
-          <FastImage style={styles.imgCheck}
+          <Image style={styles.imgCheck}
             source={require('../../assets/images/icCheck_active.png')} />
           <View style={styles.lineCheck}></View>
-          <FastImage style={styles.imgCheck}
+          <Image style={styles.imgCheck}
             source={require('../../assets/images/icCheck_active.png')} />
           <View style={styles.lineCheck}></View>
-          <FastImage style={styles.imgCheck}
+          <Image style={styles.imgCheck}
             source={require('../../assets/images/icCheck.png')} />
         </View>
         <View style={styles.deliveryContent}>
           <View style={styles.receive}>
-            <FastImage style={styles.imgReceive}
+            <Image style={styles.imgReceive}
               source={require('../../assets/images/receive.png')} />
             <Text style={styles.TextReceive}>We are packin your items...</Text>
           </View>
           <View style={styles.transport}>
-            <FastImage style={styles.imgTransport}
+            <Image style={styles.imgTransport}
               source={require('../../assets/images/transport.png')} />
             <Text style={styles.TextTransport}>Your order is delivering to your location....</Text>
           </View>
           <View style={styles.ship}>
-            <FastImage style={styles.imgShip}
+            <Image style={styles.imgShip}
               source={require('../../assets/images/ship.png')} />
             <Text style={styles.TextShip}>Your order is received..</Text>
           </View>
