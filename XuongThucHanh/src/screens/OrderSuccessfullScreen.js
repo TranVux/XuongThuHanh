@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
-import React from 'react'
+import React, {useContext} from 'react'
 import FastImage from 'react-native-fast-image'
 
-const OrderSuccessfullScreen = () => {
+const OrderSuccessfullScreen = (props) => {
+    const {navigation} = props;
     return (
         <View style={styles.container}>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -10,10 +11,10 @@ const OrderSuccessfullScreen = () => {
             </View>
             <Text style={styles.title}>Your Order Has Been Accepted</Text>
             <Text style={styles.content}>We’ve accepted your order, and we’re {'\n'}getting it ready.</Text>
-            <Pressable style={styles.buttonTrack}>
+            <Pressable onPress={() => {navigation.navigate('OnGoings')}} style={styles.buttonTrack}>
                 <Text style={styles.textButton}>Track Order</Text>
             </Pressable>
-            <Pressable style={styles.buttonBackHome}>
+            <Pressable onPress={() => {navigation.navigate('BottomNavigator')}}  style={styles.buttonBackHome}>
                 <Text style={[styles.textButton, { color: '#FF5E00' }]}>Back Home</Text>
             </Pressable>
         </View>

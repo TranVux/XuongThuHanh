@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, Pressable, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Colors } from '../../assets/Colors';
 import FastImage from 'react-native-fast-image';

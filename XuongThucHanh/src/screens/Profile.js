@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View, Image, Switch, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import FastImage from 'react-native-fast-image';
 
-const Profile = () => {
+const Profile = (props) => {
+  const { navigation } = props;
   const [isEnabled, setIsEnabled] = useState(false);
   return (
     <View style={styles.profile}>
-      <TouchableOpacity><FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></FastImage></TouchableOpacity>
+      <TouchableOpacity onPress={() => { navigation.navigate('AccountScreen') }}><FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></FastImage></TouchableOpacity>
       <View style={styles.title}>
         <Text style={styles.title_text}>Profile</Text>
       </View>
@@ -14,30 +15,37 @@ const Profile = () => {
       {/* // Account */}
       <View style={styles.account}>
         {/* edit profile */}
-        <View style={styles.account_edit}>
-          <FastImage style={styles.account_img} source={require('../../assets/images/user.png')}></FastImage>
-          <View style={styles.account_title_arrow}>
-            <Text style={styles.account_title}>Edit Profile</Text>
-            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
+        <TouchableOpacity onPress={() => { navigation.navigate('EditProfileScreen') }}>
+          <View style={styles.account_edit}>
+            <FastImage style={styles.account_img} source={require('../../assets/images/user.png')}></FastImage>
+            <View style={styles.account_title_arrow}>
+              <Text style={styles.account_title}>Edit Profile</Text>
+              <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
+
         {/* change pass */}
-        <View style={styles.account_edit}>
-          <FastImage style={styles.account_img} source={require('../../assets/images/key.png')}></FastImage>
-          <View style={styles.account_title_arrow}>
-            <Text style={styles.account_title}>Change Password</Text>
-            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
+        <TouchableOpacity onPress={() => { navigation.navigate('ChangePassScreen') }}>
+          <View style={styles.account_edit}>
+            <FastImage style={styles.account_img} source={require('../../assets/images/key.png')}></FastImage>
+            <View style={styles.account_title_arrow}>
+              <Text style={styles.account_title}>Change Password</Text>
+              <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
 
         {/* my cards */}
-        <View style={[styles.account_edit, { marginBottom: 0 }]}>
-          <FastImage style={styles.account_img} source={require('../../assets/images/cart.png')}></FastImage>
-          <View style={styles.account_title_arrow}>
-            <Text style={styles.account_title}>Edit Profile</Text>
-            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
+        <TouchableOpacity onPress={() => { navigation.navigate('MyCardScreen') }}>
+          <View style={[styles.account_edit, { marginBottom: 0 }]}>
+            <FastImage style={styles.account_img} source={require('../../assets/images/cart.png')}></FastImage>
+            <View style={styles.account_title_arrow}>
+              <Text style={styles.account_title}>My Cards</Text>
+              <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
 
       </View>
 
@@ -46,38 +54,45 @@ const Profile = () => {
         <Text style={styles.settings_text}>App Settings</Text>
 
         {/* Notifications */}
-        <View style={[styles.account_edit]}>
-          <FastImage style={styles.account_img} source={require('../../assets/images/bell.png')}></FastImage>
-          <View style={styles.account_title_arrow}>
-            <Text style={styles.account_title}>Notifications</Text>
-            <View style={styles.togglebutton}>
-              <Switch
-                trackColor={{ false: '#767577', true: '#FF5E00' }}
-                thumbColor={isEnabled ? '#FFFFFF' : '#FFFFFF'}
-                onValueChange={() => setIsEnabled(!isEnabled)}
-                value={isEnabled}
-              />
+        <TouchableOpacity>
+          <View style={[styles.account_edit]}>
+            <FastImage style={styles.account_img} source={require('../../assets/images/bell.png')}></FastImage>
+            <View style={styles.account_title_arrow}>
+              <Text style={styles.account_title}>Notifications</Text>
+              <View style={styles.togglebutton}>
+                <Switch
+                  trackColor={{ false: '#767577', true: '#FF5E00' }}
+                  thumbColor={isEnabled ? '#FFFFFF' : '#FFFFFF'}
+                  onValueChange={() => setIsEnabled(!isEnabled)}
+                  value={isEnabled}
+                />
+              </View>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
 
         {/* language */}
-        <View style={[styles.appsettings, { marginBottom: 33 }]}>
-          <View style={styles.appsettings_left}>
-            <FastImage style={styles.account_img} source={require('../../assets/images/language.png')}></FastImage>
-            <Text style={[styles.account_title, { marginLeft: 15 }]}>Languages</Text>
+        <TouchableOpacity>
+          <View style={[styles.appsettings, { marginBottom: 33 }]}>
+            <View style={styles.appsettings_left}>
+              <FastImage style={styles.account_img} source={require('../../assets/images/language.png')}></FastImage>
+              <Text style={[styles.account_title, { marginLeft: 15 }]}>Languages</Text>
+            </View>
+            <View style={styles.appsettings_right}>
+              <Text style={styles.account_select}>English</Text>
+              <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
+            </View>
           </View>
-          <View style={styles.appsettings_right}>
-            <Text style={styles.account_select}>English</Text>
-            <FastImage style={styles.account_arrow} source={require('../../assets/images/back_arrow.png')}></FastImage>
-          </View>
-        </View>
+        </TouchableOpacity>
 
         {/* logout */}
-        <View style={[styles.account_edit]}>
-          <FastImage style={styles.account_img} source={require('../../assets/images/logout.png')}></FastImage>
-          <Text style={[styles.account_title, { marginLeft: 15 }]}>Logout</Text>
-        </View>
+        <TouchableOpacity>
+          <View style={[styles.account_edit]}>
+            <FastImage style={styles.account_img} source={require('../../assets/images/logout.png')}></FastImage>
+            <Text style={[styles.account_title, { marginLeft: 15 }]}>Logout</Text>
+          </View>
+        </TouchableOpacity>
+
       </View>
     </View>
   )

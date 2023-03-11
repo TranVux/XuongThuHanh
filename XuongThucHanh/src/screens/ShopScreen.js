@@ -15,7 +15,7 @@ import ProductItem from '../components/Products/ProductItem';
 import {IconLocation, IconSearch} from '../../assets/images/svg';
 import {useSelector} from 'react-redux';
 
-const ShopScreen = () => {
+const ShopScreen = (props) => {
   const products = useSelector(state => state.products);
   const categories = useSelector(state => state.categories);
 
