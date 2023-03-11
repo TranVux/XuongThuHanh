@@ -3,7 +3,8 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ExploreCategoryScreen from '../ExploreCategoryScreen';
 import DetailCategoryNavigatorScreen from './DetailCategoryNavigatorScreen';
-import { DetailProductScreen } from '..';
+import { CartScreen, DetailProductScreen } from '..';
+import CartNavigatorScreen from './CartNavigatorScreen';
 
 const ExploreNavigatorStack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ const ExploreNavigatorScreen = () => {
             <ExploreNavigatorStack.Screen component={ExploreCategoryScreen} name="ExploreCategoryScreen" />
             <ExploreNavigatorStack.Screen component={DetailCategoryNavigatorScreen} name="DetailCategoryNavigatorScreen" />
             <ExploreNavigatorStack.Screen component={DetailProductScreen} name="DetailProductScreen" />
+            <ExploreNavigatorStack.Screen component={CartScreen} name="CartScreen" />
         </ExploreNavigatorStack.Navigator>
     )
 }

@@ -1,3 +1,8 @@
+import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import React, { useState, useContext } from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import IconIonicons from 'react-native-vector-icons/Ionicons'
+import { Colors } from '../../assets/Colors';
 import {
   Image,
   Pressable,
@@ -23,12 +28,15 @@ import {ShopList} from '../constants/DATA';
 import {TimeValue} from '../constants/TimeChoiceValue';
 import FastImage from 'react-native-fast-image';
 
-const PaymentScreen = ({navigation}) => {
-  const [collapsed, setCollapsed] = useState(true);
-  const [datePicked, setDatePicked] = useState('Select Date');
-  const [timePicked, setTimePicked] = useState('');
-  const [dialogIsVisible, setDialogIsVisible] = useState(false);
-  const [currentChipSelected, setCurrentChipSelected] = useState(-1);
+const PaymentScreen = (props) => {
+
+    const {navigation} = props;
+
+    const [collapsed, setCollapsed] = useState(true);
+    const [datePicked, setDatePicked] = useState("Select Date");
+    const [timePicked, setTimePicked] = useState("");
+    const [dialogIsVisible, setDialogIsVisible] = useState(false);
+    const [currentChipSellected, setCurrentChipSellected] = useState(-1);
 
   const handleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -357,75 +365,41 @@ const PaymentScreen = ({navigation}) => {
             </View>
             {/* end Payment Method */}
 
-            {/* Order Sammery */}
-            <View style={[styles.radiusContainer, {padding: 0}]}>
-              <View style={{padding: 20, paddingBottom: 0}}>
-                <Text style={styles.radiusContainerTitleText}>
-                  Order Sammery
-                </Text>
-                <View style={[{justifyContent: 'space-between'}]}>
-                  <View style={styles.subItem}>
-                    <Text style={styles.textMamery}>Subtotal</Text>
-                    <Text style={styles.textMamery}>$137.00</Text>
-                  </View>
-                  <View style={styles.subItem}>
-                    <Text style={styles.textMamery}>Tax</Text>
-                    <Text style={styles.textMamery}>$4.50</Text>
-                  </View>
-                  <View style={styles.subItem}>
-                    <Text style={styles.textMamery}>Delivery Price</Text>
-                    <Text style={styles.textMamery}>$5.00</Text>
-                  </View>
+                    {/* Order Sammery */}
+                    <View style={[styles.radiusContainer, { padding: 0 }]}>
+                        <View style={{ padding: 20, paddingBottom: 0 }}>
+                            <Text style={styles.radiusContainerTitleText}>Order Sammery</Text>
+                            <View style={[{ justifyContent: "space-between", }]}>
+                                <View style={styles.subItem}>
+                                    <Text style={styles.textMamery}>Subtotal</Text>
+                                    <Text style={styles.textMamery}>$137.00</Text>
+                                </View>
+                                <View style={styles.subItem}>
+                                    <Text style={styles.textMamery}>Tax</Text>
+                                    <Text style={styles.textMamery}>$4.50</Text>
+                                </View>
+                                <View style={styles.subItem}>
+                                    <Text style={styles.textMamery}>Delivery Price</Text>
+                                    <Text style={styles.textMamery}>$5.00</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={{ width: "100%", height: 2, backgroundColor: Colors.shopBorderColor }} />
+                        <View style={{ paddingHorizontal: 20, marginTop: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                            <Text style={[styles.radiusContainerTitleText,]}>Total:</Text>
+                            <Text style={[styles.radiusContainerTitleText,]}>$146.50</Text>
+                        </View>
+                    </View>
+                    {/* end Order Sammery */}
                 </View>
-              </View>
-              <View
-                style={{
-                  width: '100%',
-                  height: 2,
-                  backgroundColor: Colors.shopBorderColor,
-                }}
-              />
-              <View
-                style={{
-                  paddingHorizontal: 20,
-                  marginTop: 10,
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}>
-                <Text style={[styles.radiusContainerTitleText]}>Total:</Text>
-                <Text style={[styles.radiusContainerTitleText]}>$146.50</Text>
-              </View>
-            </View>
-            {/* end Order Sammery */}
-          </View>
-          {/*  */}
-          <Pressable style={styles.buttonCheckout}>
-            <Text style={{color: '#fff', fontSize: 18, fontWeight: '700'}}>
-              Checkout $146.50
-            </Text>
-          </Pressable>
-        </ScrollView>
-      </View>
-      {dialogIsVisible && (
-        <Pressable
-          style={styles.viewOverLayDatePicker}
-          onPress={() => {
-            setDialogIsVisible(false);
-          }}>
-          <DatePicker
-            style={styles.datePicker}
-            onSelectedChange={handleSelectDate}
-            mode="calendar"
-            options={{
-              mainColor: Colors.primaryColor,
-            }}
-          />
-        </Pressable>
-      )}
-    </SafeAreaView>
-  );
-};
+                {/*  */}
+                <Pressable style={styles.buttonCheckout}>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "700" }}>Checkout $146.50</Text>
+                </Pressable>
+            </ScrollView>
+        </SafeAreaView >
+    )
+}
 
 export default PaymentScreen;
 

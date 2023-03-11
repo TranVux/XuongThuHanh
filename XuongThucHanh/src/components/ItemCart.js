@@ -17,6 +17,7 @@ const ItemCart = (props) => {
             setCount(count - 1);
         }
     }
+    
 
     return (
         <View style={styles.container}>

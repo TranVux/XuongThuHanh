@@ -9,7 +9,8 @@ import {
 import React, {useState} from 'react';
 import FastImage from 'react-native-fast-image';
 
-const Profile = () => {
+const Profile = props => {
+  const {navigation} = props;
   const [isEnabled, setIsEnabled] = useState(false);
   return (
     <View style={styles.profile}>

@@ -5,14 +5,21 @@ import {Provider} from 'react-redux';
 import store from './src/redux/store';
 
 import {enableFreeze} from 'react-native-screens';
+import {
+  CartScreen,
+  OrderFailedScreen,
+  OrderSuccessfullScreen,
+  Wellcome,
+} from './src/screens';
 enableFreeze(true);
 
 const App = () => {
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
+      <StatusBar backgroundColor={'#ccc'} barStyle={'dark-content'} />
       <AppNavigator />
     </Provider>
+    // <CartScreen/>
   );
 };
 
