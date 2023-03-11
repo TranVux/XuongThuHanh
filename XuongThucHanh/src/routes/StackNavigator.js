@@ -7,8 +7,8 @@ const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen component={Signcode} name="Signcode" />
       <Stack.Screen component={Welcome} name="Wellcome" />
+      <Stack.Screen component={Signcode} name="Signcode" />
       <Stack.Screen component={Signup} name="Signup" />
       <Stack.Screen component={Signpass} name="Signpass" />
       <Stack.Screen component={Login} name="Login" />

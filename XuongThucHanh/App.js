@@ -16,7 +16,7 @@ enableFreeze(true);
 const App = () => {
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor={'#ccc'} barStyle={'dark-content'} />
+      <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
       <AppNavigator />
     </Provider>
     // <CartScreen/>
