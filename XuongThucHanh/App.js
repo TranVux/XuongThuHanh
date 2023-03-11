@@ -9,10 +9,16 @@ enableFreeze(true);
 
 const App = () => {
   return (
+<<<<<<< Updated upstream
     <Provider store={store}>
       <StatusBar backgroundColor={"#fff"} barStyle={'dark-content'} />
       <AppNavigator />
     </Provider>
+=======
+    <View>
+      <ToggleButton />
+    </View>
+>>>>>>> Stashed changes
   )
 }
 
