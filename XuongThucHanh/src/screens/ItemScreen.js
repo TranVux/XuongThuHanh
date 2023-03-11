@@ -37,7 +37,7 @@ const ItemScreen = (props) => {
     const { navigation } = props;
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => {navigation.navigate('OrderSuccessfullScreen')}}>
+            <TouchableOpacity onPress={() => {navigation.navigate('PaymentScreen')}}>
                 <Icon name="chevron-left" size={20} color="#FF7300" style={{ paddingLeft: 20 }} />
             </TouchableOpacity>
             <Text style={styles.title}>Itemes</Text>

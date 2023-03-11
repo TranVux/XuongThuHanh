@@ -8,10 +8,13 @@ import {
 } from 'react-native';
 import React, {useState, useContext} from 'react';
 import FastImage from 'react-native-fast-image';
+import { AppContext } from '../utils/AppContext';
+
 
 const Profile = props => {
   const {navigation} = props;
   const [isEnabled, setIsEnabled] = useState(false);
+  
   return (
     <View style={styles.profile}>
       <TouchableOpacity

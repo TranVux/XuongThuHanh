@@ -69,7 +69,7 @@ const CartScreen = (props) => {
 
                 rightOpenValue={-75}
             />
-            <Pressable onPress={()=> {navigation.navigate('PaymentScreen')}} style={styles.buttonCheck}>
+            <Pressable onPress={()=> {navigation.navigate('OrderSuccessfullScreen')}} style={styles.buttonCheck}>
                 <Text style={styles.textCheck}>CheckOut</Text>
             </Pressable>
 

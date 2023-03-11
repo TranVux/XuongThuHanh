@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, {useContext} from 'react'
 import FastImage from 'react-native-fast-image'
 
-const Orders = () => {
+const Orders = (props) => {
+    const {navigation} = props;
     return (
         <View style={styles.orders}>
-            <TouchableOpacity><FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></FastImage></TouchableOpacity>
+            <TouchableOpacity onPress={() => {navigation.navigate('AccountScreen')}}><FastImage style={styles.Arrow_ic} source={require('../../assets/images/Arrow-ic.png')}></FastImage></TouchableOpacity>
             <View style={styles.title} >
                 <Text style={styles.title_text}>Orders</Text>
             </View>

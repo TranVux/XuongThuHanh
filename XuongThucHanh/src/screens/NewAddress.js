@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { SelectList } from 'react-native-dropdown-select-list'
 import FastImage from 'react-native-fast-image'
 
@@ -13,7 +13,8 @@ const data = [
   { key: '7', value: 'Drinks' },
 ]
 
-const NewAddress = () => {
+const NewAddress = (props) => {
+  const {navigation} = props;
   const [selected, setSelected] = useState("")
   return (
     <View style={styles.container}>
@@ -55,8 +56,8 @@ const NewAddress = () => {
           placeholderTextColor='#AC8E71' />
       </View>
 
-      <View style={styles.add}>
-        <Text style={styles.addText}>Add</Text>
+      <View style={styles.add} >
+        <Text onPress={() => {navigation.navigate('AddressScreen')}} style={styles.addText}>Add</Text>
       </View>
 
 

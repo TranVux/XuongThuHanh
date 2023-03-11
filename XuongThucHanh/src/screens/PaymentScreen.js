@@ -42,7 +42,7 @@ const PaymentScreen = (props) => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
             <View style={styles.header}>
-                <Pressable onPress={() => {navigation.navigate('CartScreen')}}>
+                <Pressable onPress={() => {navigation.navigate('AccountScreen')}}>
                     <IconIonicons name='chevron-back' color={Colors.primaryColor} size={25} />
                 </Pressable>
                 <Text style={styles.textHeader}>Payment</Text>
@@ -224,7 +224,7 @@ const PaymentScreen = (props) => {
                     {/* end Order Sammery */}
                 </View>
                 {/*  */}
-                <Pressable onPress={() => {navigation.navigate('OrderSuccessfullScreen')}} style={styles.buttonCheckout}>
+                <Pressable  style={styles.buttonCheckout}>
                     <Text style={{ color: "#fff", fontSize: 18, fontWeight: "700" }}>Checkout $146.50</Text>
                 </Pressable>
             </ScrollView>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext}from 'react';
 import { View, Text, Dimensions, StyleSheet, Image } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import TabLayout from 'react-native-simple-tablayout';

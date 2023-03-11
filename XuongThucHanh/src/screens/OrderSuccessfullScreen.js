@@ -11,7 +11,7 @@ const OrderSuccessfullScreen = (props) => {
             </View>
             <Text style={styles.title}>Your Order Has Been Accepted</Text>
             <Text style={styles.content}>We’ve accepted your order, and we’re {'\n'}getting it ready.</Text>
-            <Pressable onPress={() => {navigation.navigate('OnGoings')}} style={styles.buttonTrack}>
+            <Pressable  style={styles.buttonTrack}>
                 <Text style={styles.textButton}>Track Order</Text>
             </Pressable>
             <Pressable onPress={() => {navigation.navigate('BottomNavigator')}}  style={styles.buttonBackHome}>
