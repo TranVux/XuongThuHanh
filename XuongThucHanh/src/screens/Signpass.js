@@ -16,23 +16,25 @@ const Signpass = (props) => {
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={{ marginBottom: 71, alignItems: 'center' }}>
-                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                <View style={{ marginBottom: 10, alignItems: 'center' }}>
+                    <Image style={styles.img} source={require('../../assets/images/Group7039.png')} />
                 </View>
                 <Text style={styles.titlecontent}>Enter the password</Text>
                 <Text style={styles.text} numberOfLines={2}>For the security & safety please choose a password</Text>
                 <View>
                     <View style={styles.inputView}>
-                        <TextInput
-                            textContentType='password'
-                            style={styles.input}
-                            placeholder='Password' />
+                        <Image style={styles.lock} source={require('../../assets/images/lock.png')} />
+                        <TextInput textContentType='password' style={styles.input} placeholder='Password' placeholderTextColor={'#AC8E71'}/>
+                        <TouchableOpacity>
+                            <Image style={styles.eye} source={require('../../assets/images/eye.png')} />
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.inputView} >
-                        <TextInput
-                            textContentType='password'
-                            style={styles.input}
-                            placeholder='Confirm Password' />
+                        <Image style={styles.lock} source={require('../../assets/images/lock.png')} />
+                        <TextInput textContentType='password' style={styles.input} placeholder='Confirm Password' placeholderTextColor={'#AC8E71'}/>
+                        <TouchableOpacity>
+                            <Image style={styles.eye} source={require('../../assets/images/eye.png')} />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={signcode}>
@@ -102,11 +104,9 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 48,
-        width: '100%',
+        width: '75%',
         backgroundColor: '#F3F3F3',
-        borderRadius: 5,
-        marginBottom: 16,
-        paddingStart: 27
+        fontSize:16
     },
     view: {
         flexDirection: 'row',
@@ -116,7 +116,20 @@ const styles = StyleSheet.create({
     },
     inputView: {
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        height: 48,
+        width: '100%',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 5,
+        marginBottom: 16,
+       
+    },
+    lock: {
+        marginStart: 12,
+        marginEnd: 21
+    },
+    eye: {
+        marginEnd: 17
     }
 })

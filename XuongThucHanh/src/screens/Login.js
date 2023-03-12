@@ -28,14 +28,25 @@ const Login = (props) => {
             </TouchableOpacity>
             <Text style={styles.title}>Sign In</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={{ marginBottom: 46, alignItems: 'center' }}>
-                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                <View style={{ marginBottom: 25, alignItems: 'center' }}>
+                    <Image style={styles.img} source={require('../../assets/images/login.png')} />
                 </View>
                 <Text style={styles.text}>Enter your phone number and
                     password to access your account</Text>
                 <View>
-                    <TextInput style={styles.input} placeholder='Phone Number'></TextInput>
-                    <TextInput style={styles.input} placeholder='Password'></TextInput>
+                    <View style={styles.inputNumber}>
+                        <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
+                            <Image source={require('../../assets/images/flag.png')} />
+                            <Image style={{ marginLeft: 12, marginRight: 20 }} source={require('../../assets/images/spinner.png')} />
+                        </TouchableOpacity>
+                        <TextInput style={{fontSize:16}} keyboardType='phone-pad' placeholder='Phone Number' placeholderTextColor={'#AC8E71'}></TextInput>
+                    </View>
+                    <View style={styles.inputNumber}>
+                    <TextInput style={styles.input} placeholder='Password' placeholderTextColor={'#AC8E71'}></TextInput>
+                    <TouchableOpacity >
+                        <Image source={require('../../assets/images/Mat.png')} />
+                    </TouchableOpacity>
+                    </View>
                 </View>
                 <View style={{ justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }}><TouchableOpacity><Text style={{ color: '#FF5E00' }}>Forgote Password</Text></TouchableOpacity></View>
                 <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={_handleLogin}>
@@ -101,8 +112,9 @@ const styles = StyleSheet.create({
     input: {
         height: 48,
         backgroundColor: '#F3F3F3',
-        borderRadius: 5,
-        marginTop: 16
+        marginStart:15,
+        width:'85%',
+        fontSize:16
     },
     view: {
         flexDirection: 'row',
@@ -110,5 +122,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 13,
         marginBottom: 40
-    }
+    },
+    inputNumber: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        height: 48,
+        backgroundColor: '#F3F3F3',
+        borderRadius: 5,
+        marginTop: 16,
+        paddingStart: 12
+    },
 })

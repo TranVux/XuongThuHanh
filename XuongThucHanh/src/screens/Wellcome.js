@@ -22,11 +22,11 @@ const Wellcome = (props) => {
                         delivered from stores to your home
                         in as fast as 1 hour .</Text>
                 </View>
-                <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]}>
-                    <Text style={[{ color: '#ffffff' }, styles.textButton]} onPress={onclickup}>Sign up</Text>
+                <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={onclickup}>
+                    <Text style={[{ color: '#ffffff' }, styles.textButton]}>Sign up</Text>
                 </Pressable>
-                <Pressable style={[styles.button, { marginBottom: 72 }]}>
-                    <Text style={[{ color: '#FF5E00' }, styles.textButton]} onPress={onclickin}>Sign in</Text>
+                <Pressable style={[styles.button, { marginBottom: 70 }]} onPress={onclickin}>
+                    <Text style={[{ color: '#FF5E00' }, styles.textButton]}>Sign in</Text>
                 </Pressable>
             </ScrollView>
         </View>
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 19,
         textAlign: 'center',
-        marginTop: 16,
-        marginBottom: 51
+        marginTop: 14,
+        marginBottom: 25
     },
     textButton: {
         fontSize: 17,

@@ -16,8 +16,8 @@ const Signcode = (props) => {
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={{ marginBottom: 81, alignItems: 'center' }}>
-                    <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
+                <View style={{ marginBottom: 60, alignItems: 'center' }}>
+                    <Image style={styles.img} source={require('../../assets/images/Group7038.png')} />
                 </View>
                 <Text style={styles.titlecontent}>Enter Verification Code</Text>
                 <Text style={styles.text} numberOfLines={2}>We have sent SMS to:
@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
         lineHeight: 22,
         width: 325,
         height: 53,
-        marginBottom: 39,
         marginTop: 13
     },
     textButton: {

@@ -15,16 +15,23 @@ const Signup = (props) => {
     }
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={back}><FastImage style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
+            <TouchableOpacity onPress={back}>
+                <FastImage style={{ marginStart: 4, marginTop: 15, width: 8.5, height: 14 }} source={require('../../assets/images/Arrow.png')} />
             </TouchableOpacity>
             <Text style={styles.title}>Sign Up</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={{ marginBottom: 81, alignItems: 'center' }}>
+                <View style={{ marginBottom: 40, alignItems: 'center' }}>
                     <Image style={styles.img} source={require('../../assets/images/Group7037.png')} />
                 </View>
                 <View>
-                    <TextInput style={styles.input} placeholder='Name Surname'></TextInput>
-                    <TextInput keyboardType='phone-pad' style={styles.input} placeholder='Phone Number'></TextInput>
+                    <TextInput style={styles.input} placeholder='Name Surname' placeholderTextColor={'#AC8E71'}></TextInput>
+                    <View style={styles.inputNumber}>
+                        <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
+                            <Image source={require('../../assets/images/flag.png')} />
+                            <Image style={{ marginLeft: 12, marginRight: 20 }} source={require('../../assets/images/spinner.png')} />
+                        </TouchableOpacity>
+                        <TextInput style={{fontSize:16}} keyboardType='phone-pad' placeholder='Phone Number' placeholderTextColor={'#AC8E71'}></TextInput>
+                    </View>
                 </View>
                 <Text style={styles.text}>We need to verify you. We will send you a one time verification code. </Text>
                 <Pressable style={[styles.button, { backgroundColor: '#FF5E00' }]} onPress={signpass}>
@@ -94,7 +101,18 @@ const styles = StyleSheet.create({
         backgroundColor: '#F3F3F3',
         borderRadius: 5,
         marginTop: 16,
-        paddingStart: 27
+        paddingStart: 27,
+        fontSize:16
+    },
+    inputNumber: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        height: 48,
+        backgroundColor: '#F3F3F3',
+        borderRadius: 5,
+        marginTop: 16,
+        paddingStart: 12
     },
     view: {
         flexDirection: 'row',
